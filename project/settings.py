@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     # My Packages
+    'taggit',
 
     # My Apps
     'products.apps.ProductsConfig'

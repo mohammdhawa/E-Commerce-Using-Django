@@ -4,6 +4,7 @@ data:
 - flag (new, feature, sale)
 - price
 - image
+- quantity
 - reviews:
   - name
   - image
