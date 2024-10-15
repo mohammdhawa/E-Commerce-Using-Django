@@ -23,5 +23,17 @@ class BrandListView(ListView):
     model = Brand
 
 
-class BrandDetailView(DetailView):
-    model = Brand
+class BrandDetailView(ListView):
+    model = Product
+    template_name = 'products/brand_detail.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        brand = Brand.objects.get(slug=self.kwargs['slug'])
+        context['brand'] = brand
+        return context
+
+    def get_queryset(self):
+        queryset = super().get_queryset().filter(brand__slug=self.kwargs['slug'])
+        return queryset
+
