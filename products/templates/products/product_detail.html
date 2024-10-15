@@ -44,17 +44,15 @@
                             </div>
                             <ul class="details-preview">
                                 <li><img src="{{ object.image.url }}" alt="product"></li>
-                                <li><img src="images/product/01.jpg" alt="product"></li>
-                                <li><img src="images/product/01.jpg" alt="product"></li>
-                                <li><img src="images/product/01.jpg" alt="product"></li>
-                                <li><img src="images/product/01.jpg" alt="product"></li>
+                                {% for image in images %}
+                                <li><img src="{{ image.image.url }}" alt="product"></li>
+                                {% endfor %}
                             </ul>
                             <ul class="details-thumb">
                                 <li><img src="{{ object.image.url }}" alt="product"></li>
-                                <li><img src="images/product/01.jpg" alt="product"></li>
-                                <li><img src="images/product/01.jpg" alt="product"></li>
-                                <li><img src="images/product/01.jpg" alt="product"></li>
-                                <li><img src="images/product/01.jpg" alt="product"></li>
+                                {% for image in images %}
+                                <li><img src="{{ image.image.url }}" alt="product"></li>
+                                {% endfor %}
                             </ul>
                         </div>
                     </div>
