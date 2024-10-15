@@ -78,3 +78,6 @@ class Review(models.Model):
     review = models.TextField(_('review'), max_length=5000)
     rate = models.IntegerField(_('rate'), choices=[(i, i) for i in range(1, 6)])
     review_date = models.DateTimeField(_('review date'), default=timezone.now)
+
+    def __str__(self):
+        return f"{self.user} - {self.product}"
