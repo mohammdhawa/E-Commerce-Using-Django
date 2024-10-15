@@ -3,6 +3,7 @@ from django.utils.text import slugify
 from taggit.managers import TaggableManager
 from django.contrib.auth.models import User
 from django.utils import timezone
+from django.utils.translation import gettext_lazy as _
 
 
 FLAG_CHOICES = (
@@ -12,16 +13,16 @@ FLAG_CHOICES = (
 )
 
 class Product(models.Model):
-    name = models.CharField(max_length=100)
-    flag = models.CharField(max_length=10, choices=FLAG_CHOICES)
-    price = models.FloatField()
-    image = models.ImageField(upload_to='products/')
-    quantity = models.PositiveIntegerField(default=1)
-    sku = models.CharField(max_length=10)
-    subtitle = models.TextField(max_length=500)
-    description = models.TextField(max_length=50000)
+    name = models.CharField(_('name'), max_length=100)
+    flag = models.CharField(_('flag'), max_length=10, choices=FLAG_CHOICES)
+    price = models.FloatField(_('price'))
+    image = models.ImageField(_('image'), upload_to='products/')
+    quantity = models.PositiveIntegerField(_('quantity'), default=1)
+    sku = models.CharField(_('sku'), max_length=10)
+    subtitle = models.TextField(_('subtitle'), max_length=500)
+    description = models.TextField(_('description'), max_length=50000)
     tags = TaggableManager()
-    brand = models.ForeignKey('Brand', related_name='product_brand', on_delete=models.SET_NULL, blank=True, null=True)
+    brand = models.ForeignKey('Brand', verbose_name=_('brand'), related_name='product_brand', on_delete=models.SET_NULL, blank=True, null=True)
     slug = models.SlugField(unique=True, max_length=100, blank=True)
 
     def save(self, *args, **kwargs):
@@ -42,16 +43,16 @@ class Product(models.Model):
 
 
 class ProductImages(models.Model):
-    product = models.ForeignKey(Product, related_name='product_image', on_delete=models.CASCADE)
-    image = models.ImageField(upload_to='products/')
+    product = models.ForeignKey(Product, verbose_name=_('product'), related_name='product_image', on_delete=models.CASCADE)
+    image = models.ImageField(_('image'), upload_to='products/')
 
     def __str__(self):
         return str(self.product)
 
 
 class Brand(models.Model):
-    name = models.CharField(max_length=100)
-    image = models.ImageField(upload_to='brands/')
+    name = models.CharField(_('name'), max_length=100)
+    image = models.ImageField(_('image'), upload_to='brands/')
     slug = models.SlugField(unique=True, max_length=100, blank=True)
 
     def save(self, *args, **kwargs):
@@ -72,8 +73,8 @@ class Brand(models.Model):
 
 
 class Review(models.Model):
-    user = models.ForeignKey(User, related_name='review_user', on_delete=models.SET_NULL, null=True)
-    product = models.ForeignKey(Product, related_name='review_product', on_delete=models.CASCADE)
-    review = models.TextField(max_length=5000)
-    rate = models.IntegerField(choices=[(i, i) for i in range(1, 6)])
-    review_date = models.DateTimeField(default=timezone.now)
+    user = models.ForeignKey(User, verbose_name=_('user'), related_name='review_user', on_delete=models.SET_NULL, null=True)
+    product = models.ForeignKey(Product, verbose_name=_('product'), related_name='review_product', on_delete=models.CASCADE)
+    review = models.TextField(_('review'), max_length=5000)
+    rate = models.IntegerField(_('rate'), choices=[(i, i) for i in range(1, 6)])
+    review_date = models.DateTimeField(_('review date'), default=timezone.now)
