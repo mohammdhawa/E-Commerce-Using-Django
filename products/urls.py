@@ -4,7 +4,7 @@ from .views import (ProductListView, ProductDetailView, BrandListView, BrandDeta
 
 
 urlpatterns = [
-    path('brand-list/', BrandListView.as_view(), name='brand-list'),
+    path('brands/', BrandListView.as_view(), name='brand-list'),
     path('brand-detail/<slug:slug>', BrandDetailView.as_view(), name='brand-detail'),
     path('', ProductListView.as_view(), name='product-list'),
     path('<slug:slug>', ProductDetailView.as_view(), name='product-detail'),

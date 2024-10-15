@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+
+{% block css %}
+        <link rel="stylesheet" href="css/brand-list.css">
+{% endblock css %}
+
+{% block body %}
+	
+
+        <!--=====================================
+                    BANNER PART START
+        =======================================-->
+        <section class="inner-section single-banner" style="background: url(images/single-banner.jpg) no-repeat center;">
+            <div class="container">
+                <h2>brand list</h2>
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">brand-list</li>
+                </ol>
+            </div>
+        </section>
+        <!--=====================================
+                    BANNER PART END
+        =======================================-->
+
+
+        <!--=====================================
+                    BRAND LIST PART START
+        =======================================-->
+        <section class="inner-section">
+            <div class="container">
+                
+                <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5 isotope-items">
+                    
+                    {% for item in object_list %}
+                    <div class="col all vegetables">
+                        <div class="brand-wrap">
+                            <div class="brand-media">
+                                <img src="{{ item.image.url }}" alt="brand">
+                                <div class="brand-overlay">
+                                    <a href="{% url 'brand-detail' item.slug %}"><i class="fas fa-link"></i></a>
+                                </div>
+                            </div>
+                            <div class="brand-meta">
+                                <h4>{{ item }}</h4>
+                                <p>(45 items)</p>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                    
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="bottom-paginate">
+                            <p class="page-info">Showing 12 of 60 Results</p>
+                            <ul class="pagination">
+                                <li class="page-item">
+                                    <a class="page-link" href="#">
+                                        <i class="fas fa-long-arrow-alt-left"></i>
+                                    </a>
+                                </li>
+                                <li class="page-item"><a class="page-link active" href="#">1</a></li>
+                                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                <li class="page-item">...</li>
+                                <li class="page-item"><a class="page-link" href="#">60</a></li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#">
+                                        <i class="fas fa-long-arrow-alt-right"></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--=====================================
+                    BRAND LIST PART END
+        =======================================-->
+    
+{% endblock body %}
