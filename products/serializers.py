@@ -18,51 +18,26 @@ class ReviewSerializer(serializers.ModelSerializer):
 
 class ProductSerializer(serializers.ModelSerializer):
     brand = serializers.StringRelatedField()
-    review_count = serializers.SerializerMethodField()
-    avg_review = serializers.SerializerMethodField()
+
     class Meta:
         model = Product
-        fields = '__all__'
-
-    def get_review_count(self, object):
-        count = Review.objects.filter(product=object).count()
-        return count
-
-    def get_avg_review(self, object):
-        sum = 0
-        reviews = Review.objects.filter(product=object)
-
-        for review in reviews:
-            sum += review.rate
-
-        if len(reviews) == 0:
-            return 0
-
-        return round(sum / len(reviews), 1)
+        fields = ['name', 'flag', 'price', 'image', 'quantity', 'sku',
+                  'subtitle', 'description', 'brand', 'reviews_count',
+                  'avg_rate']
 
 
 class ProductDetailSerializer(serializers.ModelSerializer):
     brand = serializers.StringRelatedField()
     images = ProductImagesSerializer(many=True, source='product_image')
     reviews = ReviewSerializer(many=True, source='review_product')
-    review_count = serializers.SerializerMethodField()
-    avg_review = serializers.SerializerMethodField()
+    tags = serializers.SlugRelatedField(slug_field='name', many=True, read_only=True)
+
     class Meta:
         model = Product
-        fields = '__all__'
+        fields = ['name', 'flag', 'price', 'image', 'quantity', 'sku',
+                  'subtitle', 'description', 'brand','tags', 'reviews_count',
+                  'avg_rate', 'images', 'reviews']
 
-    def get_review_count(self, object):
-        count = Review.objects.filter(product=object).count()
-        return count
-
-    def get_avg_review(self, object):
-        sum = 0
-        reviews = Review.objects.filter(product=object)
-
-        for review in reviews:
-            sum += review.rate
-
-        return round(sum / len(reviews), 1)
 
 
 class BrandListSerializer(serializers.ModelSerializer):
