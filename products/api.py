@@ -14,7 +14,7 @@ class ProductListAPI(generics.ListAPIView):
     pagination_class = ProductPagination
     filter_backends = [DjangoFilterBackend, filters.SearchFilter]
     filterset_fields = ['flag', 'brand']
-    search_fields = ['name', 'sku']
+    search_fields = ['name', '=sku']
 
 
 class ProductDetailAPI(generics.RetrieveAPIView):
