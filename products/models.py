@@ -46,6 +46,20 @@ class Product(models.Model):
         verbose_name_plural = _('products')
         ordering = ['-id']
 
+    @property
+    def avg_rate(self):
+        reviews = self.review_product.all()
+        total = 0
+        for review in reviews:
+            total += review.rate
+
+        return 0 if total == 0 else round(total / len(reviews), 1)
+
+    @property
+    def reviews_count(self):
+        reviews = self.review_product.all().count()
+        return reviews
+
 
 class ProductImages(models.Model):
     product = models.ForeignKey(Product, verbose_name=_('product'), related_name='product_image', on_delete=models.CASCADE)
