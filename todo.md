@@ -1,6 +1,7 @@
 ### Products:
 - add review
-- API products
+- custom filter
+- code refactor
 
 ---
 
