@@ -1,3 +1,4 @@
+from django.db.models import Count
 from django.shortcuts import render
 from django.views.generic import ListView, DetailView
 
@@ -23,6 +24,7 @@ class ProductDetailView(DetailView):
 class BrandListView(ListView):
     model = Brand
     paginate_by = 25
+    queryset = Brand.objects.annotate(product_count=Count('product_brand'))
 
 
 class BrandDetailView(ListView):
