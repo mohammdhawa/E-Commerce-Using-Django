@@ -64,11 +64,11 @@
                                 <p>BRAND:<a href="#">{{ object.brand }}</a></p>
                             </div>
                             <div class="details-rating">
-                                <i class="icofont-star {% if object.avg_rate >= 1 %}active{% endif %}"></i>
-                                <i class="icofont-star {% if object.avg_rate >= 2 %}active{% endif %}"></i>
-                                <i class="icofont-star {% if object.avg_rate >= 3 %}active{% endif %}"></i>
-                                <i class="icofont-star {% if object.avg_rate >= 4 %}active{% endif %}"></i>
-                                <i class="icofont-star {% if object.avg_rate >= 5 %}active{% endif %}"></i>
+                                <i class="icofont-star {% if object.avg_rate > 0 %}active{% endif %}"></i>
+                                <i class="icofont-star {% if object.avg_rate > 1 %}active{% endif %}"></i>
+                                <i class="icofont-star {% if object.avg_rate > 2 %}active{% endif %}"></i>
+                                <i class="icofont-star {% if object.avg_rate > 3 %}active{% endif %}"></i>
+                                <i class="icofont-star {% if object.avg_rate > 4 %}active{% endif %}"></i>
                                 <a href="product-video.html">({{ object.reviews_count }})</a>
                             </div>
                             <h3 class="details-price">
@@ -142,11 +142,11 @@
                                         </h5>
                                     </div>
                                     <ul class="review-rating">
-                                        <li class="{% if review.rate >= 1 %}icofont-ui-rating{% else %}icofont-ui-rate-blank{% endif %}"></li>
-                                        <li class="{% if review.rate >= 2 %}icofont-ui-rating{% else %}icofont-ui-rate-blank{% endif %}"></li>
-                                        <li class="{% if review.rate >= 3 %}icofont-ui-rating{% else %}icofont-ui-rate-blank{% endif %}"></li>
-                                        <li class="{% if review.rate >= 4 %}icofont-ui-rating{% else %}icofont-ui-rate-blank{% endif %}"></li>
-                                        <li class="{% if review.rate >= 5 %}icofont-ui-rating{% else %}icofont-ui-rate-blank{% endif %}"></li>
+                                        <li class="{% if review.rate > 0 %}icofont-ui-rating{% else %}icofont-ui-rate-blank{% endif %}"></li>
+                                        <li class="{% if review.rate > 1 %}icofont-ui-rating{% else %}icofont-ui-rate-blank{% endif %}"></li>
+                                        <li class="{% if review.rate > 2 %}icofont-ui-rating{% else %}icofont-ui-rate-blank{% endif %}"></li>
+                                        <li class="{% if review.rate > 3 %}icofont-ui-rating{% else %}icofont-ui-rate-blank{% endif %}"></li>
+                                        <li class="{% if review.rate > 4 %}icofont-ui-rating{% else %}icofont-ui-rate-blank{% endif %}"></li>
                                     </ul>
                                     <p class="review-desc"> {{ review.review }}</p>
                                     
