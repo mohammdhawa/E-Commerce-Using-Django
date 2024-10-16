@@ -35,6 +35,9 @@ class ProductSerializer(serializers.ModelSerializer):
         for review in reviews:
             sum += review.rate
 
+        if len(reviews) == 0:
+            return 0
+
         return round(sum / len(reviews), 1)
 
 
