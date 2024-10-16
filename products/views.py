@@ -34,7 +34,7 @@ class BrandDetailView(ListView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        brand = Brand.objects.get(slug=self.kwargs['slug'])
+        brand = Brand.objects.filter(slug=self.kwargs['slug']).annotate(product_count=Count('product_brand'))[0]
         context['brand'] = brand
         return context
 
