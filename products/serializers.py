@@ -43,8 +43,8 @@ class ProductSerializer(serializers.ModelSerializer):
 
 class ProductDetailSerializer(serializers.ModelSerializer):
     brand = serializers.StringRelatedField()
-    product_image = ProductImagesSerializer(many=True)
-    review_product = ReviewSerializer(many=True)
+    images = ProductImagesSerializer(many=True, source='product_image')
+    reviews = ReviewSerializer(many=True, source='review_product')
     review_count = serializers.SerializerMethodField()
     avg_review = serializers.SerializerMethodField()
     class Meta:
