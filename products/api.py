@@ -1,19 +1,9 @@
 from rest_framework import generics
-from rest_framework.pagination import PageNumberPagination
 
 from .models import Product, Brand
 from .serializers import (ProductSerializer, ProductDetailSerializer, BrandListSerializer,
                           BrandDetailSerializer)
-
-
-class ProductPagination(PageNumberPagination):
-    page_size = 48
-    page_size_query_param = 'page_size'
-
-
-class BrandPagination(PageNumberPagination):
-    page_size = 25
-    page_size_query_param = 'page_size'
+from .pagination import ProductPagination, BrandPagination
 
 
 class ProductListAPI(generics.ListAPIView):
