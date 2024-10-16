@@ -6,6 +6,7 @@ from .models import (Product, Brand, Review, ProductImages)
 
 class ProductListView(ListView):
     model = Product
+    paginate_by = 48
 
 
 class ProductDetailView(DetailView):
@@ -21,11 +22,13 @@ class ProductDetailView(DetailView):
 
 class BrandListView(ListView):
     model = Brand
+    paginate_by = 25
 
 
 class BrandDetailView(ListView):
     model = Product
     template_name = 'products/brand_detail.html'
+    paginate_by = 25
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
