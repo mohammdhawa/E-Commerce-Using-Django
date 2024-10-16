@@ -41,6 +41,11 @@ class Product(models.Model):
     def __str__(self):
         return self.name
 
+    class Meta:
+        verbose_name = _('product')
+        verbose_name_plural = _('products')
+        ordering = ['-id']
+
 
 class ProductImages(models.Model):
     product = models.ForeignKey(Product, verbose_name=_('product'), related_name='product_image', on_delete=models.CASCADE)
