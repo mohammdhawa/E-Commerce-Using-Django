@@ -229,12 +229,12 @@
                             </div>
                             <div class="product-content">
                                 <div class="product-rating">
-                                    <i class="active icofont-star"></i>
-                                    <i class="active icofont-star"></i>
-                                    <i class="active icofont-star"></i>
-                                    <i class="active icofont-star"></i>
-                                    <i class="icofont-star"></i>
-                                    <a href="product-video.html">({{ item.product_count }})</a>
+                                    <i class="icofont-star {% if item.avg_rate > 0 %}active{% endif %}"></i>
+                                    <i class="icofont-star {% if item.avg_rate > 1 %}active{% endif %}"></i>
+                                    <i class="icofont-star {% if item.avg_rate > 2 %}active{% endif %}"></i>
+                                    <i class="icofont-star {% if item.avg_rate > 3 %}active{% endif %}"></i>
+                                    <i class="icofont-star {% if item.avg_rate > 4 %}active{% endif %}"></i>
+                                    <a href="product-video.html">({{ item.reviews_count }})</a>
                                 </div>
                                 <h6 class="product-name">
                                     <a href="{% url 'product-detail' item.slug %}">{{ item }}</a>
