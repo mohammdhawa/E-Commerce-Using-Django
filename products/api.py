@@ -26,6 +26,8 @@ class BrandListAPI(generics.ListAPIView):
     queryset = Brand.objects.all()
     serializer_class = BrandListSerializer
     pagination_class = BrandPagination
+    filter_backends = [filters.SearchFilter]
+    search_fields = ['name']
 
 
 class BrandDetailAPI(generics.RetrieveAPIView):
