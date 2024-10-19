@@ -1,8 +1,12 @@
 # Settings context processor which should return the data like (logo, name of the webiste and contact us data and so on)
-
+from django.core.cache import cache
 from .models import Settings
 
 def settings_data(request):
-    settings_data = Settings.objects.last()
+    data = cache.get('settings_data')
+    if not data:
+        data = Settings.objects.last()
+        cache.set('settings_data', data, timeout=60 * 60 * 24) # for one day
 
-    return {'settings_data': settings_data}
+    # print(data)
+    return {'settings_data': data}
