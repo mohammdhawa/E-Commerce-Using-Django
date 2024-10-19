@@ -1,10 +1,388 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-<h1>Home Page</h1>
-</body>
-</html>
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css %}
+        <link rel="stylesheet" href="{% static 'en/css/index.css' %}">
+{% endblock css %}
+
+{% block body %}
+
+
+        <!--=====================================
+                    SUGGEST PART START
+        =======================================-->
+        <section class="section suggest-part mt-4">
+            <div class="container">
+                <ul class="suggest-slider slider-arrow">
+                    {% for item in brands %}
+                    <li>
+                        <a class="suggest-card" href="{% url 'brand-detail' item.slug %}">
+                            <img src="{{ item.image.url }}" alt="suggest">
+                            <h5>vegetables <span>34 items</span></h5>
+                        </a>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </section>
+        <!--=====================================
+                    SUGGEST PART END
+        =======================================-->
+
+
+        <!--=====================================
+                    RECENT PART START
+        =======================================-->
+        <section class="section recent-part">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="section-heading">
+                            <h2>recently sold items</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 row-cols-xl-5">
+                    {% for item in sale_products %}
+                        <div class="col">
+                            <div class="product-card">
+                                <div class="product-media">
+                                    <div class="product-label">
+                                        <label class="label-text
+                                        {% if item.flag == 'Sale' %}sale
+                                        {% elif item.flag == 'Feature' %}feat
+                                        {% else %}new{% endif %}">
+                                        {{ item.flag }}
+                                        </label>
+
+                                    </div>
+
+                                    <a class="product-image" href="{% url 'product-detail' item.slug %}">
+                                        <img src="{{item.image.url}}" alt="product">
+                                    </a>
+                                </div>
+                                <div class="product-content">
+                                    <div class="product-rating">
+                                        <i class="icofont-star {% if item.avg_rate > 0 %}active{% endif %}"></i>
+                                        <i class="icofont-star {% if item.avg_rate > 1 %}active{% endif %}"></i>
+                                        <i class="icofont-star {% if item.avg_rate > 2 %}active{% endif %}"></i>
+                                        <i class="icofont-star {% if item.avg_rate > 3 %}active{% endif %}"></i>
+                                        <i class="icofont-star {% if item.avg_rate > 4 %}active{% endif %}"></i>
+                                        <a href="product-video.html">({{ item.reviews_count }})</a>
+                                    </div>
+                                    <h6 class="product-name">
+                                        <a href="{% url 'product-detail' item.slug %}">{{item}}</a>
+                                    </h6>
+                                    <h6 class="product-price">
+                                        <span>${{ item.price }}</span>
+                                    </h6>
+                                    <button class="product-add" title="Add to Cart">
+                                        <i class="fas fa-shopping-basket"></i>
+                                        <span>add</span>
+                                    </button>
+                                    <div class="product-action">
+                                        <button class="action-minus" title="Quantity Minus"><i class="icofont-minus"></i></button>
+                                        <input class="action-input" title="Quantity Number" type="text" name="quantity" value="1">
+                                        <button class="action-plus" title="Quantity Plus"><i class="icofont-plus"></i></button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="section-btn-25">
+                            <a href="{% url 'product-list' %}" class="btn btn-outline">
+                                <i class="fas fa-eye"></i>
+                                <span>show more</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--=====================================
+                    RECENT PART END
+        =======================================-->
+
+
+        <!--=====================================
+                    FEATURED PART START
+        =======================================-->
+        <section class="section feature-part">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="section-heading">
+                            <h2>our featured items</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="row row-cols-1 row-cols-md-1 row-cols-lg-2 row-cols-xl-2">
+                    {% for item in feature_products %}
+                    <div class="col">
+                        <div class="feature-card">
+                            <div class="feature-media">
+                                <div class="feature-label">
+                                    <label class="label-text
+                                        {% if item.flag == 'Sale' %}sale
+                                        {% elif item.flag == 'Feature' %}feat
+                                        {% else %}new{% endif %}">
+                                        {{ item.flag }}
+                                    </label>
+                                </div>
+                                <a class="feature-image" href="{% url 'product-detail' item.slug %}">
+                                    <img src="{{ item.image.url }}" alt="product">
+                                </a>
+                            </div>
+                            <div class="feature-content">
+                                <h6 class="feature-name">
+                                    <a href="{% url 'product-detail' item.slug %}">{{ item}}</a>
+                                </h6>
+                                <div class="feature-rating">
+                                    <i class="icofont-star {% if item.avg_rate > 0 %}active{% endif %}"></i>
+                                    <i class="icofont-star {% if item.avg_rate > 1 %}active{% endif %}"></i>
+                                    <i class="icofont-star {% if item.avg_rate > 2 %}active{% endif %}"></i>
+                                    <i class="icofont-star {% if item.avg_rate > 3 %}active{% endif %}"></i>
+                                    <i class="icofont-star {% if item.avg_rate > 4 %}active{% endif %}"></i>
+                                    <a href="product-video.html">({{ item.reviews_count }})</a>
+                                </div>
+                                <h6 class="feature-price">
+                                    <span>${{ item.price}}</span>
+                                </h6>
+                                <p class="feature-desc">{{ item.subtitle|truncatechars:100 }}</p>
+                                <button class="product-add" title="Add to Cart">
+                                    <i class="fas fa-shopping-basket"></i>
+                                    <span>add</span>
+                                </button>
+                                <div class="product-action">
+                                    <button class="action-minus" title="Quantity Minus"><i class="icofont-minus"></i></button>
+                                    <input class="action-input" title="Quantity Number" type="text" name="quantity" value="1">
+                                    <button class="action-plus" title="Quantity Plus"><i class="icofont-plus"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="section-btn-25">
+                            <a href="{% url 'product-list' %}" class="btn btn-outline">
+                                <i class="fas fa-eye"></i>
+                                <span>show more</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--=====================================
+                    FEATURE PART END
+        =======================================-->
+
+
+        <!--=====================================
+                    NEW ITEM PART START
+        =======================================-->
+        <section class="section newitem-part">
+            <div class="container">
+                <div class="row">
+                    <div class="col">
+                        <div class="section-heading">
+                            <h2>collected new items</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <ul class="new-slider slider-arrow">
+                            {% for item in new_products %}
+                            <li>
+                                <div class="product-card">
+                                    <div class="product-media">
+                                        <div class="product-label">
+                                            <label class="label-text
+                                            {% if item.flag == 'Sale' %}sale
+                                            {% elif item.flag == 'Feature' %}feat
+                                            {% else %}new{% endif %}">
+                                            {{ item.flag }}
+                                            </label>
+                                        </div>
+                                        <a class="product-image" href="{% url 'product-detail' item.slug %}">
+                                            <img src="{{ item.image.url }}" alt="product">
+                                        </a>
+                                    </div>
+                                    <div class="product-content">
+                                        <div class="product-rating">
+                                        <i class="icofont-star {% if item.avg_rate > 0 %}active{% endif %}"></i>
+                                        <i class="icofont-star {% if item.avg_rate > 1 %}active{% endif %}"></i>
+                                        <i class="icofont-star {% if item.avg_rate > 2 %}active{% endif %}"></i>
+                                        <i class="icofont-star {% if item.avg_rate > 3 %}active{% endif %}"></i>
+                                        <i class="icofont-star {% if item.avg_rate > 4 %}active{% endif %}"></i>
+                                        <a href="product-video.html">({{ item.reviews_count }})</a>
+                                    </div>
+                                        <h6 class="product-name">
+                                            <a href="{% url 'product-detail' item.slug %}">{{ item }}</a>
+                                        </h6>
+                                        <h6 class="product-price">
+                                            <span>${{ item.price }}</span>
+                                        </h6>
+                                        <button class="product-add" title="Add to Cart">
+                                            <i class="fas fa-shopping-basket"></i>
+                                            <span>add</span>
+                                        </button>
+                                        <div class="product-action">
+                                            <button class="action-minus" title="Quantity Minus"><i class="icofont-minus"></i></button>
+                                            <input class="action-input" title="Quantity Number" type="text" name="quantity" value="1">
+                                            <button class="action-plus" title="Quantity Plus"><i class="icofont-plus"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <div class="section-btn-25">
+                            <a href="{% url 'product-list' %}" class="btn btn-outline">
+                                <i class="fas fa-eye"></i>
+                                <span>show more</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--=====================================
+                    NEW ITEM PART END
+        =======================================-->
+
+
+
+        <!--=====================================
+                    BRAND PART START
+        =======================================-->
+        <section class="section brand-part">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="section-heading">
+                            <h2>shop by brands</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="brand-slider slider-arrow">
+                    {% for item in brands %}
+                    <div class="brand-wrap">
+                        <div class="brand-media">
+                            <img src="{{ item.image.url }}" alt="brand">
+                            <div class="brand-overlay">
+                                <a href="{% url 'brand-detail' item.slug %}"><i class="fas fa-link"></i></a>
+                            </div>
+                        </div>
+                        <div class="brand-meta">
+                            <h4>{{ item }}</h4>
+                            <p>(45 items)</p>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="section-btn-50">
+                            <a href="{% url 'brand-list' %}" class="btn btn-outline">
+                                <i class="fas fa-eye"></i>
+                                <span>view all brands</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--=====================================
+                    BRAND PART END
+        =======================================-->
+
+
+        <!--=====================================
+                  TESTIMONIAL PART START
+        =======================================-->
+        <section class="section testimonial-part">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="section-heading">
+                            <h2>client's feedback</h2>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="testimonial-slider slider-arrow">
+                            <div class="testimonial-card">
+                                <i class="fas fa-quote-left"></i>
+                                <p>Lorem ipsum dolor consectetur adipisicing elit neque earum sapiente vitae obcaecati magnam doloribus magni provident ipsam</p>
+                                <h5>mahmud hasan</h5>
+                                <ul>
+                                    <li class="fas fa-star"></li>
+                                    <li class="fas fa-star"></li>
+                                    <li class="fas fa-star"></li>
+                                    <li class="fas fa-star"></li>
+                                    <li class="fas fa-star"></li>
+                                </ul>
+                                <img src="images/avatar/01.jpg" alt="testimonial">
+                            </div>
+                            <div class="testimonial-card">
+                                <i class="fas fa-quote-left"></i>
+                                <p>Lorem ipsum dolor consectetur adipisicing elit neque earum sapiente vitae obcaecati magnam doloribus magni provident ipsam</p>
+                                <h5>mahmud hasan</h5>
+                                <ul>
+                                    <li class="fas fa-star"></li>
+                                    <li class="fas fa-star"></li>
+                                    <li class="fas fa-star"></li>
+                                    <li class="fas fa-star"></li>
+                                    <li class="fas fa-star"></li>
+                                </ul>
+                                <img src="images/avatar/02.jpg" alt="testimonial">
+                            </div>
+                            <div class="testimonial-card">
+                                <i class="fas fa-quote-left"></i>
+                                <p>Lorem ipsum dolor consectetur adipisicing elit neque earum sapiente vitae obcaecati magnam doloribus magni provident ipsam</p>
+                                <h5>mahmud hasan</h5>
+                                <ul>
+                                    <li class="fas fa-star"></li>
+                                    <li class="fas fa-star"></li>
+                                    <li class="fas fa-star"></li>
+                                    <li class="fas fa-star"></li>
+                                    <li class="fas fa-star"></li>
+                                </ul>
+                                <img src="images/avatar/03.jpg" alt="testimonial">
+                            </div>
+                            <div class="testimonial-card">
+                                <i class="fas fa-quote-left"></i>
+                                <p>Lorem ipsum dolor consectetur adipisicing elit neque earum sapiente vitae obcaecati magnam doloribus magni provident ipsam</p>
+                                <h5>mahmud hasan</h5>
+                                <ul>
+                                    <li class="fas fa-star"></li>
+                                    <li class="fas fa-star"></li>
+                                    <li class="fas fa-star"></li>
+                                    <li class="fas fa-star"></li>
+                                    <li class="fas fa-star"></li>
+                                </ul>
+                                <img src="images/avatar/04.jpg" alt="testimonial">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--=====================================
+                   TESTIMONIAL PART END
+        =======================================-->
+
+
+{% endblock body %}
