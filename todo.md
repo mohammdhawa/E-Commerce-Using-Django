@@ -1,5 +1,4 @@
 ### Products:
-- home page
 - add review
 - custom filter
 - code refactor
@@ -26,10 +25,8 @@
 ### Intermediate:
 - docker
 - celery
-- redis
 - payment
 - ajax
-- caching
 - linting
 - deploy
 

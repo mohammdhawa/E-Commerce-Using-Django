@@ -6,7 +6,7 @@ def settings_data(request):
     data = cache.get('settings_data')
     if not data:
         data = Settings.objects.last()
-        cache.set('settings_data', data, timeout=60 * 60 * 24) # for one day
+        cache.set('settings_data', data, timeout=60 * 60 * 24 * 7) # for one week
 
     # print(data)
     return {'settings_data': data}
