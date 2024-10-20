@@ -1,8 +1,9 @@
 from django.db.models import Count
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views.generic import ListView, DetailView
 
 from .models import (Product, Brand, Review, ProductImages)
+from .forms import ReviewForm
 
 
 class ProductListView(ListView):
@@ -42,3 +43,15 @@ class BrandDetailView(ListView):
         queryset = super().get_queryset().filter(brand__slug=self.kwargs['slug'])
         return queryset
 
+
+def add_review(request, slug):
+    user = request.user
+    product = Product.objects.get(slug=slug)
+
+    if request.method == "POST":
+        rate = int(request.POST['rate'])
+        review = request.POST['review']
+        Review.objects.create(user=user, product=product, rate=rate, review=review)
+        return redirect('product-detail', slug=slug)
+
+    return render(request, 'products/product_detail.html', {})
