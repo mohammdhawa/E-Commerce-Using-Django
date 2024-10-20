@@ -1,9 +1,3 @@
-### Products:
-- custom filter
-- code refactor
-
----
-
 ### Orders:
 - design models
 - add views of orders
