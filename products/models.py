@@ -49,11 +49,9 @@ class Product(models.Model):
     @property
     def avg_rate(self):
         reviews = self.review_product.all()
-        total = 0
-        for review in reviews:
-            total += review.rate
+        total_reviews = len(reviews)
 
-        return 0 if total == 0 else round(total / len(reviews), 1)
+        return 0 if total_reviews == 0 else round(sum(review.rate for review in reviews) / total_reviews, 1)
 
     @property
     def reviews_count(self):
