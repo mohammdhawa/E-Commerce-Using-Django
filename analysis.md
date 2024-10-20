@@ -55,3 +55,40 @@ functions:
 - dashboard
 - profile
 - edit profile
+
+---
+
+### Orders
+data:
+- user: FK
+- order status (recieved, processed, shipped, delivered)
+- code (like serial number)
+- order time
+- delivery time
+- delivery address: FK
+- coupon: FK
+- total
+- total_with_coupon
+
+### Order Detail
+data:
+- order: FK
+- product: FK
+- quantity
+- price
+- total
+
+### Address
+data:
+- user: FK
+- type (home, office, work, other)
+- address
+
+
+### Coupon
+data:
+- code
+- start date
+- end date
+- quantity
+- discount
