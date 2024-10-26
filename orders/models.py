@@ -12,7 +12,7 @@ ORDER_STATUS_CHOICES = (
     ('Delivered', 'Delivered'),
 )
 class Order(models.Model):
-    user = models.ForeignKey(User, related_name='user_orders', on_delete=models.SET_NULL, null=True, blank=True)
+    user = models.ForeignKey(User, related_name='order_owner', on_delete=models.SET_NULL, null=True, blank=True)
     status = models.CharField(max_length=10, choices=ORDER_STATUS_CHOICES, default='Delivered')
     code = models.CharField(max_length=10, default=generate_code)
     order_time = models.DateTimeField(default=timezone.now)
@@ -30,6 +30,26 @@ class OrderDetail(models.Model):
     quantity = models.PositiveIntegerField()
     price = models.FloatField()
     total = models.FloatField()
+
+
+CART_STATUS_CHOICES = (
+    ('Inprogress', 'Inprogress'),
+    ('Completed', 'Completed'),
+)
+class Cart(models.Model):
+    user = models.ForeignKey(User, related_name='cart_owner', on_delete=models.SET_NULL, null=True, blank=True)
+    status = models.CharField(max_length=10, choices=CART_STATUS_CHOICES, default='Inprogress')
+    coupon = models.ForeignKey('Coupon', related_name='cart_coupon', on_delete=models.SET_NULL,
+                               null=True, blank=True)
+    total_with_coupon = models.FloatField(null=True, blank=True)
+
+
+class CartDetail(models.Model):
+    cart = models.ForeignKey(Cart, related_name='cart_details', on_delete=models.CASCADE)
+    product = models.ForeignKey(Product, related_name='cart_detail_product', on_delete=models.SET_NULL,
+                                null=True, blank=True)
+    quantity = models.PositiveIntegerField(default=1)
+    total = models.FloatField(null=True, blank=True)
 
 
 class Coupon(models.Model):
