@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 from products.models import Product
 from utils.generate_code import generate_code
 from django.utils import timezone
+from accounts.models import Address
 
 
 ORDER_STATUS_CHOICES = (
@@ -17,6 +18,7 @@ class Order(models.Model):
     code = models.CharField(max_length=10, default=generate_code)
     order_time = models.DateTimeField(default=timezone.now)
     delivery_time = models.DateTimeField(null=True, blank=True)
+    delivery_address = models.ForeignKey(Address, related_name='delivery_address', on_delete=models.SET_NULL, null=True, blank=True)
     coupon = models.ForeignKey('Coupon', related_name='order_coupon', on_delete=models.SET_NULL,
                                null=True, blank=True)
     total = models.FloatField()
