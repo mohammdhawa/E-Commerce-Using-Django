@@ -1,3 +1,5 @@
+from itertools import product
+
 from django.db import models
 from django.contrib.auth.models import User
 from products.models import Product
@@ -45,6 +47,13 @@ class Cart(models.Model):
                                null=True, blank=True)
     total_with_coupon = models.FloatField(null=True, blank=True)
 
+    @property
+    def cart_total(self):
+        total = 0
+        for item in self.cart_details.all():
+            total += item.total
+        return round(total, 2)
+
 
 class CartDetail(models.Model):
     cart = models.ForeignKey(Cart, related_name='cart_details', on_delete=models.CASCADE)
@@ -52,6 +61,12 @@ class CartDetail(models.Model):
                                 null=True, blank=True)
     quantity = models.PositiveIntegerField(default=1)
     total = models.FloatField(null=True, blank=True)
+
+    def save(self, *args, **kwargs):
+        total = self.product.price * self.quantity
+        self.total = total
+        # Call the parent save method to actually save the data
+        super().save(*args, **kwargs)
 
 
 class Coupon(models.Model):
