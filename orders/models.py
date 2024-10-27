@@ -14,7 +14,7 @@ ORDER_STATUS_CHOICES = (
 )
 class Order(models.Model):
     user = models.ForeignKey(User, related_name='order_owner', on_delete=models.SET_NULL, null=True, blank=True)
-    status = models.CharField(max_length=10, choices=ORDER_STATUS_CHOICES, default='Delivered')
+    status = models.CharField(max_length=10, choices=ORDER_STATUS_CHOICES)
     code = models.CharField(max_length=10, default=generate_code)
     order_time = models.DateTimeField(default=timezone.now)
     delivery_time = models.DateTimeField(null=True, blank=True)
@@ -31,7 +31,7 @@ class OrderDetail(models.Model):
                                 null=True, blank=True)
     quantity = models.PositiveIntegerField()
     price = models.FloatField()
-    total = models.FloatField()
+    total = models.FloatField(null=True, blank=True)
 
 
 CART_STATUS_CHOICES = (

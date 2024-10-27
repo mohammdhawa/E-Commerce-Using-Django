@@ -27,6 +27,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('products/', include('products.urls')),
     path('', include('settings.urls')),
+    path('orders/', include('orders.urls')),
 
     ## Reset API
     path('api-auth/', include('rest_framework.urls')),
