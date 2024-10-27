@@ -40,7 +40,7 @@ CART_STATUS_CHOICES = (
 )
 class Cart(models.Model):
     user = models.ForeignKey(User, related_name='cart_owner', on_delete=models.SET_NULL, null=True, blank=True)
-    status = models.CharField(max_length=10, choices=CART_STATUS_CHOICES, default='Inprogress')
+    status = models.CharField(max_length=10, choices=CART_STATUS_CHOICES)
     coupon = models.ForeignKey('Coupon', related_name='cart_coupon', on_delete=models.SET_NULL,
                                null=True, blank=True)
     total_with_coupon = models.FloatField(null=True, blank=True)
