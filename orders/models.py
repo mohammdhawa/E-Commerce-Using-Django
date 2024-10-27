@@ -63,8 +63,9 @@ class CartDetail(models.Model):
     total = models.FloatField(null=True, blank=True)
 
     def save(self, *args, **kwargs):
-        total = self.product.price * self.quantity
-        self.total = total
+        if not self.total:
+            total = self.product.price * self.quantity
+            self.total = total
         # Call the parent save method to actually save the data
         super().save(*args, **kwargs)
 
