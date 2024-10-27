@@ -33,6 +33,9 @@ def checkout(request):
                 cart.coupon = coupon
                 cart.total_with_coupon = total
                 cart.save()
+
+                coupon.quantity -= 1
+                coupon.save()
             else:
                 error = True
         except Coupon.DoesNotExist:
