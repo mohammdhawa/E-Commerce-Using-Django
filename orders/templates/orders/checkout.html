@@ -75,10 +75,14 @@
                                 </div>
                                 <div class="chekout-coupon">
                                     <button class="coupon-btn">Do you have a coupon code?</button>
-                                    <form class="coupon-form">
-                                        <input type="text" placeholder="Enter your coupon code">
+                                    <form class="coupon-form" action="{% url 'checkout' %}" method="post">
+                                        {% csrf_token %}
+                                        <input type="text" name="coupon" placeholder="Enter your coupon code">
                                         <button type="submit"><span>apply</span></button>
                                     </form>
+                                    {% if error %}
+                                    <p class="fs-5 text-danger">The coupon you entered expired</p>
+                                    {% endif %}
                                 </div>
                                 <div class="checkout-charge">
                                     <ul>

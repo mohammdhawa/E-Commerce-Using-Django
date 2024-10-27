@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from redis.commands.search.reducers import quantile
+from django.utils import timezone
 
 from products.models import Product
 from .models import (Order, OrderDetail, Cart, CartDetail, Coupon)
@@ -20,6 +20,23 @@ def checkout(request):
     subtotal = cart.cart_total
     discount = 0
     total = subtotal + delivery_fee
+    error = False
+
+    if request.method == 'POST':
+        coupon_code = request.POST['coupon']
+        try:
+            coupon = Coupon.objects.get(code=coupon_code)
+            time_now = timezone.now()
+            if coupon.start_date <= time_now <= coupon.end_date and coupon.quantity > 0:
+                discount = round((coupon.discount / 100) * subtotal, 2)
+                total = round((subtotal - discount) + delivery_fee, 2)
+                cart.coupon = coupon
+                cart.total_with_coupon = total
+                cart.save()
+            else:
+                error = True
+        except Coupon.DoesNotExist:
+            error = True
 
     context = {
         'cart': cart,
@@ -28,6 +45,7 @@ def checkout(request):
         'subtotal': subtotal,
         'discount': discount,
         'total': total,
+        'error': error
     }
 
 

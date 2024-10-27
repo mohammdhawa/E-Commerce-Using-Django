@@ -73,9 +73,12 @@ class CartDetail(models.Model):
 class Coupon(models.Model):
     code = models.CharField(max_length=20)
     start_date = models.DateTimeField(default=timezone.now)
-    end_date = models.DateTimeField()
+    end_date = models.DateTimeField(null=True, blank=True)
     quantity = models.PositiveIntegerField()
     discount = models.FloatField()
+
+    def __str__(self):
+        return self.code
 
     def save(self, *args, **kwargs):
         if self.end_date is None:
