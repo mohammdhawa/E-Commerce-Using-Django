@@ -331,7 +331,7 @@
 
                             {% for item in object_list %}
                             <div class="col">
-                                <div class="product-card">
+                                <div class="product-card {% if item.quantity == 0 %} product-disable {% endif %}">
                                     <div class="product-media">
                                         <div class="product-label">
                                             <label class="label-text
