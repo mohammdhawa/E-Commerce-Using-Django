@@ -21,3 +21,7 @@ class OrderListAPI(generics.ListAPIView):
         data = OrderSerializer(queryset, many=True).data
         return Response({'orders': data})
 
+
+class OrderDetailAPI(generics.RetrieveAPIView):
+    queryset = Order.objects.all()
+    serializer_class = OrderSerializer
