@@ -1,4 +1,5 @@
 from rest_framework import generics
+from rest_framework.response import Response
 
 from django.contrib.auth.models import User
 
@@ -13,7 +14,10 @@ class OrderListAPI(generics.ListAPIView):
     queryset = Order.objects.all()
     serializer_class = OrderSerializer
 
-    def get_queryset(self, *args, **kwargs):
+    def list(self, request, *args, **kwargs):
         queryset = super(OrderListAPI, self).get_queryset()
-        queryset = queryset.filter(user__username=self.kwargs['username'])
-        return queryset
+        user = User.objects.get(username=self.kwargs['username'])
+        queryset = queryset.filter(user=user)
+        data = OrderSerializer(queryset, many=True).data
+        return Response({'orders': data})
+
