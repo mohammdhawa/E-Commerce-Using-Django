@@ -10,6 +10,7 @@ from .serializers import (OrderSerializer, OrderDetailSerializer, CartSerializer
 from .models import Order, OrderDetail, Cart, CartDetail, Coupon
 from products.models import Product
 from settings.models import DeliveryFee
+from accounts.models import Address
 
 
 class OrderListAPI(generics.ListAPIView):
@@ -102,14 +103,30 @@ class CreateOrderAPI(generics.GenericAPIView):
 
 
 class CartCreateUpdateDeleteAPI(generics.GenericAPIView):
-    def post(self, request, *args, **kwargs):
-        pass
+    def post(self, request, *args, **kwargs): # add & update
+        user = User.objects.get(user=self.kwargs['username'])
+        cart = Cart.objects.get(user=user, status='Inprogress')
+        product = Product.objects.get(id=request.data['product_id'])
+        quantity = int(request.data['quantity'])
 
-    def get(self, request, *args, **kwargs):
-        pass
+        cart_detail, created = CartDetail.objects.get_or_create(cart=cart)
+        cart_detail.quantity = quantity
+        cart_detail.total = round(product.price * cart_detail.quantity, 2)
+        cart_detail.save()
 
-    def put(self, request, *args, **kwargs):
-        pass
+        return Response({"message": "Cart updated  successfully!"}, status=status.HTTP_201_CREATED)
 
-    def delete(self, request, *args, **kwargs):
-        pass
+    def get(self, request, *args, **kwargs): # get or create
+        user = User.objects.get(user=self.kwargs['username'])
+        cart, created = Cart.objects.get_or_create(user=user, status='Inprogress')
+
+        data = CartSerializer(cart).data
+        return Response({'cart': data})
+
+    def delete(self, request, *args, **kwargs): # delete from cart
+        user = User.objects.get(user=self.kwargs['username'])
+        cart_detail = CartDetail.objects.get(id=request.data['item_id'])
+        cart_detail.delete()
+        cart_detail.save()
+
+        return Response({"message": "Item deleted successfully!"}, status=status.HTTP_200_OK)
