@@ -1,18 +1,52 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-<h1>Signup Page</h1>
+{% extends "base_generic.html" %}
+{% load bootstrap5 %}
 
+{% block body %}
+        <!--=====================================
+                    USER FORM PART START
+        =======================================-->
+        <section class="user-form-part">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-sm-10 col-md-12 col-lg-12 col-xl-10">
+                        <div class="user-form-card">
+                            <div class="user-form-title">
+                                <h2>Join Now!</h2>
+                                <p>Setup A New Account In A Minute</p>
+                            </div>
+                            <div class="user-form-group">
+                                <ul class="user-form-social">
+                                    <li><a href="#" class="facebook"><i class="fab fa-facebook-f"></i>login with facebook</a></li>
+                                    <li><a href="#" class="twitter"><i class="fab fa-twitter"></i>login with twitter</a></li>
+                                    <li><a href="#" class="google"><i class="fab fa-google"></i>login with google</a></li>
+                                    <li><a href="#" class="instagram"><i class="fab fa-instagram"></i>login with instagram</a></li>
+                                </ul>
+                                <div class="user-form-divider">
+                                    <p>or</p>
+                                </div>
+                                <form class="user-form" method="post" action="{% url 'signup' %}">
+                                    {% csrf_token %}
+                                    <div class="form-group">
+                                       {% bootstrap_form form %}
+                                    </div>
+                                    <div class="form-button">
+                                        <button type="submit">Signup</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="user-form-remind">
+                            <p>Already have an account?<a href="{% url 'login' %}">Login</a></p>
+                        </div>
+                        <div class="user-form-footer">
+                            <p>Greeny | &COPY; Copyright by <a href="#">Mironcoder</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--=====================================
+                    USER FORM PART END
+        =======================================-->
 
-<form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <input type="submit" value="Signup">
-</form>
-
-</body>
-</html>
+{% endblock body %}

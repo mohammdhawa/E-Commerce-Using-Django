@@ -1,0 +1,29 @@
+{% extends "base_generic.html" %}
+
+{% block body %}
+        <!--=====================================
+                    USER FORM PART START
+        =======================================-->
+        <section class="user-form-part">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-sm-10 col-md-12 col-lg-12 col-xl-10">
+                        <div class="user-form-card">
+                            <div class="user-form-title">
+                                <h2>We Wait For You!</h2>
+                                <p>Don't Be Late</p>
+                            </div>
+                            <div class="user-form-group">
+                                <p>Logged out!</p>
+                                  <a href="{% url 'login'%}">Click here to login again.</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--=====================================
+                    USER FORM PART END
+        =======================================-->
+
+{% endblock body %}
