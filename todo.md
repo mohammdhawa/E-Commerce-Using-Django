@@ -1,10 +1,5 @@
-### Orders:
-- accounts
-
----
 
 ### Users:
-- design models
 - add templates
 - API
 
