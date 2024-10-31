@@ -172,5 +172,10 @@ INTERNAL_IPS = [
     # ...
 ]
 
+# For loggin with emails also not just in usernames
+AUTHENTICATION_BACKENDS = [
+    'accounts.backend.EmailOrUsernameLogin',
+]
+
 # For sending emails
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
