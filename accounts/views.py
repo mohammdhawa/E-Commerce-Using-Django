@@ -48,7 +48,7 @@ def user_activate(request, username):
         form = UserActivationForm(request.POST)
         if form.is_valid():
             code = form.cleaned_data.get('code')
-            if profile.code == code:
+            if profile.code == code.strip():
                 profile.code = ''
                 profile.save()
                 user.is_active = True
