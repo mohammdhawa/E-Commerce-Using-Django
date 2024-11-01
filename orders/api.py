@@ -2,6 +2,7 @@ from rest_framework import generics, status
 from rest_framework.generics import get_object_or_404
 from rest_framework.response import Response
 from django.utils import timezone
+from rest_framework.permissions import IsAuthenticated
 
 from django.contrib.auth.models import User
 
@@ -16,6 +17,7 @@ from accounts.models import Address
 class OrderListAPI(generics.ListAPIView):
     queryset = Order.objects.all()
     serializer_class = OrderSerializer
+    permission_classes = (IsAuthenticated,)
 
     def list(self, request, *args, **kwargs):
         queryset = super(OrderListAPI, self).get_queryset()
@@ -28,9 +30,11 @@ class OrderListAPI(generics.ListAPIView):
 class OrderDetailAPI(generics.RetrieveAPIView):
     queryset = Order.objects.all()
     serializer_class = OrderSerializer
+    permission_classes = (IsAuthenticated,)
 
 
 class ApplyCouponAPI(generics.GenericAPIView):
+    permission_classes = (IsAuthenticated,)
 
     def post(self, request, *args, **kwargs):
         user = User.objects.get(username=self.kwargs['username']) # get username from url
@@ -59,6 +63,7 @@ class ApplyCouponAPI(generics.GenericAPIView):
 
 
 class CreateOrderAPI(generics.GenericAPIView):
+    permission_classes = (IsAuthenticated,)
     def post(self, request, *args, **kwargs):
         user = User.objects.get(username=self.kwargs['username'])
         code = request.data['payment_code']
@@ -103,6 +108,7 @@ class CreateOrderAPI(generics.GenericAPIView):
 
 
 class CartCreateUpdateDeleteAPI(generics.GenericAPIView):
+    permission_classes = (IsAuthenticated,)
     def post(self, request, *args, **kwargs): # add & update
         user = User.objects.get(username=self.kwargs['username'])
         cart = Cart.objects.get(user=user, status='Inprogress')
