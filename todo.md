@@ -1,14 +1,8 @@
-
-### Users:
-- API
-
----
-
 ### Intermediate:
-- translation
 - docker
-- celery
+- translation
 - payment
+- celery
 - ajax
 - linting
 - deploy
