@@ -33,10 +33,9 @@ class OrderDetailAPI(generics.RetrieveAPIView):
 class ApplyCouponAPI(generics.GenericAPIView):
 
     def post(self, request, *args, **kwargs):
-        user = User.objects.get(user=self.kwargs['username']) # get username from url
+        user = User.objects.get(username=self.kwargs['username']) # get username from url
         coupon = get_object_or_404(Coupon, code=request.data['coupon_code']) # get coupon code from request body
         cart = Cart.objects.get(user=user, status='Inprogress')
-        cart_detail = CartDetail.objects.get(cart=cart)
         delivery_fee = DeliveryFee.objects.last().fee
 
         subtotal = cart.cart_total
@@ -61,8 +60,8 @@ class ApplyCouponAPI(generics.GenericAPIView):
 
 class CreateOrderAPI(generics.GenericAPIView):
     def post(self, request, *args, **kwargs):
-        user = User.objects.get(user=self.kwargs['username'])
-        code = request.data['coupon_code']
+        user = User.objects.get(username=self.kwargs['username'])
+        code = request.data['payment_code']
         delivery_address = request.data['address_id']
 
         cart = Cart.objects.get(user=user, status='Inprogress')
@@ -73,6 +72,7 @@ class CreateOrderAPI(generics.GenericAPIView):
         new_order = Order.objects.create(
             user=user,
             status='Recieved',
+            code=code,
             delivery_address=user_address,
             coupon=cart.coupon,
             total_with_coupon=cart.total_with_coupon,
@@ -109,7 +109,7 @@ class CartCreateUpdateDeleteAPI(generics.GenericAPIView):
         product = Product.objects.get(id=request.data['product_id'])
         quantity = int(request.data['quantity'])
 
-        cart_detail, created = CartDetail.objects.get_or_create(cart=cart)
+        cart_detail, created = CartDetail.objects.get_or_create(cart=cart, product=product)
         cart_detail.quantity = quantity
         cart_detail.total = round(product.price * cart_detail.quantity, 2)
         cart_detail.save()
@@ -127,6 +127,5 @@ class CartCreateUpdateDeleteAPI(generics.GenericAPIView):
         user = User.objects.get(username=self.kwargs['username'])
         cart_detail = CartDetail.objects.get(id=request.data['item_id'])
         cart_detail.delete()
-        cart_detail.save()
 
         return Response({"message": "Item deleted successfully!"}, status=status.HTTP_200_OK)
