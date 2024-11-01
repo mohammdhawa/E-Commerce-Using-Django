@@ -1,22 +1,27 @@
 {% extends "base_generic.html" %}
 
+{% load bootstrap5 %}
+
 {% block body %}
-        <!--=====================================
+
+    <!--=====================================
                     USER FORM PART START
         =======================================-->
         <section class="user-form-part">
             <div class="container">
                 <div class="row justify-content-center">
-                    <div class="col-12 col-sm-10 col-md-12 col-lg-12 col-xl-10">
+                    <div class="col-12 col-sm-10 col-md-8 col-lg-6 col-xl-5">
                         <div class="user-form-card">
                             <div class="user-form-title">
-                                <h2>We Wait For You!</h2>
-                                <p>Don't Be Late</p>
+                                <h2>Logged Out!</h2>
+                                <p>Don't Be Late We Are Waiting For You</p>
                             </div>
-                            <div class="user-form-group">
-                                <p>Logged out!</p>
-                                  <a href="{% url 'login'%}">Click here to login again.</a>
-                            </div>
+                        </div>
+                        <div class="user-form-remind">
+                            <p>Click Here To Login Again.<a href="{% url 'login' %}">login here</a></p>
+                        </div>
+                        <div class="user-form-footer">
+                            <p>Greeny | &COPY; Copyright by <a href="#">Mironcoder</a></p>
                         </div>
                     </div>
                 </div>
@@ -27,3 +32,5 @@
         =======================================-->
 
 {% endblock body %}
+
+

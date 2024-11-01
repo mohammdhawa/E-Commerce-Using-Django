@@ -187,3 +187,7 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = "ismekbektop@gmail.com"
 EMAIL_HOST_PASSWORD = "pogqkisnkxdwveyu"
+
+
+# Redirect to home URL after login (Default redirects to /accounts/profile/)
+LOGIN_REDIRECT_URL = '/'
