@@ -47,6 +47,7 @@ INSTALLED_APPS = [
     'drf_yasg',
     'debug_toolbar',
     'bootstrap5',
+    'rest_framework.authtoken',
 
     # My Apps
     'products.apps.ProductsConfig',
@@ -111,11 +112,14 @@ CACHES = {
 }
 
 
-# Rest API
+# Rest API Settings
 REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
     'PAGE_SIZE': 100,
     'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend'],
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.TokenAuthentication',
+    ],
 }
 
 
