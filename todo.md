@@ -1,11 +1,11 @@
 
 ### Users:
-- add templates
 - API
 
 ---
 
 ### Intermediate:
+- translation
 - docker
 - celery
 - payment
