@@ -124,20 +124,25 @@ DATABASES = {
 # }
 
 # Redis caching
-# CACHES = {
-#     "default": {
-#         "BACKEND": "django_redis.cache.RedisCache",
-#         # "LOCATION": "redis://redis:6379/1",  # Redis URL and DB number for docker
-#         'LOCATION': 'redis://127.0.0.1:6379/1',
-#         "OPTIONS": {
-#             "CLIENT_CLASS": "django_redis.client.DefaultClient",
-#         }
-#     }
-# }
+CACHES = {
+    "default": {
+        "BACKEND": "django_redis.cache.RedisCache",
+        "LOCATION": "redis://redis:6379/1",  # Redis URL and DB number for docker
+        # 'LOCATION': 'redis://127.0.0.1:6379/1',
+        "OPTIONS": {
+            "CLIENT_CLASS": "django_redis.client.DefaultClient",
+        }
+    }
+}
 
 # Celery & Redis
-CELERY_BROKER_URL = 'redis://localhost:6379'
-CELERY_BACKEND_RESULTS = 'redis://localhost:6379'
+# CELERY_BROKER_URL = 'redis://localhost:6379'
+# CELERY_BACKEND_RESULTS = 'redis://localhost:6379'
+
+# Celery in Docker
+# Celery & Redis
+CELERY_BROKER_URL = 'redis://redis:6379/0'
+CELERY_BACKEND_RESULTS = 'redis://redis:6379/0'
 
 
 # Rest API Settings
