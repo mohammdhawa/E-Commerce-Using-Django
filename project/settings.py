@@ -105,10 +105,21 @@ WSGI_APPLICATION = 'project.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+    "default": {
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": "amazon",
+        "USER": "postgres_user",
+        "PASSWORD": "2925",
+        "HOST": "db",
+        "PORT": "5432",
     }
 }
 
@@ -116,7 +127,7 @@ DATABASES = {
 CACHES = {
     "default": {
         "BACKEND": "django_redis.cache.RedisCache",
-        "LOCATION": "redis://127.0.0.1:6379/1",  # Redis URL and DB number
+        "LOCATION": "redis://redis:6379/1",  # Redis URL and DB number
         "OPTIONS": {
             "CLIENT_CLASS": "django_redis.client.DefaultClient",
         }

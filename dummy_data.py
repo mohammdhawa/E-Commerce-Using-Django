@@ -90,4 +90,4 @@ def seed_review():
 # seed_brand(50)
 # seed_product(500)
 # seed_product_images()
-seed_review()
+# seed_review()

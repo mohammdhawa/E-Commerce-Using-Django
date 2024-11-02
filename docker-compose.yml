@@ -1,0 +1,33 @@
+version: '3.8'
+
+services:
+  backend:
+    build: .
+    volumes:
+      - .:/app
+    command: python manage.py runserver 0.0.0.0:8000
+    ports:
+      - "8000:8000"
+    container_name: django-server
+    depends_on:
+      - redis
+      - db
+
+  redis:
+    image: redis:8.0-M02-alpine
+    container_name: redis-server
+    ports:
+      - "6379:6379"
+
+
+  db:
+    image: postgres:latest
+    volumes:
+      - postgres_data:/var/lib/postgresql/data/
+    environment:
+      - POSTGRES_USER=postgres_user
+      - POSTGRES_PASSWORD=2925
+      - POSTGRES_DB=amazon
+
+volumes:
+  postgres_data:
