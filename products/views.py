@@ -4,6 +4,13 @@ from django.views.generic import ListView, DetailView
 
 from .models import (Product, Brand, Review, ProductImages)
 from .forms import ReviewForm
+from .tasks import execute_something
+
+
+def test_celery(request):
+    execute_something.delay()
+
+    return render(request, 'products/test_celery.html', {})
 
 
 class ProductListView(ListView):
