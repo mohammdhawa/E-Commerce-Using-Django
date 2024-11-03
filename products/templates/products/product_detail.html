@@ -94,7 +94,7 @@
                             </div>
                             <div class="details-add-group">
                                 
-                                <form method="post" action="{% url 'add-to-cart' %}">
+                                <form id="cart-form" method="post" action="{% url 'add-to-cart' %}">
                                     {% csrf_token %}
                                     
                                     <div class="container">
@@ -288,8 +288,34 @@
                     }
                 })
             })
+            
+            // add to cart
+            $(document).on('submit', '#cart-form', function(event) {
+                // no refresh
+                event.preventDefault()
+                
+                // ajax
+                $.ajax({
+                    type: $(this).attr('method'),
+                    url: $(this).attr('action'),
+                    data: $(this).serialize(),
+                    dataType: 'json',
+                    success: function (response) {
+                        $('#cart-aside').html(response['result'])
+                        
+                        $('#cart-total').text(response['total'])
+                        $('#cart-count').text(response['cart_count'])
+                        
+                    },
+                    error: function() {
+                        // Handle error (optional)
+                        alert("There was an error submitting your cart. Please try again.");
+                    }
+                })
+            })
         })
-    
+        
+      
     </script>
 
 

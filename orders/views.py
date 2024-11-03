@@ -1,5 +1,7 @@
 from django.shortcuts import render, redirect
 from django.utils import timezone
+from django.http import JsonResponse
+from django.template.loader import render_to_string
 
 from products.models import Product
 from .models import (Order, OrderDetail, Cart, CartDetail, Coupon)
@@ -73,6 +75,12 @@ def add_to_cart(request):
     cart_detail.total = round(product.price * quantity, 2)
     cart_detail.save()
 
+    cart = Cart.objects.get(user=request.user, status='Inprogress')
+    cart_detail_data = CartDetail.objects.filter(cart=cart)
 
-    return redirect("product-detail", slug=product.slug)
+    total = cart.cart_total
+    cart_count = len(cart_detail_data)
+
+    page = render_to_string('cart_includes.html', {'cart_detail_data': cart_detail_data, 'cart_data': cart})
+    return JsonResponse({'result': page, 'total': total, 'cart_count': cart_count})
 
