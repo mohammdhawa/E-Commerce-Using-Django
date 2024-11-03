@@ -1,6 +1,8 @@
 from django.db.models import Count
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from django.views.generic import ListView, DetailView
+from django.http import JsonResponse
+from django.template.loader import render_to_string
 
 from .models import (Product, Brand, Review, ProductImages)
 from .forms import ReviewForm
@@ -53,12 +55,17 @@ class BrandDetailView(ListView):
 
 def add_review(request, slug):
     user = request.user
-    product = Product.objects.get(slug=slug)
+    product = get_object_or_404(Product, slug=slug)
 
     if request.method == "POST":
-        rate = int(request.POST['rate'])
-        review = request.POST['review']
-        Review.objects.create(user=user, product=product, rate=rate, review=review)
-        return redirect('product-detail', slug=slug)
+        rate = int(request.POST.get('rate', 0))
+        review_text = request.POST.get('review', '')
+        Review.objects.create(user=user, product=product, rate=rate, review=review_text)
 
-    return render(request, 'products/product_detail.html', {})
+        # Get all reviews for this product after adding the new one
+        reviews = Review.objects.filter(product=product)
+        rendered_reviews = render_to_string('includes/reviews.html', {'reviews': reviews})
+        return JsonResponse({'result': rendered_reviews})
+
+    # Fallback if not a POST request
+    return JsonResponse({'result': 'Invalid request'}, status=400)

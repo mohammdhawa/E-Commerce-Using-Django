@@ -144,37 +144,12 @@
                                 <p>{{ object.description }}</p>
                             </div>
                         </div>
-                        <div class="product-details-frame">
-                            <h3 class="frame-title">Reviews ({{ object.reviews_count }})</h3>
-                            <ul class="review-list">
-                                
-                                {% for review in reviews %}
-                                <li class="review-item">
-                                    <div class="review-media">
-                                        <a class="review-avatar" href="#">
-                                            <img src="images/avatar/01.jpg" alt="review">
-                                        </a>
-                                        <h5 class="review-meta">
-                                            <a href="#">{{ review.user }}</a>
-                                            <span>{{ review.review_date }}</span>
-                                        </h5>
-                                    </div>
-                                    <ul class="review-rating">
-                                        <li class="{% if review.rate > 0 %}icofont-ui-rating{% else %}icofont-ui-rate-blank{% endif %}"></li>
-                                        <li class="{% if review.rate > 1 %}icofont-ui-rating{% else %}icofont-ui-rate-blank{% endif %}"></li>
-                                        <li class="{% if review.rate > 2 %}icofont-ui-rating{% else %}icofont-ui-rate-blank{% endif %}"></li>
-                                        <li class="{% if review.rate > 3 %}icofont-ui-rating{% else %}icofont-ui-rate-blank{% endif %}"></li>
-                                        <li class="{% if review.rate > 4 %}icofont-ui-rating{% else %}icofont-ui-rate-blank{% endif %}"></li>
-                                    </ul>
-                                    <p class="review-desc"> {{ review.review }}</p>
-                                    
-                                </li>
-                                {% endfor %}
-                            </ul>
+                        <div class="product-details-frame" id="all-reviews">
+                            {% include 'includes/reviews.html' %}
                         </div>
                         <div class="product-details-frame">
                             <h3 class="frame-title">add your review</h3>
-                            <form class="review-form" method="post" action="{% url 'add-review' object.slug %}">
+                            <form id="review-form" class="review-form" method="post" action="{% url 'add-review' object.slug %}">
                                 {% csrf_token %}
                                 <div class="row">
                                     <div class="col-lg-12">
@@ -283,7 +258,39 @@
         =======================================-->
 
 
-
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    
+    <script>
+    
+        $(document).ready(function() { // execute code on loading
+            $(document).on('submit', '#review-form', function(event) {
+                // no refresh
+                event.preventDefault()
+                
+                // ajax
+                $.ajax({
+                    type: $(this).attr('method'),
+                    url: $(this).attr('action'),
+                    data: $(this).serialize(),
+                    dataType: 'json',
+                    success: function (response) {
+                        $('#all-reviews').html(response['result'])
+                        
+                        // Clear the textarea
+                        $('textarea[name="review"]').val('');
+    
+                        // Clear the star ratings
+                        $('input[name="rate"]').prop('checked', false);
+                    },
+                    error: function() {
+                        // Handle error (optional)
+                        alert("There was an error submitting your review. Please try again.");
+                    }
+                })
+            })
+        })
+    
+    </script>
 
 
 {% endblock body %}
