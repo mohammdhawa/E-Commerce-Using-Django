@@ -235,3 +235,7 @@ EMAIL_HOST_PASSWORD = "pogqkisnkxdwveyu"
 
 # Redirect to home URL after login (Default redirects to /accounts/profile/)
 LOGIN_REDIRECT_URL = '/'
+
+# Payments settings
+STRIPE_API_KEY_PUBLISHABLE = 'pk_test_51PqcbcFFXmaIAdi3Hnw3TsmAAYsWsH1HCYzq65aQ0UxN6VXq5jfrkhu19mvWd0t7If2G4yYvn0DqUyaWfnWLYP3g00dBoLOXAI'
+STRIPE_API_KEY_SECRET = 'sk_test_51PqcbcFFXmaIAdi3ONZ73ioWSgzpGIdlSzxfvNH0fvbZqfFBfehvz8pwsT330Bm2pO1lCNAkIlGM8iazBrGAq0RP00M6LCtHPn'

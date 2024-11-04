@@ -2,10 +2,16 @@ from django.shortcuts import render, redirect
 from django.utils import timezone
 from django.http import JsonResponse
 from django.template.loader import render_to_string
+from django.conf import settings
 
 from products.models import Product
 from .models import (Order, OrderDetail, Cart, CartDetail, Coupon)
 from settings.models import DeliveryFee
+from utils.generate_code import generate_code
+from accounts.models import Address
+from django.contrib.auth.decorators import login_required
+
+import stripe
 
 
 def order_list(request):
@@ -18,6 +24,8 @@ def checkout(request):
     cart = Cart.objects.get(user=request.user, status='Inprogress')
     cart_detail = CartDetail.objects.filter(cart=cart)
     delivery_fee = DeliveryFee.objects.last().fee
+
+    pub_key = settings.STRIPE_API_KEY_PUBLISHABLE
 
     subtotal = cart.cart_total
     discount = 0
@@ -40,8 +48,10 @@ def checkout(request):
                 coupon.save()
             else:
                 error = True
+                print("Error Occured in checkout function")
         except Coupon.DoesNotExist:
             error = True
+            print("Error Occured in checkout function")
 
     context = {
         'cart': cart,
@@ -50,7 +60,8 @@ def checkout(request):
         'subtotal': subtotal,
         'discount': discount,
         'total': total,
-        'error': error
+        'error': error,
+        'pub_key': pub_key,
     }
 
 
@@ -84,3 +95,86 @@ def add_to_cart(request):
     page = render_to_string('cart_includes.html', {'cart_detail_data': cart_detail_data, 'cart_data': cart})
     return JsonResponse({'result': page, 'total': total, 'cart_count': cart_count})
 
+
+@login_required
+def process_payment(request): # create invoice
+    cart = Cart.objects.get(user=request.user, status='Inprogress')
+    delivery_fee = DeliveryFee.objects.last().fee
+
+    if cart.total_with_coupon:
+        total = cart.total_with_coupon + delivery_fee
+    else:
+        total = cart.cart_total + delivery_fee
+
+    # Generate code to new order
+    code = generate_code()
+
+    # django sessions
+    request.session['order_code'] = code
+    request.session.save()
+
+    # Create invoice
+    stripe.api_key = settings.STRIPE_API_KEY_SECRET
+
+    checkout_session = stripe.checkout.Session.create(
+        line_items=[
+            {
+                "price_data": {
+                    'currency': 'usd',
+                    'product_data': {'name': code},
+                    'unit_amount': int(total * 100)
+                },
+                'quantity': 1
+            },
+        ],
+        mode='payment',
+        success_url='http://127.0.0.1:8000/orders/checkout/payment/success',
+        cancel_url='http://127.0.0.1:8000/orders/checkout/payment/failure',
+    )
+
+    return JsonResponse({'session': checkout_session})
+
+
+def payment_success(request): # If payment successed
+    cart = Cart.objects.get(user=request.user, status='Inprogress')
+    cart_detail = CartDetail.objects.filter(cart=cart)
+    user_address = Address.objects.last()
+
+    code = request.session.get('order_code')
+
+    # Cart: Order | Cart Detail : Order Detail
+    new_order = Order.objects.create(
+        user=request.user,
+        status='Recieved',
+        code=code,
+        delivery_address=user_address,
+        coupon=cart.coupon,
+        total_with_coupon=cart.total_with_coupon,
+        total=cart.cart_total
+    )
+
+    # Order Detail
+    for item in cart_detail:
+        product = Product.objects.get(id=item.product.id)
+        OrderDetail.objects.create(
+            order=new_order,
+            product=product,
+            quantity=item.quantity,
+            price=item.product.price,
+            total=round(item.quantity * product.price, 2)
+        )
+
+        # Decrease product quantity
+        product.quantity -= item.quantity
+        product.save()
+
+    # Close cart
+    cart.status = "Completed"
+    cart.save()
+
+    return render(request, 'orders/success.html', {'code': code})
+
+
+def payment_failure(request): # if payment failure
+
+    return render(request, 'orders/failure.html', {})
