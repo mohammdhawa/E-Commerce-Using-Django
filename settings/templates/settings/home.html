@@ -18,7 +18,7 @@
                     <li>
                         <a class="suggest-card" href="{% url 'brand-detail' item.slug %}">
                             <img src="{{ item.image.url }}" alt="suggest">
-                            <h5>vegetables <span>34 items</span></h5>
+                            <h5>vegetables <span>{{ item.products_count }} items</span></h5>
                         </a>
                     </li>
                     {% endfor %}
@@ -76,15 +76,6 @@
                                     <h6 class="product-price">
                                         <span>${{ item.price }}</span>
                                     </h6>
-                                    <button class="product-add" title="Add to Cart">
-                                        <i class="fas fa-shopping-basket"></i>
-                                        <span>add</span>
-                                    </button>
-                                    <div class="product-action">
-                                        <button class="action-minus" title="Quantity Minus"><i class="icofont-minus"></i></button>
-                                        <input class="action-input" title="Quantity Number" type="text" name="quantity" value="1">
-                                        <button class="action-plus" title="Quantity Plus"><i class="icofont-plus"></i></button>
-                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -152,15 +143,6 @@
                                     <span>${{ item.price}}</span>
                                 </h6>
                                 <p class="feature-desc">{{ item.subtitle|truncatechars:100 }}</p>
-                                <button class="product-add" title="Add to Cart">
-                                    <i class="fas fa-shopping-basket"></i>
-                                    <span>add</span>
-                                </button>
-                                <div class="product-action">
-                                    <button class="action-minus" title="Quantity Minus"><i class="icofont-minus"></i></button>
-                                    <input class="action-input" title="Quantity Number" type="text" name="quantity" value="1">
-                                    <button class="action-plus" title="Quantity Plus"><i class="icofont-plus"></i></button>
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -229,15 +211,6 @@
                                         <h6 class="product-price">
                                             <span>${{ item.price }}</span>
                                         </h6>
-                                        <button class="product-add" title="Add to Cart">
-                                            <i class="fas fa-shopping-basket"></i>
-                                            <span>add</span>
-                                        </button>
-                                        <div class="product-action">
-                                            <button class="action-minus" title="Quantity Minus"><i class="icofont-minus"></i></button>
-                                            <input class="action-input" title="Quantity Number" type="text" name="quantity" value="1">
-                                            <button class="action-plus" title="Quantity Plus"><i class="icofont-plus"></i></button>
-                                        </div>
                                     </div>
                                 </div>
                             </li>
@@ -286,7 +259,7 @@
                         </div>
                         <div class="brand-meta">
                             <h4>{{ item }}</h4>
-                            <p>(45 items)</p>
+                            <p>({{ item.products_count }} items)</p>
                         </div>
                     </div>
                     {% endfor %}
@@ -323,58 +296,31 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="testimonial-slider slider-arrow">
+                            {% for review in reviews %}
                             <div class="testimonial-card">
                                 <i class="fas fa-quote-left"></i>
-                                <p>Lorem ipsum dolor consectetur adipisicing elit neque earum sapiente vitae obcaecati magnam doloribus magni provident ipsam</p>
-                                <h5>mahmud hasan</h5>
+                                <p>{{ review.review|truncatechars:150 }}</p>
+                                <h5>{{ review.user }}</h5>
                                 <ul>
+                                    {% if review.rate > 0 %}
                                     <li class="fas fa-star"></li>
+                                    {% endif %}
+                                    {% if review.rate > 1 %}
                                     <li class="fas fa-star"></li>
+                                    {% endif %}
+                                    {% if review.rate > 2 %}
                                     <li class="fas fa-star"></li>
+                                    {% endif %}
+                                    {% if review.rate > 3 %}
                                     <li class="fas fa-star"></li>
+                                    {% endif %}
+                                    {% if review.rate > 4 %}
                                     <li class="fas fa-star"></li>
+                                    {% endif %}
                                 </ul>
-                                <img src="images/avatar/01.jpg" alt="testimonial">
+                                <img src="{{ review.user.profile.image.url }}" alt="testimonial">
                             </div>
-                            <div class="testimonial-card">
-                                <i class="fas fa-quote-left"></i>
-                                <p>Lorem ipsum dolor consectetur adipisicing elit neque earum sapiente vitae obcaecati magnam doloribus magni provident ipsam</p>
-                                <h5>mahmud hasan</h5>
-                                <ul>
-                                    <li class="fas fa-star"></li>
-                                    <li class="fas fa-star"></li>
-                                    <li class="fas fa-star"></li>
-                                    <li class="fas fa-star"></li>
-                                    <li class="fas fa-star"></li>
-                                </ul>
-                                <img src="images/avatar/02.jpg" alt="testimonial">
-                            </div>
-                            <div class="testimonial-card">
-                                <i class="fas fa-quote-left"></i>
-                                <p>Lorem ipsum dolor consectetur adipisicing elit neque earum sapiente vitae obcaecati magnam doloribus magni provident ipsam</p>
-                                <h5>mahmud hasan</h5>
-                                <ul>
-                                    <li class="fas fa-star"></li>
-                                    <li class="fas fa-star"></li>
-                                    <li class="fas fa-star"></li>
-                                    <li class="fas fa-star"></li>
-                                    <li class="fas fa-star"></li>
-                                </ul>
-                                <img src="images/avatar/03.jpg" alt="testimonial">
-                            </div>
-                            <div class="testimonial-card">
-                                <i class="fas fa-quote-left"></i>
-                                <p>Lorem ipsum dolor consectetur adipisicing elit neque earum sapiente vitae obcaecati magnam doloribus magni provident ipsam</p>
-                                <h5>mahmud hasan</h5>
-                                <ul>
-                                    <li class="fas fa-star"></li>
-                                    <li class="fas fa-star"></li>
-                                    <li class="fas fa-star"></li>
-                                    <li class="fas fa-star"></li>
-                                    <li class="fas fa-star"></li>
-                                </ul>
-                                <img src="images/avatar/04.jpg" alt="testimonial">
-                            </div>
+                            {% endfor %}
                         </div>
                     </div>
                 </div>

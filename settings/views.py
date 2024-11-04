@@ -8,7 +8,7 @@ def home(request):
     feature_products = Product.objects.filter(flag='Feature')[:6]
     sale_products = Product.objects.filter(flag='Sale')[:10]
     new_products = Product.objects.filter(flag='New')[:6]
-    reviews = Review.objects.order_by('rate')[:4]
+    reviews = Review.objects.all()[:4]
 
     context = {'brands': brands, 'feature_products': feature_products,
                'sale_products': sale_products, 'reviews': reviews,

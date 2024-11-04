@@ -88,6 +88,10 @@ class Brand(models.Model):
     def __str__(self):
         return self.name
 
+    @property
+    def products_count(self):
+        return self.product_brand.count()
+
 
 class Review(models.Model):
     user = models.ForeignKey(User, verbose_name=_('user'), related_name='review_user', on_delete=models.SET_NULL, null=True)
@@ -98,3 +102,6 @@ class Review(models.Model):
 
     def __str__(self):
         return f"{self.user} - {self.product}"
+
+    class Meta:
+        ordering = ['-id']
