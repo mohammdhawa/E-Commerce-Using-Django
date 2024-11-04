@@ -19,6 +19,11 @@ class ProductListView(ListView):
     model = Product
     paginate_by = 48
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['count'] = Product.objects.count()
+        return context
+
 
 class ProductDetailView(DetailView):
     model = Product
