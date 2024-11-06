@@ -46,4 +46,4 @@ PHONE_CHOICES = (
 class Phone(models.Model):
     user = models.ForeignKey(User, related_name='user_phone', on_delete=models.CASCADE)
     type = models.CharField(max_length=10, choices=PHONE_CHOICES)
-    number = models.CharField(max_length=15)
+    number = models.CharField(max_length=25)

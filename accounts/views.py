@@ -5,7 +5,9 @@ from django.views.generic import DetailView
 from .forms import SignupForm, UserActivationForm
 from .models import Profile
 from django.contrib.auth.models import User
-from accounts.models import Address
+from accounts.models import Address, Phone
+from django.http import JsonResponse
+from django.db import IntegrityError
 
 
 def signup(request):
@@ -76,13 +78,16 @@ class ProfileView(DetailView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        addresses = Address.objects.filter(user=self.request.user)
+        addresses = Address.objects.filter(user=self.request.user).order_by('-default')
+        contact_numbers = Phone.objects.filter(user=self.request.user).order_by('type')
         flag = any(obj.default for obj in addresses)
         if not flag:
             addresses[0].default = True
             addresses[0].save()
         context['addresses'] = addresses
         context['address_count'] = addresses.count()
+        context['contact_numbers'] = contact_numbers
+        context['contact_numbers_count'] = contact_numbers.count()
         return context
 
 
@@ -112,7 +117,10 @@ def edit_profile(request):
 
 
 def add_address(request):
-    count = Address.objects.filter(user=request.user).count()
+    try:
+        count = Address.objects.filter(user=request.user).count()
+    except:
+        count = 0
     if count < 3:
         if request.method == 'POST':
             type = request.POST.get('type')
@@ -156,7 +164,47 @@ def edit_address(request):
 
 
 def delete_address(request, pk):
+    addresses = Address.objects.filter(user=request.user).exclude(id=pk)
     address = Address.objects.get(id=pk)
     address.delete()
+
+    if not any(obj.default for obj in addresses):
+        addresses[0].default = True
+        addresses[0].save()
+
+
+    return redirect('profile')
+
+
+def add_contact_number(request):
+    numbers = Phone.objects.filter(user=request.user)
+    numbers_count = numbers.count()
+
+    if numbers_count < 3:
+        if request.method == 'POST':
+            new_type = request.POST.get('type')
+            new_number = request.POST.get('number')
+
+            if new_type == 'Primary':
+                for number in numbers:
+                    number.type = 'Secondary'
+                    number.save()
+            elif not any(obj.type == 'Primary' for obj in numbers):
+                numbers[0].type = 'Primary'
+                numbers[0].save()
+
+            Phone.objects.create(user=request.user, type=new_type, number=new_number)
+
+    return redirect('profile')
+
+
+def delete_contact_number(request, pk):
+    numbers = Phone.objects.filter(user=request.user).exclude(id=pk)
+    number = Phone.objects.get(id=pk)
+    number.delete()
+
+    if not any(obj.type == 'Primary' for obj in numbers):
+        numbers[0].type = 'Primary'
+        numbers[0].save()
 
     return redirect('profile')
