@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from django.core.mail import send_mail
+from django.template.defaultfilters import default
 from django.views.generic import DetailView
 
 from .forms import SignupForm, UserActivationForm
@@ -80,10 +81,6 @@ class ProfileView(DetailView):
         context = super().get_context_data(**kwargs)
         addresses = Address.objects.filter(user=self.request.user).order_by('-default')
         contact_numbers = Phone.objects.filter(user=self.request.user).order_by('type')
-        flag = any(obj.default for obj in addresses)
-        if not flag:
-            addresses[0].default = True
-            addresses[0].save()
         context['addresses'] = addresses
         context['address_count'] = addresses.count()
         context['contact_numbers'] = contact_numbers
@@ -117,16 +114,31 @@ def edit_profile(request):
 
 
 def add_address(request):
-    try:
-        count = Address.objects.filter(user=request.user).count()
-    except:
-        count = 0
+    addresses = Address.objects.filter(user=request.user)
+    count = addresses.count()
+
     if count < 3:
         if request.method == 'POST':
             type = request.POST.get('type')
             address = request.POST.get('address')
-            Address.objects.create(user=request.user, type=type, address=address)
-            return redirect('profile')
+            default = request.POST.get('default')
+
+            if default:
+                default = True
+            else:
+                default = False
+
+            if default:
+                for address in addresses:
+                    address.default = False
+                    address.save()
+            elif not default:
+                default = True
+            elif addresses and not any(obj.default for obj in addresses):
+                addresses[0].default = True
+                addresses[0].save()
+
+            Address.objects.create(user=request.user, type=type, address=address, default=default)
     return redirect('profile')
 
 
@@ -168,7 +180,7 @@ def delete_address(request, pk):
     address = Address.objects.get(id=pk)
     address.delete()
 
-    if not any(obj.default for obj in addresses):
+    if addresses and not any(obj.default for obj in addresses):
         addresses[0].default = True
         addresses[0].save()
 
@@ -189,7 +201,9 @@ def add_contact_number(request):
                 for number in numbers:
                     number.type = 'Secondary'
                     number.save()
-            elif not any(obj.type == 'Primary' for obj in numbers):
+            elif not numbers:
+                new_type = 'Primary'
+            elif numbers and not any(obj.type == 'Primary' for obj in numbers):
                 numbers[0].type = 'Primary'
                 numbers[0].save()
 
@@ -203,7 +217,7 @@ def delete_contact_number(request, pk):
     number = Phone.objects.get(id=pk)
     number.delete()
 
-    if not any(obj.type == 'Primary' for obj in numbers):
+    if numbers and not any(obj.type == 'Primary' for obj in numbers):
         numbers[0].type = 'Primary'
         numbers[0].save()
 
