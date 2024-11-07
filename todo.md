@@ -1,5 +1,4 @@
 ### Intermediate:
-- add and customize profile page
 - customize payment success page
 - customize payment failure page
 - customize checkout page
