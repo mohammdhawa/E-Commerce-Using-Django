@@ -30,6 +30,8 @@ def checkout(request):
     subtotal = cart.cart_total
     discount = 0
     total = subtotal + delivery_fee
+    cart.total = total
+    cart.save()
     error = False
 
     if request.method == 'POST':
@@ -59,7 +61,7 @@ def checkout(request):
         'delivery_fee': delivery_fee,
         'subtotal': subtotal,
         'discount': discount,
-        'total': total,
+        'total': round(total, 2),
         'error': error,
         'pub_key': pub_key,
     }
@@ -98,6 +100,7 @@ def add_to_cart(request):
 
 @login_required
 def process_payment(request): # create invoice
+    print('\n\n****************************** Process Payment *************************************\n\n')
     cart = Cart.objects.get(user=request.user, status='Inprogress')
     delivery_fee = DeliveryFee.objects.last().fee
 
@@ -108,6 +111,7 @@ def process_payment(request): # create invoice
 
     # Generate code to new order
     code = generate_code()
+    print(f"Generated code {code}")
 
     # django sessions
     request.session['order_code'] = code
@@ -136,11 +140,17 @@ def process_payment(request): # create invoice
 
 
 def payment_success(request): # If payment successed
-    cart = Cart.objects.get(user=request.user, status='Inprogress')
+    print('\n\n****************************** Payment Success *************************************\n\n')
+    try:
+        cart = Cart.objects.get(user=request.user, status='Inprogress')
+    except Cart.DoesNotExist:
+        return redirect('home')
     cart_detail = CartDetail.objects.filter(cart=cart)
     user_address = Address.objects.last()
+    delivery_fee = DeliveryFee.objects.last().fee
 
     code = request.session.get('order_code')
+    print(f"code: {code}")
 
     # Cart: Order | Cart Detail : Order Detail
     new_order = Order.objects.create(
@@ -149,8 +159,8 @@ def payment_success(request): # If payment successed
         code=code,
         delivery_address=user_address,
         coupon=cart.coupon,
-        total_with_coupon=cart.total_with_coupon,
-        total=cart.cart_total
+        total_with_coupon= cart.total_with_coupon if cart.total_with_coupon else 0,
+        total=cart.total if cart.total else 0,
     )
 
     # Order Detail
@@ -172,7 +182,30 @@ def payment_success(request): # If payment successed
     cart.status = "Completed"
     cart.save()
 
-    return render(request, 'orders/success.html', {'code': code})
+    discount = 0
+    subtotal = 0
+    total = 0
+    if new_order.total_with_coupon:
+        discount = new_order.total - new_order.total_with_coupon
+        total = new_order.total_with_coupon
+        subtotal = total - delivery_fee + discount
+    else:
+        total = new_order.total - delivery_fee
+        subtotal = total - delivery_fee
+
+    order_details = OrderDetail.objects.filter(order=new_order)
+
+    context = {
+        'order': new_order,
+        'order_details': order_details,
+        'discount': round(discount, 2),
+        'code': code,
+        'total': round(total, 2),
+        'subtotal': round(subtotal, 2),
+        'delivery_fee': delivery_fee,
+    }
+
+    return render(request, 'orders/success.html', context)
 
 
 def payment_failure(request): # if payment failure
