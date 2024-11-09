@@ -6,6 +6,7 @@ from products.models import Product
 from utils.generate_code import generate_code
 from django.utils import timezone
 from accounts.models import Address
+from django.utils.translation import gettext_lazy as _
 
 
 ORDER_STATUS_CHOICES = (
@@ -15,25 +16,25 @@ ORDER_STATUS_CHOICES = (
     ('Delivered', 'Delivered'),
 )
 class Order(models.Model):
-    user = models.ForeignKey(User, related_name='order_owner', on_delete=models.SET_NULL, null=True, blank=True)
-    status = models.CharField(max_length=10, choices=ORDER_STATUS_CHOICES)
-    code = models.CharField(max_length=10, default=generate_code)
-    order_time = models.DateTimeField(default=timezone.now)
-    delivery_time = models.DateTimeField(null=True, blank=True)
-    delivery_address = models.ForeignKey(Address, related_name='delivery_address', on_delete=models.SET_NULL, null=True, blank=True)
-    coupon = models.ForeignKey('Coupon', related_name='order_coupon', on_delete=models.SET_NULL,
+    user = models.ForeignKey(User, verbose_name=_('order owner') ,related_name='order_owner', on_delete=models.SET_NULL, null=True, blank=True)
+    status = models.CharField(_('status'), max_length=10, choices=ORDER_STATUS_CHOICES)
+    code = models.CharField(_('code'), max_length=10, default=generate_code)
+    order_time = models.DateTimeField(_('order time'), default=timezone.now)
+    delivery_time = models.DateTimeField(_('deliery time'), null=True, blank=True)
+    delivery_address = models.ForeignKey(Address, verbose_name=_('delivery address'), related_name='delivery_address', on_delete=models.SET_NULL, null=True, blank=True)
+    coupon = models.ForeignKey('Coupon', verbose_name=_('coupon'), related_name='order_coupon', on_delete=models.SET_NULL,
                                null=True, blank=True)
-    total = models.FloatField()
-    total_with_coupon = models.FloatField(null=True, blank=True)
+    total = models.FloatField(_('total'))
+    total_with_coupon = models.FloatField(_('total with coupon'), null=True, blank=True)
 
 
 class OrderDetail(models.Model):
-    order = models.ForeignKey(Order, related_name='order_details', on_delete=models.CASCADE)
-    product = models.ForeignKey(Product, related_name='order_detail_product', on_delete=models.SET_NULL,
+    order = models.ForeignKey(Order, verbose_name=_('order'), related_name='order_details', on_delete=models.CASCADE)
+    product = models.ForeignKey(Product, verbose_name=_('product'), related_name='order_detail_product', on_delete=models.SET_NULL,
                                 null=True, blank=True)
-    quantity = models.PositiveIntegerField()
-    price = models.FloatField()
-    total = models.FloatField(null=True, blank=True)
+    quantity = models.PositiveIntegerField(_('quantity'))
+    price = models.FloatField(_('price'))
+    total = models.FloatField(_('total'), null=True, blank=True)
 
 
 CART_STATUS_CHOICES = (
@@ -41,12 +42,12 @@ CART_STATUS_CHOICES = (
     ('Completed', 'Completed'),
 )
 class Cart(models.Model):
-    user = models.ForeignKey(User, related_name='cart_owner', on_delete=models.SET_NULL, null=True, blank=True)
-    status = models.CharField(max_length=10, choices=CART_STATUS_CHOICES)
-    coupon = models.ForeignKey('Coupon', related_name='cart_coupon', on_delete=models.SET_NULL,
+    user = models.ForeignKey(User, verbose_name=_('cart owner'), related_name='cart_owner', on_delete=models.SET_NULL, null=True, blank=True)
+    status = models.CharField(_('status'), max_length=10, choices=CART_STATUS_CHOICES)
+    coupon = models.ForeignKey('Coupon', verbose_name=_('cart coupon'), related_name='cart_coupon', on_delete=models.SET_NULL,
                                null=True, blank=True)
-    total = models.FloatField(null=True, blank=True)
-    total_with_coupon = models.FloatField(null=True, blank=True)
+    total = models.FloatField(_('total'), null=True, blank=True)
+    total_with_coupon = models.FloatField(_('total with coupon'), null=True, blank=True)
 
     @property
     def cart_total(self):
@@ -57,11 +58,11 @@ class Cart(models.Model):
 
 
 class CartDetail(models.Model):
-    cart = models.ForeignKey(Cart, related_name='cart_details', on_delete=models.CASCADE)
-    product = models.ForeignKey(Product, related_name='cart_detail_product', on_delete=models.SET_NULL,
+    cart = models.ForeignKey(Cart, verbose_name=_('cart details'), related_name='cart_details', on_delete=models.CASCADE)
+    product = models.ForeignKey(Product, verbose_name=_('cart detail product'), related_name='cart_detail_product', on_delete=models.SET_NULL,
                                 null=True, blank=True)
-    quantity = models.PositiveIntegerField(default=1)
-    total = models.FloatField(null=True, blank=True)
+    quantity = models.PositiveIntegerField(_('quantity'), default=1)
+    total = models.FloatField(_('total'), null=True, blank=True)
 
     def save(self, *args, **kwargs):
         if not self.total:
@@ -72,11 +73,11 @@ class CartDetail(models.Model):
 
 
 class Coupon(models.Model):
-    code = models.CharField(max_length=20)
-    start_date = models.DateTimeField(default=timezone.now)
-    end_date = models.DateTimeField(null=True, blank=True)
-    quantity = models.PositiveIntegerField()
-    discount = models.FloatField()
+    code = models.CharField(_('code'), max_length=20)
+    start_date = models.DateTimeField(_('start date'), default=timezone.now)
+    end_date = models.DateTimeField(_('end date'), null=True, blank=True)
+    quantity = models.PositiveIntegerField(_('quantity'))
+    discount = models.FloatField(_('discount amount'))
 
     def __str__(self):
         return self.code

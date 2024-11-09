@@ -13,10 +13,6 @@
         <section class="inner-section single-banner" style="background: url(images/single-banner.jpg) no-repeat center;">
             <div class="container">
                 <h2>Order History</h2>
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Orderlist</li>
-                </ol>
             </div>
         </section>
         <!--=====================================
@@ -33,16 +29,6 @@
                     <div class="col-lg-12">
                         <div class="orderlist-filter">
                             <h5>total order <span>- ({{ orders|length }})</span></h5>
-                            <div class="filter-short">
-                                <label class="form-label">short by:</label>
-                                <select class="form-select">
-                                    <option value="all" selected>all order</option>
-                                    <option value="recieved">recieved order</option>
-                                    <option value="processed">processed order</option>
-                                    <option value="shipped">shipped order</option>
-                                    <option value="delivered">delivered order</option>
-                                </select>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -53,7 +39,7 @@
                         {% for order in orders %}
                         <div class="orderlist">
                             <div class="orderlist-head">
-                                <h5>order#01</h5>
+                                <h5>Order {% if forloop.counter < 10 %}0{{ forloop.counter }}{% else %}{{ forloop.counter }}{% endif %}</h5>
                                 <h5>order {{ order.status }}</h5>
                             </div>
                             <div class="orderlist-body">
@@ -88,7 +74,7 @@
                                             </li>
                                             <li>
                                                 <h6>Total Item</h6>
-                                                <p>6 Items</p>
+                                                <p>{{ order.order_details.all|length }} Items</p>
                                             </li>
                                             <li>
                                                 <h6>Order Time</h6>
@@ -96,7 +82,7 @@
                                             </li>
                                             <li>
                                                 <h6>Delivery Time</h6>
-                                                <p>12th February 2021</p>
+                                                <p>{{ order.delivery_time }}</p>
                                             </li>
                                         </ul>
                                     </div>

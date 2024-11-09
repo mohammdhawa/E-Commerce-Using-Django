@@ -1,0 +1,219 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-11-09 11:25+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+#: accounts/models.py:11
+msgid "profile"
+msgstr "profil"
+
+#: accounts/models.py:12 products/models.py:19 products/models.py:64
+#: products/models.py:72
+msgid "image"
+msgstr "resim"
+
+#: accounts/models.py:13 orders/models.py:21 orders/models.py:76
+msgid "code"
+msgstr "kod"
+
+#: accounts/models.py:33 accounts/models.py:48 products/models.py:97
+msgid "user"
+msgstr "kullanıcı"
+
+#: accounts/models.py:34 accounts/models.py:49
+msgid "type"
+msgstr "tip"
+
+#: accounts/models.py:35 settings/models.py:13
+msgid "address"
+msgstr "adres"
+
+#: accounts/models.py:36
+msgid "default"
+msgstr "varsayılan"
+
+#: accounts/models.py:50
+msgid "number"
+msgstr "sayı"
+
+#: orders/models.py:19
+msgid "order owner"
+msgstr "sipariş sahibi"
+
+#: orders/models.py:20 orders/models.py:46
+msgid "status"
+msgstr "durum"
+
+#: orders/models.py:22
+msgid "order time"
+msgstr "sipariş zamanı"
+
+#: orders/models.py:23
+msgid "deliery time"
+msgstr "teslimat zamanı"
+
+#: orders/models.py:24
+msgid "delivery address"
+msgstr "teslimat adresi"
+
+#: orders/models.py:25
+msgid "coupon"
+msgstr "kupon"
+
+#: orders/models.py:27 orders/models.py:37 orders/models.py:49
+#: orders/models.py:65
+msgid "total"
+msgstr "toplam"
+
+#: orders/models.py:28 orders/models.py:50
+msgid "total with coupon"
+msgstr "kuponlu toplam"
+
+#: orders/models.py:32
+msgid "order"
+msgstr "sipariş"
+
+#: orders/models.py:33 products/models.py:45 products/models.py:63
+#: products/models.py:98
+msgid "product"
+msgstr "ürün"
+
+#: orders/models.py:35 orders/models.py:64 orders/models.py:79
+#: products/models.py:20
+msgid "quantity"
+msgstr "miktar"
+
+#: orders/models.py:36 products/models.py:18
+msgid "price"
+msgstr "fiyat"
+
+#: orders/models.py:45
+msgid "cart owner"
+msgstr "sepet sahibi"
+
+#: orders/models.py:47
+msgid "cart coupon"
+msgstr "sepet kuponu"
+
+#: orders/models.py:61
+msgid "cart details"
+msgstr "sepet ayrıntıları"
+
+#: orders/models.py:62
+msgid "cart detail product"
+msgstr "sepet detaylı ürün"
+
+#: orders/models.py:77
+msgid "start date"
+msgstr "başlangıç ​​tarihi"
+
+#: orders/models.py:78
+msgid "end date"
+msgstr "bitiş tarihi"
+
+#: orders/models.py:80
+msgid "discount amount"
+msgstr "indirim tutarı"
+
+#: products/models.py:16 products/models.py:71 settings/models.py:6
+msgid "name"
+msgstr "isim"
+
+#: products/models.py:17
+msgid "flag"
+msgstr "bayrak"
+
+#: products/models.py:21
+msgid "sku"
+msgstr ""
+
+#: products/models.py:22 settings/models.py:8
+msgid "subtitle"
+msgstr "altyazı"
+
+#: products/models.py:23
+msgid "description"
+msgstr "açıklama"
+
+#: products/models.py:25
+msgid "brand"
+msgstr "marka"
+
+#: products/models.py:46
+msgid "products"
+msgstr "ürünler"
+
+#: products/models.py:99
+msgid "review"
+msgstr "inceleme"
+
+#: products/models.py:100
+msgid "rate"
+msgstr "oran"
+
+#: products/models.py:101
+msgid "review date"
+msgstr "inceleme tarihi"
+
+#: settings/models.py:7
+msgid "logo"
+msgstr ""
+
+#: settings/models.py:9
+msgid "call us"
+msgstr "bizi arayın"
+
+#: settings/models.py:10
+msgid "email us"
+msgstr "Bize e-posta gönderin"
+
+#: settings/models.py:11
+msgid "phone"
+msgstr "telefon"
+
+#: settings/models.py:12
+msgid "email"
+msgstr "e-posta"
+
+#: settings/models.py:14
+msgid "android app"
+msgstr "android uygulaması"
+
+#: settings/models.py:15
+msgid "ios app"
+msgstr "ios uygulaması"
+
+#: settings/models.py:16
+msgid "facebook"
+msgstr ""
+
+#: settings/models.py:17
+msgid "youtube"
+msgstr ""
+
+#: settings/models.py:18
+msgid "twitter"
+msgstr ""
+
+#: settings/models.py:19
+msgid "instagram"
+msgstr ""
+
+#: settings/models.py:26
+msgid "fee"
+msgstr "ücret"
+

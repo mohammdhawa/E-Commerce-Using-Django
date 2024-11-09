@@ -3,6 +3,7 @@ from django.core.mail import send_mail
 from django.template.defaultfilters import default
 from django.views.generic import DetailView
 
+from orders.models import CartDetail
 from .forms import SignupForm, UserActivationForm
 from .models import Profile
 from django.contrib.auth.models import User

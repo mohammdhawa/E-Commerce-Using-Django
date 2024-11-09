@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 {% load static %}
+{% load i18n %}
 <html lang="en">
     <head>
         <!--=====================================
@@ -71,11 +72,21 @@
                         <div class="header-top-select">
                             <div class="header-select">
                                 <i class="icofont-world"></i>
-                                <select class="select">
-                                    <option value="english" selected>english</option>
-                                    <option value="bangali">bangali</option>
-                                    <option value="arabic">arabic</option>
-                                </select>
+                                <form action="{% url 'set_language' %}" method="post">{% csrf_token %}
+                                    <input name="next" type="hidden" value="{{ redirect_to }}">
+                                    <select name="language" class="select">
+                                        {% get_current_language as LANGUAGE_CODE %}
+                                        {% get_available_languages as LANGUAGES %}
+                                        {% get_language_info_list for LANGUAGES as languages %}
+                                        {% for language in languages %}
+                                            <option value="{{ language.code }}"{% if language.code == LANGUAGE_CODE %} selected{% endif %}>
+                                                {{ language.name_local }} ({{ language.code }})
+                                            </option>
+                                        {% endfor %}
+                                    </select>
+                                    <input type="submit" value="Go">
+                                </form>
+
                             </div>
                             <div class="header-select">
                                 <i class="icofont-money"></i>
@@ -770,10 +781,6 @@
                         <div class="footer-widget">
                             <h3 class="footer-title">Download App</h3>
                             <p class="footer-desc">Lorem ipsum dolor sit amet tenetur dignissimos ipsum eligendi autem obcaecati minus ducimus totam reprehenderit exercitationem!</p>
-                            <div class="footer-app">
-                                <a href="#"><img src="images/google-store.png" alt="google"></a>
-                                <a href="#"><img src="images/app-store.png" alt="app"></a>
-                            </div>
                         </div>
                     </div>
                 </div>
@@ -781,12 +788,6 @@
                     <div class="col-12">
                         <div class="footer-bottom">
                             <p class="footer-copytext">&copy;  All Copyrights Reserved by <a target="_blank" href="https://themeforest.net/user/mironcoder">Mironcoder</a></p>
-                            <div class="footer-card">
-                                <a href="#"><img src="images/payment/jpg/01.jpg" alt="payment"></a>
-                                <a href="#"><img src="images/payment/jpg/02.jpg" alt="payment"></a>
-                                <a href="#"><img src="images/payment/jpg/03.jpg" alt="payment"></a>
-                                <a href="#"><img src="images/payment/jpg/04.jpg" alt="payment"></a>
-                            </div>
                         </div>
                     </div>
                 </div>

@@ -69,6 +69,8 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    # Add translation middleware
+    "django.middleware.locale.LocaleMiddleware",
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -185,7 +187,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'tr'
 
 TIME_ZONE = 'UTC'
 
@@ -239,3 +241,13 @@ LOGIN_REDIRECT_URL = '/'
 # Payments settings
 STRIPE_API_KEY_PUBLISHABLE = 'pk_test_51PqcbcFFXmaIAdi3Hnw3TsmAAYsWsH1HCYzq65aQ0UxN6VXq5jfrkhu19mvWd0t7If2G4yYvn0DqUyaWfnWLYP3g00dBoLOXAI'
 STRIPE_API_KEY_SECRET = 'sk_test_51PqcbcFFXmaIAdi3ONZ73ioWSgzpGIdlSzxfvNH0fvbZqfFBfehvz8pwsT330Bm2pO1lCNAkIlGM8iazBrGAq0RP00M6LCtHPn'
+
+# Translation
+LOCALE_PATHS = [
+    "locale",
+]
+
+LANGUAGES = (
+    ('en', 'English'),
+    ('tr', 'Turkish'),
+)

@@ -1,8 +1,11 @@
+from urllib import request
+
 from django.shortcuts import render, redirect
 from django.utils import timezone
 from django.http import JsonResponse
 from django.template.loader import render_to_string
 from django.conf import settings
+from django.views.generic import ListView
 
 from products.models import Product
 from .models import (Order, OrderDetail, Cart, CartDetail, Coupon)
@@ -14,15 +17,20 @@ from django.contrib.auth.decorators import login_required
 import stripe
 
 
-def order_list(request):
-    orders = Order.objects.filter(user=request.user)
 
-    return render(request, 'orders/order_list.html', {'orders': orders})
+class OrderList(ListView):
+    template_name = 'orders/order_list.html'
+    context_object_name = 'orders'
+    def get_queryset(self, *args, **kwargs):
+        queryset = Order.objects.filter(user=self.request.user)
+        return queryset
 
 
 def checkout(request):
     cart = Cart.objects.get(user=request.user, status='Inprogress')
     cart_detail = CartDetail.objects.filter(cart=cart)
+    if not cart_detail:
+        return redirect('home')
     delivery_fee = DeliveryFee.objects.last().fee
 
     pub_key = settings.STRIPE_API_KEY_PUBLISHABLE
@@ -211,3 +219,12 @@ def payment_success(request): # If payment successed
 def payment_failure(request): # if payment failure
 
     return render(request, 'orders/failure.html', {})
+
+
+def delete_from_cart(request, pk):
+    try:
+        item = CartDetail.objects.get(pk=pk)
+        item.delete()
+        return redirect('checkout')
+    except CartDetail.DoesNotExist:
+        return JsonResponse({'error': 'CartDetail does not exists'})
