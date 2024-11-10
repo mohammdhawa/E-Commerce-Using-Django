@@ -1,8 +1,15 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load i18n %}
+{% get_current_language as LANGUAGE_CODE %}
 
 {% block css %}
+        {% if LANGUAGE_CODE == 'ar' %}
+        <link rel="stylesheet" href="{% static 'ar/css/index.css' %}">
+        {% else %}
         <link rel="stylesheet" href="{% static 'en/css/index.css' %}">
+        {% endif %}
+
 {% endblock css %}
 
 {% block body %}
@@ -38,7 +45,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="section-heading">
-                            <h2>recently sold items</h2>
+                            <h2>{% translate 'recently sold items' %}</h2>
                         </div>
                     </div>
                 </div>
@@ -86,7 +93,7 @@
                         <div class="section-btn-25">
                             <a href="{% url 'product-list' %}" class="btn btn-outline">
                                 <i class="fas fa-eye"></i>
-                                <span>show more</span>
+                                <span>{% translate 'show more' %}</span>
                             </a>
                         </div>
                     </div>
@@ -106,7 +113,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="section-heading">
-                            <h2>our featured items</h2>
+                            <h2>{% translate 'our featured items' %}</h2>
                         </div>
                     </div>
                 </div>
@@ -153,7 +160,7 @@
                         <div class="section-btn-25">
                             <a href="{% url 'product-list' %}" class="btn btn-outline">
                                 <i class="fas fa-eye"></i>
-                                <span>show more</span>
+                                <span>{% translate 'show more' %}</span>
                             </a>
                         </div>
                     </div>
@@ -173,7 +180,7 @@
                 <div class="row">
                     <div class="col">
                         <div class="section-heading">
-                            <h2>collected new items</h2>
+                            <h2>{% translate 'collected new items' %}</h2>
                         </div>
                     </div>
                 </div>
@@ -223,7 +230,7 @@
                         <div class="section-btn-25">
                             <a href="{% url 'product-list' %}" class="btn btn-outline">
                                 <i class="fas fa-eye"></i>
-                                <span>show more</span>
+                                <span>{% translate 'show more' %}</span>
                             </a>
                         </div>
                     </div>
@@ -244,7 +251,7 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="section-heading">
-                            <h2>shop by brands</h2>
+                            <h2>{% translate 'shop by brands' %}</h2>
                         </div>
                     </div>
                 </div>
@@ -269,7 +276,7 @@
                         <div class="section-btn-50">
                             <a href="{% url 'brand-list' %}" class="btn btn-outline">
                                 <i class="fas fa-eye"></i>
-                                <span>view all brands</span>
+                                <span>{% translate 'view all brands' %}</span>
                             </a>
                         </div>
                     </div>
@@ -289,7 +296,7 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="section-heading">
-                            <h2>client's feedback</h2>
+                            <h2>{% translate "client's feedback" %}</h2>
                         </div>
                     </div>
                 </div>

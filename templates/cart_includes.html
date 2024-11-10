@@ -1,8 +1,8 @@
-
+{% load i18n %}
     <div class="cart-header">
         <div class="cart-total">
             <i class="fas fa-shopping-basket"></i>
-            <span>total item ({{ cart_detail_data|length }})</span>
+            <span>{% translate 'total item' %} ({{ cart_detail_data|length }})</span>
         </div>
         <button class="cart-close"><i class="icofont-close"></i></button>
     </div>
@@ -17,7 +17,7 @@
             <div class="cart-info-group">
                 <div class="cart-info">
                     <h6><a href="product-single.html">{{ item.product.name }}</a></h6>
-                    <p>Unit Price - ${{ item.product.price }}</p>
+                    <p>{% translate 'Unit Price' %} - ${{ item.product.price }}</p>
                 </div>
                 <div class="cart-action-group">
                     <div class="product-action">
@@ -32,7 +32,7 @@
     </ul>
     <div class="cart-footer">
         <a class="cart-checkout-btn" href="{% url 'checkout' %}">
-            <span class="checkout-label">Proceed to Checkout</span>
+            <span class="checkout-label">{% translate 'Proceed to Checkout' %}</span>
             <span class="checkout-price">${{ cart_data.cart_total }}</span>
         </a>
     </div>

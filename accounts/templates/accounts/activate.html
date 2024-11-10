@@ -1,17 +1,18 @@
 <!DOCTYPE html>
+{% load i18n %}
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>{% translate 'Title' %}</title>
 </head>
 <body>
 
-<h1>Activate you account</h1>
+<h1>{% translate 'Activate you account' %}</h1>
 
 <form method="post">
     {% csrf_token %}
     {{ form.as_p }}
-    <input type="submit" value="activate">
+    <input type="submit" value="{% translate 'activate' %}">
 </form>
 
 </body>

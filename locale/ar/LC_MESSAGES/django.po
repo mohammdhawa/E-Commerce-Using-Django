@@ -1,0 +1,952 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2024-11-10 16:05+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
+"&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
+
+#: accounts/models.py:11
+msgid "profile"
+msgstr "الملف الشخصي"
+
+#: accounts/models.py:12 products/models.py:19 products/models.py:64
+#: products/models.py:72
+msgid "image"
+msgstr "صورة"
+
+#: accounts/models.py:13 orders/models.py:21 orders/models.py:76
+msgid "code"
+msgstr "كود"
+
+#: accounts/models.py:33 accounts/models.py:48 products/models.py:97
+msgid "user"
+msgstr "المستخدم"
+
+#: accounts/models.py:34 accounts/models.py:49
+msgid "type"
+msgstr "النوع"
+
+#: accounts/models.py:35 accounts/templates/accounts/profile.html:181
+#: settings/models.py:13
+msgid "address"
+msgstr "العنوان"
+
+#: accounts/models.py:36
+msgid "default"
+msgstr "افتراضي"
+
+#: accounts/models.py:50 accounts/templates/accounts/profile.html:247
+msgid "number"
+msgstr "رقم"
+
+#: accounts/templates/accounts/activate.html:6
+msgid "Title"
+msgstr "العنوان الفرعي"
+
+#: accounts/templates/accounts/activate.html:10
+msgid "Activate you account"
+msgstr "تفعيل حسابك"
+
+#: accounts/templates/accounts/activate.html:15
+msgid "activate"
+msgstr "تفعيل"
+
+#: accounts/templates/accounts/profile.html:21
+msgid "my profile"
+msgstr "الملف الشخصي"
+
+#: accounts/templates/accounts/profile.html:38
+msgid "Your Profile"
+msgstr "الملف الشخصي"
+
+#: accounts/templates/accounts/profile.html:39
+msgid "edit profile"
+msgstr "الملف الشخصي"
+
+#: accounts/templates/accounts/profile.html:50 products/models.py:16
+#: products/models.py:71 settings/models.py:6
+msgid "name"
+msgstr "الاسم"
+
+#: accounts/templates/accounts/profile.html:56
+msgid "Email"
+msgstr "البريد الإلكتروني"
+
+#: accounts/templates/accounts/profile.html:62
+msgid "change pass."
+msgstr "تمرير التغيير."
+
+#: accounts/templates/accounts/profile.html:72
+msgid "contact number"
+msgstr "اتصل بنا"
+
+#: accounts/templates/accounts/profile.html:74
+msgid "add contact"
+msgstr "اتصل بنا"
+
+#: accounts/templates/accounts/profile.html:97 orders/models.py:24
+msgid "delivery address"
+msgstr "عنوان التسليم"
+
+#: accounts/templates/accounts/profile.html:99
+msgid "add address"
+msgstr "العنوان"
+
+#: accounts/templates/accounts/profile.html:141
+msgid "add new contact"
+msgstr "إضافة جهة اتصال جديدة"
+
+#: accounts/templates/accounts/profile.html:145
+#: accounts/templates/accounts/profile.html:172
+#: accounts/templates/accounts/profile.html:265
+msgid "title"
+msgstr "العنوان الفرعي"
+
+#: accounts/templates/accounts/profile.html:147
+#: accounts/templates/accounts/profile.html:242
+msgid "primary"
+msgstr "الابتدائي"
+
+#: accounts/templates/accounts/profile.html:148
+#: accounts/templates/accounts/profile.html:243
+msgid "secondary"
+msgstr "ثانوي"
+
+#: accounts/templates/accounts/profile.html:155
+#: accounts/templates/accounts/profile.html:250
+msgid "save contact info"
+msgstr "حفظ معلومات الاتصال"
+
+#: accounts/templates/accounts/profile.html:169
+msgid "add new address"
+msgstr "عنوان التسليم"
+
+#: accounts/templates/accounts/profile.html:174
+#: accounts/templates/accounts/profile.html:267
+msgid "Home"
+msgstr "المنزل"
+
+#: accounts/templates/accounts/profile.html:175
+#: accounts/templates/accounts/profile.html:268
+msgid "Office"
+msgstr "مكتب"
+
+#: accounts/templates/accounts/profile.html:176
+#: accounts/templates/accounts/profile.html:269
+msgid "Work"
+msgstr "العمل"
+
+#: accounts/templates/accounts/profile.html:177
+#: accounts/templates/accounts/profile.html:270
+msgid "Other"
+msgstr "أخرى"
+
+#: accounts/templates/accounts/profile.html:182
+#: accounts/templates/accounts/profile.html:275
+msgid "Enter your address"
+msgstr "عنوان التسليم"
+
+#: accounts/templates/accounts/profile.html:186
+#: accounts/templates/accounts/profile.html:279
+msgid "Make It Default Address"
+msgstr "اجعله العنوان الافتراضي"
+
+#: accounts/templates/accounts/profile.html:188
+#: accounts/templates/accounts/profile.html:281
+msgid "save address info"
+msgstr "عنوان التسليم"
+
+#: accounts/templates/accounts/profile.html:210
+msgid "edit profile info"
+msgstr "تعديل معلومات الملف الشخصي"
+
+#: accounts/templates/accounts/profile.html:213
+msgid "profile image"
+msgstr "الملف الشخصي"
+
+#: accounts/templates/accounts/profile.html:224
+msgid "save profile info"
+msgstr "حفظ معلومات الملف الشخصي"
+
+#: accounts/templates/accounts/profile.html:237
+msgid "edit contact info"
+msgstr "تعديل معلومات الاتصال"
+
+#: accounts/templates/accounts/signup.html:15
+msgid "Join Now!"
+msgstr "انضم الآن!"
+
+#: accounts/templates/accounts/signup.html:16
+msgid "Setup A New Account In A Minute"
+msgstr "إعداد حساب جديد في دقيقة واحدة"
+
+#: accounts/templates/accounts/signup.html:20
+#: accounts/templates/registration/login.html:20
+msgid "login with facebook"
+msgstr "تسجيل الدخول بالفيسبوك"
+
+#: accounts/templates/accounts/signup.html:21
+#: accounts/templates/registration/login.html:21
+msgid "login with twitter"
+msgstr "تسجيل الدخول بتويتر"
+
+#: accounts/templates/accounts/signup.html:22
+#: accounts/templates/registration/login.html:22
+msgid "login with google"
+msgstr "تسجيل الدخول مع جوجل"
+
+#: accounts/templates/accounts/signup.html:23
+#: accounts/templates/registration/login.html:23
+msgid "login with instagram"
+msgstr "الانستقرام"
+
+#: accounts/templates/accounts/signup.html:34
+msgid "Signup"
+msgstr "الاشتراك"
+
+#: accounts/templates/accounts/signup.html:40
+msgid "Already have an account?"
+msgstr "هل لديك حساب بالفعل؟"
+
+#: accounts/templates/accounts/signup.html:40
+msgid "Login"
+msgstr "تسجيل الدخول"
+
+#: accounts/templates/accounts/signup.html:43
+#: accounts/templates/registration/logged_out.html:25
+#: accounts/templates/registration/login.html:57
+#: accounts/templates/registration/password_change_form.html:37
+#: accounts/templates/registration/password_reset_complete.html:25
+#: accounts/templates/registration/password_reset_confirm.html:45
+#: accounts/templates/registration/password_reset_done.html:26
+#: accounts/templates/registration/password_reset_form.html:39
+msgid "Greeny"
+msgstr "جريني"
+
+#: accounts/templates/accounts/signup.html:43
+#: accounts/templates/registration/logged_out.html:25
+#: accounts/templates/registration/login.html:57
+#: accounts/templates/registration/password_change_form.html:37
+#: accounts/templates/registration/password_reset_complete.html:25
+#: accounts/templates/registration/password_reset_confirm.html:45
+#: accounts/templates/registration/password_reset_done.html:26
+#: accounts/templates/registration/password_reset_form.html:39
+msgid "Copyright by"
+msgstr "جميع الحقوق محفوظة"
+
+#: accounts/templates/accounts/signup.html:43
+#: accounts/templates/registration/logged_out.html:25
+#: accounts/templates/registration/login.html:57
+#: accounts/templates/registration/password_change_form.html:37
+#: accounts/templates/registration/password_reset_complete.html:25
+#: accounts/templates/registration/password_reset_confirm.html:45
+#: accounts/templates/registration/password_reset_done.html:26
+#: accounts/templates/registration/password_reset_form.html:39
+#: templates/base.html:799
+msgid "Mironcoder"
+msgstr "ميرونكودر"
+
+#: accounts/templates/registration/logged_out.html:17
+msgid "Logged Out!"
+msgstr "تسجيل الخروج!"
+
+#: accounts/templates/registration/logged_out.html:18
+msgid "Don't Be Late We Are Waiting For You"
+msgstr "لا تتأخر، نحن في انتظارك"
+
+#: accounts/templates/registration/logged_out.html:22
+msgid "Click Here To Login Again."
+msgstr "انقر هنا لتسجيل الدخول مرة أخرى."
+
+#: accounts/templates/registration/logged_out.html:22
+#: accounts/templates/registration/password_change_form.html:34
+#: accounts/templates/registration/password_reset_done.html:23
+#: accounts/templates/registration/password_reset_form.html:36
+msgid "login here"
+msgstr "تسجيل الدخول"
+
+#: accounts/templates/registration/login.html:15
+msgid "welcome!"
+msgstr "مرحباً!"
+
+#: accounts/templates/registration/login.html:16
+msgid "Use your credentials to access"
+msgstr "استخدم بيانات الاعتماد الخاصة بك للوصول"
+
+#: accounts/templates/registration/login.html:26
+msgid "or"
+msgstr "أو"
+
+#: accounts/templates/registration/login.html:29
+msgid "Your username and password didn't match. Please try again."
+msgstr "اسم المستخدم وكلمة المرور الخاصين بك غير متطابقين. "
+
+#: accounts/templates/registration/login.html:37
+msgid "Please login to see this page."
+msgstr "الرجاء تسجيل الدخول لرؤية هذه الصفحة."
+
+#: accounts/templates/registration/login.html:46 templates/base.html:147
+msgid "login"
+msgstr "تسجيل الدخول"
+
+#: accounts/templates/registration/login.html:48
+msgid "reset here"
+msgstr "إعادة التعيين هنا"
+
+#: accounts/templates/registration/login.html:54
+msgid "Don't have any account?"
+msgstr "ليس لديك أي حساب؟"
+
+#: accounts/templates/registration/login.html:54
+msgid "register here"
+msgstr "سجل هنا"
+
+#: accounts/templates/registration/password_change_form.html:17
+#: accounts/templates/registration/password_reset_confirm.html:18
+#: accounts/templates/registration/password_reset_form.html:18
+msgid "any issue?"
+msgstr "هل هناك مشكلة؟"
+
+#: accounts/templates/registration/password_change_form.html:18
+msgid "Make sure your current password is strong"
+msgstr "تأكد من أن كلمة المرور الحالية قوية"
+
+#: accounts/templates/registration/password_change_form.html:29
+msgid "Change password"
+msgstr "تغيير كلمة المرور"
+
+#: accounts/templates/registration/password_change_form.html:34
+#: accounts/templates/registration/password_reset_complete.html:22
+#: accounts/templates/registration/password_reset_confirm.html:42
+#: accounts/templates/registration/password_reset_done.html:23
+#: accounts/templates/registration/password_reset_form.html:36
+msgid "Go Back To"
+msgstr "العودة إلى"
+
+#: accounts/templates/registration/password_reset_complete.html:17
+msgid "The password has been changed!"
+msgstr "تم تغيير كلمة المرور!"
+
+#: accounts/templates/registration/password_reset_complete.html:18
+msgid "Great Job"
+msgstr "عمل عظيم"
+
+#: accounts/templates/registration/password_reset_complete.html:22
+msgid "log in again?"
+msgstr "تسجيل الدخول مرة أخرى؟"
+
+#: accounts/templates/registration/password_reset_confirm.html:19
+msgid "Please enter (and confirm) your new password."
+msgstr "الرجاء إدخال (وتأكيد) كلمة المرور الجديدة."
+
+#: accounts/templates/registration/password_reset_confirm.html:31
+#: accounts/templates/registration/password_reset_form.html:31
+msgid "Reset password"
+msgstr "إعادة تعيين كلمة المرور"
+
+#: accounts/templates/registration/password_reset_confirm.html:37
+msgid "Password reset failed"
+msgstr "فشلت إعادة تعيين كلمة المرور"
+
+#: accounts/templates/registration/password_reset_confirm.html:38
+msgid ""
+"The password reset link was invalid, possibly because it has already been "
+"used. Please request a new password reset."
+msgstr "رابط إعادة تعيين كلمة المرور غير صالح، ربما لأنه تم استخدامه بالفعل. "
+
+#: accounts/templates/registration/password_reset_confirm.html:42
+msgid "Change my password"
+msgstr "تغيير كلمة المرور الخاصة بي"
+
+#: accounts/templates/registration/password_reset_done.html:18
+msgid "Successful"
+msgstr "ناجح"
+
+#: accounts/templates/registration/password_reset_done.html:19
+msgid ""
+"We've emailed you instructions for setting your password. If they haven't "
+"arrived in a few minutes, check your spam folder."
+msgstr "لقد أرسلنا إليك تعليمات عبر البريد الإلكتروني لإعداد كلمة المرور الخاصة بك. "
+
+#: accounts/templates/registration/password_reset_form.html:19
+msgid "Write Your Email To Send You A Link For Password Reset"
+msgstr "اكتب بريدك الإلكتروني لإرسال رابط لإعادة تعيين كلمة المرور"
+
+#: orders/models.py:19
+msgid "order owner"
+msgstr "صاحب الأمر"
+
+#: orders/models.py:20 orders/models.py:46
+msgid "status"
+msgstr "الحالة"
+
+#: orders/models.py:22
+msgid "order time"
+msgstr "وقت الطلب"
+
+#: orders/models.py:23
+msgid "deliery time"
+msgstr "وقت التسليم"
+
+#: orders/models.py:25
+msgid "coupon"
+msgstr "قسيمة"
+
+#: orders/models.py:27 orders/models.py:37 orders/models.py:49
+#: orders/models.py:65
+msgid "total"
+msgstr "المجموع"
+
+#: orders/models.py:28 orders/models.py:50
+msgid "total with coupon"
+msgstr "الإجمالي مع القسيمة"
+
+#: orders/models.py:32 orders/templates/orders/order_list.html:45
+msgid "order"
+msgstr "النظام"
+
+#: orders/models.py:33 products/models.py:45 products/models.py:63
+#: products/models.py:98
+msgid "product"
+msgstr "المنتج"
+
+#: orders/models.py:35 orders/models.py:64 orders/models.py:79
+#: orders/templates/orders/order_list.html:127
+#: orders/templates/orders/success.html:116 products/models.py:20
+msgid "quantity"
+msgstr "الكمية"
+
+#: orders/models.py:36 products/models.py:18
+msgid "price"
+msgstr "السعر"
+
+#: orders/models.py:45
+msgid "cart owner"
+msgstr "صاحب العربة"
+
+#: orders/models.py:47
+msgid "cart coupon"
+msgstr "قسيمة عربة التسوق"
+
+#: orders/models.py:61
+msgid "cart details"
+msgstr "تفاصيل العربة"
+
+#: orders/models.py:62
+msgid "cart detail product"
+msgstr "منتج تفاصيل عربة التسوق"
+
+#: orders/models.py:77
+msgid "start date"
+msgstr "تاريخ البدء"
+
+#: orders/models.py:78
+msgid "end date"
+msgstr "تاريخ الانتهاء"
+
+#: orders/models.py:80
+msgid "discount amount"
+msgstr "مبلغ الخصم"
+
+#: orders/templates/orders/checkout.html:16
+msgid "checkout"
+msgstr "الخروج"
+
+#: orders/templates/orders/checkout.html:67
+msgid "Do you have a coupon code?"
+msgstr "هل لديك رمز قسيمة؟"
+
+#: orders/templates/orders/checkout.html:74
+msgid "The coupon you entered expired"
+msgstr "انتهت صلاحية القسيمة التي أدخلتها"
+
+#: orders/templates/orders/checkout.html:80
+msgid "Sub total"
+msgstr "المجموع"
+
+#: orders/templates/orders/checkout.html:84
+#: orders/templates/orders/order_list.html:102
+msgid "delivery fee"
+msgstr "وقت التسليم"
+
+#: orders/templates/orders/checkout.html:88
+#: orders/templates/orders/order_list.html:98
+#: orders/templates/orders/success.html:91
+msgid "discount"
+msgstr "مبلغ الخصم"
+
+#: orders/templates/orders/checkout.html:92
+#: orders/templates/orders/order_list.html:106
+#: orders/templates/orders/success.html:99
+msgid "Total"
+msgstr "المجموع"
+
+#: orders/templates/orders/checkout.html:103
+msgid "Complete Payment"
+msgstr "الدفع الكامل"
+
+#: orders/templates/orders/checkout.html:106
+msgid "proceed to checkout"
+msgstr "انتقل إلى الخروج"
+
+#: orders/templates/orders/failure.html:16
+msgid "ERROR!!!"
+msgstr "خطأ!!!"
+
+#: orders/templates/orders/failure.html:17
+msgid "ooopps! payment failed could you try again later"
+msgstr "عفوا! "
+
+#: orders/templates/orders/failure.html:18
+msgid ""
+"Please be sure that your payment cart is working and has the enough money in "
+"it."
+msgstr "يرجى التأكد من أن عربة الدفع الخاصة بك تعمل وبها ما يكفي من المال."
+
+#: orders/templates/orders/failure.html:19
+msgid "go to home"
+msgstr "اذهب إلى المنزل"
+
+#: orders/templates/orders/order_list.html:17 templates/base.html:774
+msgid "Order History"
+msgstr "تاريخ الطلب"
+
+#: orders/templates/orders/order_list.html:33
+msgid "total order"
+msgstr "السعر الإجمالي"
+
+#: orders/templates/orders/order_list.html:44
+msgid "Order"
+msgstr "النظام"
+
+#: orders/templates/orders/order_list.html:74
+msgid "order id"
+msgstr "وقت الطلب"
+
+#: orders/templates/orders/order_list.html:78
+#: orders/templates/orders/success.html:60
+msgid "Total Item"
+msgstr "إجمالي البند"
+
+#: orders/templates/orders/order_list.html:82
+#: orders/templates/orders/success.html:64
+msgid "Order Time"
+msgstr "وقت الطلب"
+
+#: orders/templates/orders/order_list.html:86
+#: orders/templates/orders/success.html:68
+msgid "Delivery Time"
+msgstr "وقت التسليم"
+
+#: orders/templates/orders/order_list.html:94
+#: orders/templates/orders/success.html:87
+msgid "Sub Total"
+msgstr "المجموع الفرعي"
+
+#: orders/templates/orders/order_list.html:113
+msgid "Delivery location"
+msgstr "وقت التسليم"
+
+#: orders/templates/orders/order_list.html:122
+#: orders/templates/orders/success.html:111
+msgid "Serial"
+msgstr "مسلسل"
+
+#: orders/templates/orders/order_list.html:123
+#: orders/templates/orders/success.html:112
+msgid "Product"
+msgstr "المنتج"
+
+#: orders/templates/orders/order_list.html:124
+#: orders/templates/orders/success.html:113
+msgid "Name"
+msgstr "الاسم"
+
+#: orders/templates/orders/order_list.html:125
+#: orders/templates/orders/success.html:114
+msgid "Price"
+msgstr "السعر"
+
+#: orders/templates/orders/order_list.html:126
+#: orders/templates/orders/success.html:115 products/models.py:25
+msgid "brand"
+msgstr "العلامة التجارية"
+
+#: orders/templates/orders/success.html:16
+msgid "Order invoice"
+msgstr "تاريخ الطلب"
+
+#: orders/templates/orders/success.html:17
+msgid "Payment Success"
+msgstr "نجاح الدفع"
+
+#: orders/templates/orders/success.html:18
+msgid "Your code is"
+msgstr "الرمز الخاص بك هو"
+
+#: orders/templates/orders/success.html:34
+msgid "Thank you! We have recieved your order."
+msgstr "شكرا لك! "
+
+#: orders/templates/orders/success.html:40
+msgid "order recieved"
+msgstr "وقت الطلب"
+
+#: orders/templates/orders/success.html:44
+msgid "order number"
+msgstr "صاحب الأمر"
+
+#: orders/templates/orders/success.html:45
+msgid "order date"
+msgstr "وقت الطلب"
+
+#: orders/templates/orders/success.html:46
+msgid "total amount"
+msgstr "مبلغ الخصم"
+
+#: orders/templates/orders/success.html:47
+msgid "payment method"
+msgstr "طريقة الدفع"
+
+#: orders/templates/orders/success.html:47
+msgid "Online Payment"
+msgstr "الدفع عبر الإنترنت"
+
+#: orders/templates/orders/success.html:55
+msgid "Order Details"
+msgstr "تفاصيل العربة"
+
+#: orders/templates/orders/success.html:61
+msgid "Items"
+msgstr "العناصر"
+
+#: orders/templates/orders/success.html:72
+msgid "Delivery Location"
+msgstr "الموقع"
+
+#: orders/templates/orders/success.html:82
+msgid "Amount Details"
+msgstr "تفاصيل العربة"
+
+#: orders/templates/orders/success.html:95
+msgid "Delivery Fee"
+msgstr "وقت التسليم"
+
+#: orders/templates/orders/success.html:138
+msgid "Back to Home"
+msgstr "العودة إلى المنزل"
+
+#: products/models.py:17
+msgid "flag"
+msgstr "العلم"
+
+#: products/models.py:21
+msgid "sku"
+msgstr "سكو"
+
+#: products/models.py:22 settings/models.py:8
+msgid "subtitle"
+msgstr "العنوان الفرعي"
+
+#: products/models.py:23
+msgid "description"
+msgstr "الوصف"
+
+#: products/models.py:46
+msgid "products"
+msgstr "المنتجات"
+
+#: products/models.py:99
+msgid "review"
+msgstr "مراجعة"
+
+#: products/models.py:100
+msgid "rate"
+msgstr "معدل"
+
+#: products/models.py:101
+msgid "review date"
+msgstr "تاريخ المراجعة"
+
+#: products/templates/includes/reviews.html:3
+msgid "Reviews"
+msgstr "مراجعة"
+
+#: products/templates/products/brand_detail.html:16
+msgid "Brand Details"
+msgstr "تفاصيل العربة"
+
+#: products/templates/products/brand_detail.html:30
+#: products/templates/products/brand_list.html:43
+msgid "items"
+msgstr "العناصر"
+
+#: products/templates/products/brand_list.html:16
+msgid "brands list"
+msgstr "العلامات التجارية"
+
+#: products/templates/products/product_detail.html:21
+msgid "product details"
+msgstr "تفاصيل العربة"
+
+#: products/templates/products/product_detail.html:60
+msgid "SKU"
+msgstr ""
+
+#: products/templates/products/product_detail.html:61
+msgid "BRAND"
+msgstr "العلامة التجارية"
+
+#: products/templates/products/product_detail.html:106
+msgid "add to cart"
+msgstr "أضف إلى السلة"
+
+#: products/templates/products/product_detail.html:139
+msgid "Description"
+msgstr "الوصف"
+
+#: products/templates/products/product_detail.html:148
+msgid "add your review"
+msgstr "أضف رأيك"
+
+#: products/templates/products/product_detail.html:163
+msgid "write your review about this product"
+msgstr "اكتب رأيك حول هذا المنتج"
+
+#: products/templates/products/product_detail.html:169
+msgid "drop your review"
+msgstr "قم بإسقاط رأيك"
+
+#: products/templates/products/product_detail.html:192
+msgid "related this items"
+msgstr "عناصرنا المميزة"
+
+#: products/templates/products/product_detail.html:246
+msgid "view all related"
+msgstr "عرض جميع الماركات"
+
+#: products/templates/products/product_list.html:10
+msgid "Products List"
+msgstr "المنتجات"
+
+#: settings/models.py:7
+msgid "logo"
+msgstr "الشعار"
+
+#: settings/models.py:9 templates/base.html:200
+msgid "call us"
+msgstr "اتصل بنا"
+
+#: settings/models.py:10 templates/base.html:207
+msgid "email us"
+msgstr "راسلنا عبر البريد الإلكتروني"
+
+#: settings/models.py:11
+msgid "phone"
+msgstr "الهاتف"
+
+#: settings/models.py:12
+msgid "email"
+msgstr "البريد الإلكتروني"
+
+#: settings/models.py:14
+msgid "android app"
+msgstr "تطبيق أندرويد"
+
+#: settings/models.py:15
+msgid "ios app"
+msgstr "تطبيق ios"
+
+#: settings/models.py:16
+msgid "facebook"
+msgstr "الفيسبوك"
+
+#: settings/models.py:17
+msgid "youtube"
+msgstr "يوتيوب"
+
+#: settings/models.py:18
+msgid "twitter"
+msgstr "تويتر"
+
+#: settings/models.py:19
+msgid "instagram"
+msgstr "الانستقرام"
+
+#: settings/models.py:26
+msgid "fee"
+msgstr "رسوم"
+
+#: settings/templates/settings/home.html:42
+msgid "recently sold items"
+msgstr "العناصر المباعة مؤخرًا"
+
+#: settings/templates/settings/home.html:90
+#: settings/templates/settings/home.html:157
+#: settings/templates/settings/home.html:227
+msgid "show more"
+msgstr "عرض المزيد"
+
+#: settings/templates/settings/home.html:110
+msgid "our featured items"
+msgstr "عناصرنا المميزة"
+
+#: settings/templates/settings/home.html:177
+msgid "collected new items"
+msgstr "جمع عناصر جديدة"
+
+#: settings/templates/settings/home.html:248
+msgid "shop by brands"
+msgstr "تسوق حسب العلامات التجارية"
+
+#: settings/templates/settings/home.html:273
+msgid "view all brands"
+msgstr "عرض جميع الماركات"
+
+#: settings/templates/settings/home.html:293
+msgid "client's feedback"
+msgstr "ملاحظات العميل"
+
+#: templates/base.html:86
+msgid "Welcome to Ecomart in Your Dream Online Store!"
+msgstr "مرحبًا بك في Ecomart في متجر أحلامك عبر الإنترنت!"
+
+#: templates/base.html:113
+msgid "need help"
+msgstr "بحاجة للمساعدة"
+
+#: templates/base.html:114 templates/base.html:747
+msgid "contact us"
+msgstr "اتصل بنا"
+
+#: templates/base.html:150
+msgid "join"
+msgstr "الانضمام"
+
+#: templates/base.html:155
+msgid "Search anything..."
+msgstr "ابحث عن أي شيء..."
+
+#: templates/base.html:163
+msgid "total price"
+msgstr "السعر الإجمالي"
+
+#: templates/base.html:184
+msgid "home"
+msgstr "المنزل"
+
+#: templates/base.html:187
+msgid "shop"
+msgstr "متجر"
+
+#: templates/base.html:190
+msgid "brands"
+msgstr "العلامات التجارية"
+
+#: templates/base.html:193
+msgid "orders"
+msgstr "الأوامر"
+
+#: templates/base.html:678
+msgid "free home delivery"
+msgstr "التوصيل المجاني للمنزل"
+
+#: templates/base.html:679 templates/base.html:690 templates/base.html:701
+#: templates/base.html:712
+msgid "Lorem ipsum dolor sit amet adipisicing elit nobis."
+msgstr "لوريم إيبسوم دولور سيت أميت أديبيسينج إليت نوبيس."
+
+#: templates/base.html:689
+msgid "instant return policy"
+msgstr "سياسة الإرجاع الفوري"
+
+#: templates/base.html:700
+msgid "quick support system"
+msgstr "نظام الدعم السريع"
+
+#: templates/base.html:711
+msgid "secure payment way"
+msgstr "طريقة الدفع الآمنة"
+
+#: templates/base.html:770
+msgid "quick Links"
+msgstr "روابط سريعة"
+
+#: templates/base.html:773
+msgid "My Account"
+msgstr "حسابي"
+
+#: templates/base.html:775
+msgid "Order Tracking"
+msgstr "تتبع الطلب"
+
+#: templates/base.html:776
+msgid "Best Seller"
+msgstr "أفضل بائع"
+
+#: templates/base.html:777
+msgid "New Arrivals"
+msgstr "القادمون الجدد"
+
+#: templates/base.html:780
+msgid "Location"
+msgstr "الموقع"
+
+#: templates/base.html:781
+msgid "Affiliates"
+msgstr "الشركات التابعة"
+
+#: templates/base.html:782
+msgid "Contact"
+msgstr "الاتصال"
+
+#: templates/base.html:783
+msgid "Carrer"
+msgstr "كارير"
+
+#: templates/base.html:784
+msgid "Faq"
+msgstr "أسئلة وأجوبة"
+
+#: templates/base.html:791
+msgid "Download App"
+msgstr "تنزيل التطبيق"
+
+#: templates/base.html:792
+msgid ""
+"Lorem ipsum dolor sit amet tenetur dignissimos ipsum eligendi autem "
+"obcaecati minus ducimus totam reprehenderit exercitationem!"
+msgstr "Lorem ipsum dolor sit amet Tenetur dignissimos ipsum eligendi autem obcaecati minus ducimus totam rerehenderit exercitementem!"
+"Lorem ipsum dolor sit amet Tenetur dignissimos ipsum eligendi autem "
+"obcaecati minus ducimus totam rerehenderit exercitationem!"
+
+#: templates/base.html:799
+msgid "All Copyrights Reserved by"
+msgstr "جميع الحقوق محفوظة"
+
+#: templates/cart_includes.html:5
+msgid "total item"
+msgstr "إجمالي البند"
+
+#: templates/cart_includes.html:20
+msgid "Unit Price"
+msgstr "سعر الوحدة"
+
+#: templates/cart_includes.html:35
+msgid "Proceed to Checkout"
+msgstr "انتقل إلى الخروج"
+

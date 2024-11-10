@@ -1,5 +1,6 @@
 {% extends "base_generic.html" %}
 {% load bootstrap5 %}
+{% load i18n %}
 
 {% block body %}
         <!--=====================================
@@ -11,29 +12,29 @@
                     <div class="col-12 col-sm-10 col-md-12 col-lg-12 col-xl-10">
                         <div class="user-form-card">
                             <div class="user-form-title">
-                                <h2>welcome!</h2>
-                                <p>Use your credentials to access</p>
+                                <h2>{% translate 'welcome!' %}</h2>
+                                <p>{% translate 'Use your credentials to access' %}</p>
                             </div>
                             <div class="user-form-group">
                                 <ul class="user-form-social">
-                                    <li><a href="#" class="facebook"><i class="fab fa-facebook-f"></i>login with facebook</a></li>
-                                    <li><a href="#" class="twitter"><i class="fab fa-twitter"></i>login with twitter</a></li>
-                                    <li><a href="#" class="google"><i class="fab fa-google"></i>login with google</a></li>
-                                    <li><a href="#" class="instagram"><i class="fab fa-instagram"></i>login with instagram</a></li>
+                                    <li><a href="#" class="facebook"><i class="fab fa-facebook-f"></i>{% translate 'login with facebook' %}</a></li>
+                                    <li><a href="#" class="twitter"><i class="fab fa-twitter"></i>{% translate 'login with twitter' %}</a></li>
+                                    <li><a href="#" class="google"><i class="fab fa-google"></i>{% translate 'login with google' %}</a></li>
+                                    <li><a href="#" class="instagram"><i class="fab fa-instagram"></i>{% translate 'login with instagram' %}</a></li>
                                 </ul>
                                 <div class="user-form-divider">
-                                    <p>or</p>
+                                    <p>{% translate 'or' %}</p>
                                 </div>
                                 {% if form.errors %}
-                                    <p>Your username and password didn't match. Please try again.</p>
+                                    <p>{% translate "Your username and password didn't match. Please try again." %}</p>
                                   {% endif %}
 
                                   {% if next %}
                                     {% if user.is_authenticated %}
-                                      <p>Your account doesn't have access to this page. To proceed,
-                                      please login with an account that has access.</p>
+                                      <p>{% translate "Your account doesn't have access to this page. To proceed,
+                                      please login with an account that has access." %}</p>
                                     {% else %}
-                                      <p>Please login to see this page.</p>
+                                      <p>{% translate 'Please login to see this page.' %}</p>
                                     {% endif %}
                                   {% endif %}
                                 <form class="user-form" method="post" action="{% url 'login' %}">
@@ -42,18 +43,18 @@
                                        {% bootstrap_form form %}
                                     </div>
                                     <div class="form-button">
-                                        <button type="submit">login</button>
+                                        <button type="submit">{% translate 'login' %}</button>
                                         <input type="hidden" name="next" value="{{ next }}">
-                                        <p>Forgot your password?<a href="{% url 'password_reset' %}">reset here</a></p>
+                                        <p>Forgot your password?<a href="{% url 'password_reset' %}">{% translate 'reset here' %}</a></p>
                                     </div>
                                 </form>
                             </div>
                         </div>
                         <div class="user-form-remind">
-                            <p>Don't have any account?<a href="{% url 'signup' %}">register here</a></p>
+                            <p>{% translate "Don't have any account?" %}<a href="{% url 'signup' %}">{% translate 'register here' %}</a></p>
                         </div>
                         <div class="user-form-footer">
-                            <p>Greeny | &COPY; Copyright by <a href="#">Mironcoder</a></p>
+                            <p>{% translate 'Greeny' %} | &COPY; {% translate 'Copyright by' %} <a href="#">{% translate 'Mironcoder' %}</a></p>
                         </div>
                     </div>
                 </div>

@@ -250,4 +250,5 @@ LOCALE_PATHS = [
 LANGUAGES = (
     ('en', 'English'),
     ('tr', 'Turkish'),
+    ('ar', 'Arabic')
 )

@@ -1,4 +1,6 @@
-<h3 class="frame-title">Reviews ({{ object.reviews_count }})</h3>
+{% load i18n %}
+
+<h3 class="frame-title">{% translate 'Reviews' %} ({{ object.reviews_count }})</h3>
 <ul class="review-list">
 
     {% for review in reviews %}

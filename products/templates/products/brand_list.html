@@ -1,7 +1,14 @@
 {% extends 'base.html' %}
+{% load static %}
+{% load i18n %}
+{% get_current_language as LANGUAGE_CODE %}
 
 {% block css %}
-        <link rel="stylesheet" href="css/brand-list.css">
+    {% if LANGUAGE_CODE == 'ar' %}
+        <link rel="stylesheet" href="{% static 'ar/css/brand-list.css' %}">
+    {% else %}
+        <link rel="stylesheet" href="{% static 'en/css/brand-list.css' %}">
+    {% endif %}
 {% endblock css %}
 
 {% block body %}
@@ -12,11 +19,7 @@
         =======================================-->
         <section class="inner-section single-banner" style="background: url(images/single-banner.jpg) no-repeat center;">
             <div class="container">
-                <h2>brand list</h2>
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">brand-list</li>
-                </ol>
+                <h2>{% translate 'brands list' %}</h2>
             </div>
         </section>
         <!--=====================================
@@ -43,7 +46,7 @@
                             </div>
                             <div class="brand-meta">
                                 <h4>{{ item }}</h4>
-                                <p>({{ item.product_count }} items)</p>
+                                <p>({{ item.product_count }} {% translate 'items' %})</p>
                             </div>
                         </div>
                     </div>
@@ -54,7 +57,6 @@
                 <div class="row mt-4">
                     <div class="col-lg-12">
                         <div class="bottom-paginate">
-                            <p class="page-info">Showing 12 of 60 Results</p>
                             <ul class="pagination">
 
                                 {% if page_obj.has_previous %}

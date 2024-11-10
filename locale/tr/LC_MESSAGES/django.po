@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-11-09 11:25+0300\n"
+"POT-Creation-Date: 2024-11-10 16:05+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,6 +17,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
+
 #: accounts/models.py:11
 msgid "profile"
 msgstr "profil"
@@ -38,7 +39,8 @@ msgstr "kullanıcı"
 msgid "type"
 msgstr "tip"
 
-#: accounts/models.py:35 settings/models.py:13
+#: accounts/models.py:35 accounts/templates/accounts/profile.html:181
+#: settings/models.py:13
 msgid "address"
 msgstr "adres"
 
@@ -46,9 +48,342 @@ msgstr "adres"
 msgid "default"
 msgstr "varsayılan"
 
-#: accounts/models.py:50
+#: accounts/models.py:50 accounts/templates/accounts/profile.html:247
 msgid "number"
 msgstr "sayı"
+
+#: accounts/templates/accounts/activate.html:6
+msgid "Title"
+msgstr "altyazı"
+
+#: accounts/templates/accounts/activate.html:10
+msgid "Activate you account"
+msgstr "Hesabınızı etkinleştirin"
+
+#: accounts/templates/accounts/activate.html:15
+msgid "activate"
+msgstr "etkinleştir"
+
+#: accounts/templates/accounts/profile.html:21
+msgid "my profile"
+msgstr "profil"
+
+#: accounts/templates/accounts/profile.html:38
+msgid "Your Profile"
+msgstr "profil"
+
+#: accounts/templates/accounts/profile.html:39
+msgid "edit profile"
+msgstr "profil"
+
+#: accounts/templates/accounts/profile.html:50 products/models.py:16
+#: products/models.py:71 settings/models.py:6
+msgid "name"
+msgstr "isim"
+
+#: accounts/templates/accounts/profile.html:56
+msgid "Email"
+msgstr "e-posta"
+
+#: accounts/templates/accounts/profile.html:62
+msgid "change pass."
+msgstr "geçişi değiştir."
+
+#: accounts/templates/accounts/profile.html:72
+msgid "contact number"
+msgstr "Bize ulaşın"
+
+#: accounts/templates/accounts/profile.html:74
+msgid "add contact"
+msgstr "Bize ulaşın"
+
+#: accounts/templates/accounts/profile.html:97 orders/models.py:24
+msgid "delivery address"
+msgstr "teslimat adresi"
+
+#: accounts/templates/accounts/profile.html:99
+msgid "add address"
+msgstr "adres"
+
+#: accounts/templates/accounts/profile.html:141
+msgid "add new contact"
+msgstr "yeni kişi ekle"
+
+#: accounts/templates/accounts/profile.html:145
+#: accounts/templates/accounts/profile.html:172
+#: accounts/templates/accounts/profile.html:265
+msgid "title"
+msgstr "altyazı"
+
+#: accounts/templates/accounts/profile.html:147
+#: accounts/templates/accounts/profile.html:242
+msgid "primary"
+msgstr "birincil"
+
+#: accounts/templates/accounts/profile.html:148
+#: accounts/templates/accounts/profile.html:243
+msgid "secondary"
+msgstr "ikincil"
+
+#: accounts/templates/accounts/profile.html:155
+#: accounts/templates/accounts/profile.html:250
+msgid "save contact info"
+msgstr "iletişim bilgilerini kaydet"
+
+#: accounts/templates/accounts/profile.html:169
+msgid "add new address"
+msgstr "teslimat adresi"
+
+#: accounts/templates/accounts/profile.html:174
+#: accounts/templates/accounts/profile.html:267
+msgid "Home"
+msgstr "Ev"
+
+#: accounts/templates/accounts/profile.html:175
+#: accounts/templates/accounts/profile.html:268
+msgid "Office"
+msgstr "Ofis"
+
+#: accounts/templates/accounts/profile.html:176
+#: accounts/templates/accounts/profile.html:269
+msgid "Work"
+msgstr "İş"
+
+#: accounts/templates/accounts/profile.html:177
+#: accounts/templates/accounts/profile.html:270
+msgid "Other"
+msgstr "Diğer"
+
+#: accounts/templates/accounts/profile.html:182
+#: accounts/templates/accounts/profile.html:275
+msgid "Enter your address"
+msgstr "teslimat adresi"
+
+#: accounts/templates/accounts/profile.html:186
+#: accounts/templates/accounts/profile.html:279
+msgid "Make It Default Address"
+msgstr "Varsayılan Adres Yap"
+
+#: accounts/templates/accounts/profile.html:188
+#: accounts/templates/accounts/profile.html:281
+msgid "save address info"
+msgstr "teslimat adresi"
+
+#: accounts/templates/accounts/profile.html:210
+msgid "edit profile info"
+msgstr "profil bilgilerini düzenle"
+
+#: accounts/templates/accounts/profile.html:213
+msgid "profile image"
+msgstr "profil"
+
+#: accounts/templates/accounts/profile.html:224
+msgid "save profile info"
+msgstr "profil bilgilerini kaydet"
+
+#: accounts/templates/accounts/profile.html:237
+msgid "edit contact info"
+msgstr "iletişim bilgilerini düzenle"
+
+#: accounts/templates/accounts/signup.html:15
+msgid "Join Now!"
+msgstr "Şimdi Katılın!"
+
+#: accounts/templates/accounts/signup.html:16
+msgid "Setup A New Account In A Minute"
+msgstr "Bir Dakikada Yeni Hesap Oluştur"
+
+#: accounts/templates/accounts/signup.html:20
+#: accounts/templates/registration/login.html:20
+msgid "login with facebook"
+msgstr "facebook'a giriş yap"
+
+#: accounts/templates/accounts/signup.html:21
+#: accounts/templates/registration/login.html:21
+msgid "login with twitter"
+msgstr "twitter'a giriş yap"
+
+#: accounts/templates/accounts/signup.html:22
+#: accounts/templates/registration/login.html:22
+msgid "login with google"
+msgstr "google'a giriş yap"
+
+#: accounts/templates/accounts/signup.html:23
+#: accounts/templates/registration/login.html:23
+msgid "login with instagram"
+msgstr "instagram ile giriş yap"
+
+#: accounts/templates/accounts/signup.html:34
+msgid "Signup"
+msgstr "Kayıt ol"
+
+#: accounts/templates/accounts/signup.html:40
+msgid "Already have an account?"
+msgstr "Zaten bir hesabınız var mı?"
+
+#: accounts/templates/accounts/signup.html:40
+msgid "Login"
+msgstr "giriş"
+
+#: accounts/templates/accounts/signup.html:43
+#: accounts/templates/registration/logged_out.html:25
+#: accounts/templates/registration/login.html:57
+#: accounts/templates/registration/password_change_form.html:37
+#: accounts/templates/registration/password_reset_complete.html:25
+#: accounts/templates/registration/password_reset_confirm.html:45
+#: accounts/templates/registration/password_reset_done.html:26
+#: accounts/templates/registration/password_reset_form.html:39
+msgid "Greeny"
+msgstr "Yeşil"
+
+#: accounts/templates/accounts/signup.html:43
+#: accounts/templates/registration/logged_out.html:25
+#: accounts/templates/registration/login.html:57
+#: accounts/templates/registration/password_change_form.html:37
+#: accounts/templates/registration/password_reset_complete.html:25
+#: accounts/templates/registration/password_reset_confirm.html:45
+#: accounts/templates/registration/password_reset_done.html:26
+#: accounts/templates/registration/password_reset_form.html:39
+msgid "Copyright by"
+msgstr "Tüm Telif Hakları Saklıdır"
+
+#: accounts/templates/accounts/signup.html:43
+#: accounts/templates/registration/logged_out.html:25
+#: accounts/templates/registration/login.html:57
+#: accounts/templates/registration/password_change_form.html:37
+#: accounts/templates/registration/password_reset_complete.html:25
+#: accounts/templates/registration/password_reset_confirm.html:45
+#: accounts/templates/registration/password_reset_done.html:26
+#: accounts/templates/registration/password_reset_form.html:39
+#: templates/base.html:799
+msgid "Mironcoder"
+msgstr "Miron kodlayıcı"
+
+#: accounts/templates/registration/logged_out.html:17
+msgid "Logged Out!"
+msgstr "Oturum Kapatıldı!"
+
+#: accounts/templates/registration/logged_out.html:18
+msgid "Don't Be Late We Are Waiting For You"
+msgstr "Geç Kalmayın Sizi Bekliyoruz"
+
+#: accounts/templates/registration/logged_out.html:22
+msgid "Click Here To Login Again."
+msgstr "Tekrar Giriş Yapmak İçin Tıklayınız."
+
+#: accounts/templates/registration/logged_out.html:22
+#: accounts/templates/registration/password_change_form.html:34
+#: accounts/templates/registration/password_reset_done.html:23
+#: accounts/templates/registration/password_reset_form.html:36
+msgid "login here"
+msgstr "giriş"
+
+#: accounts/templates/registration/login.html:15
+msgid "welcome!"
+msgstr "hoş geldiniz!"
+
+#: accounts/templates/registration/login.html:16
+msgid "Use your credentials to access"
+msgstr "Erişim için kimlik bilgilerinizi kullanın"
+
+#: accounts/templates/registration/login.html:26
+msgid "or"
+msgstr "veya"
+
+#: accounts/templates/registration/login.html:29
+msgid "Your username and password didn't match. Please try again."
+msgstr "Kullanıcı adınız ve şifreniz eşleşmedi. "
+
+#: accounts/templates/registration/login.html:37
+msgid "Please login to see this page."
+msgstr "Bu sayfayı görebilmek için lütfen giriş yapınız."
+
+#: accounts/templates/registration/login.html:46 templates/base.html:147
+msgid "login"
+msgstr "giriş"
+
+#: accounts/templates/registration/login.html:48
+msgid "reset here"
+msgstr "burayı sıfırla"
+
+#: accounts/templates/registration/login.html:54
+msgid "Don't have any account?"
+msgstr "Hesabınız yok mu?"
+
+#: accounts/templates/registration/login.html:54
+msgid "register here"
+msgstr "buraya kaydolun"
+
+#: accounts/templates/registration/password_change_form.html:17
+#: accounts/templates/registration/password_reset_confirm.html:18
+#: accounts/templates/registration/password_reset_form.html:18
+msgid "any issue?"
+msgstr "bir sorun var mı?"
+
+#: accounts/templates/registration/password_change_form.html:18
+msgid "Make sure your current password is strong"
+msgstr "Mevcut şifrenizin güçlü olduğundan emin olun"
+
+#: accounts/templates/registration/password_change_form.html:29
+msgid "Change password"
+msgstr "Şifreyi değiştir"
+
+#: accounts/templates/registration/password_change_form.html:34
+#: accounts/templates/registration/password_reset_complete.html:22
+#: accounts/templates/registration/password_reset_confirm.html:42
+#: accounts/templates/registration/password_reset_done.html:23
+#: accounts/templates/registration/password_reset_form.html:36
+msgid "Go Back To"
+msgstr "Geri Dön"
+
+#: accounts/templates/registration/password_reset_complete.html:17
+msgid "The password has been changed!"
+msgstr "Şifre değiştirildi!"
+
+#: accounts/templates/registration/password_reset_complete.html:18
+msgid "Great Job"
+msgstr "Harika İş"
+
+#: accounts/templates/registration/password_reset_complete.html:22
+msgid "log in again?"
+msgstr "tekrar giriş yapılsın mı?"
+
+#: accounts/templates/registration/password_reset_confirm.html:19
+msgid "Please enter (and confirm) your new password."
+msgstr "Lütfen yeni şifrenizi girin (ve onaylayın)."
+
+#: accounts/templates/registration/password_reset_confirm.html:31
+#: accounts/templates/registration/password_reset_form.html:31
+msgid "Reset password"
+msgstr "Şifreyi sıfırla"
+
+#: accounts/templates/registration/password_reset_confirm.html:37
+msgid "Password reset failed"
+msgstr "Parola sıfırlama işlemi başarısız oldu"
+
+#: accounts/templates/registration/password_reset_confirm.html:38
+msgid ""
+"The password reset link was invalid, possibly because it has already been "
+"used. Please request a new password reset."
+msgstr "Şifre sıfırlama bağlantısı geçersizdi, muhtemelen zaten kullanılmış olduğundan. "
+
+#: accounts/templates/registration/password_reset_confirm.html:42
+msgid "Change my password"
+msgstr "Şifremi değiştir"
+
+#: accounts/templates/registration/password_reset_done.html:18
+msgid "Successful"
+msgstr "Başarılı"
+
+#: accounts/templates/registration/password_reset_done.html:19
+msgid ""
+"We've emailed you instructions for setting your password. If they haven't "
+"arrived in a few minutes, check your spam folder."
+msgstr "Şifrenizi ayarlama talimatlarını size e-postayla gönderdik. "
+
+#: accounts/templates/registration/password_reset_form.html:19
+msgid "Write Your Email To Send You A Link For Password Reset"
+msgstr "Parola Sıfırlama Bağlantısını Göndermek İçin E-Postanızı Yazın"
 
 #: orders/models.py:19
 msgid "order owner"
@@ -66,10 +401,6 @@ msgstr "sipariş zamanı"
 msgid "deliery time"
 msgstr "teslimat zamanı"
 
-#: orders/models.py:24
-msgid "delivery address"
-msgstr "teslimat adresi"
-
 #: orders/models.py:25
 msgid "coupon"
 msgstr "kupon"
@@ -83,7 +414,7 @@ msgstr "toplam"
 msgid "total with coupon"
 msgstr "kuponlu toplam"
 
-#: orders/models.py:32
+#: orders/models.py:32 orders/templates/orders/order_list.html:45
 msgid "order"
 msgstr "sipariş"
 
@@ -93,7 +424,8 @@ msgid "product"
 msgstr "ürün"
 
 #: orders/models.py:35 orders/models.py:64 orders/models.py:79
-#: products/models.py:20
+#: orders/templates/orders/order_list.html:127
+#: orders/templates/orders/success.html:116 products/models.py:20
 msgid "quantity"
 msgstr "miktar"
 
@@ -129,9 +461,193 @@ msgstr "bitiş tarihi"
 msgid "discount amount"
 msgstr "indirim tutarı"
 
-#: products/models.py:16 products/models.py:71 settings/models.py:6
-msgid "name"
-msgstr "isim"
+#: orders/templates/orders/checkout.html:16
+msgid "checkout"
+msgstr "ödeme"
+
+#: orders/templates/orders/checkout.html:67
+msgid "Do you have a coupon code?"
+msgstr "Kupon kodunuz var mı?"
+
+#: orders/templates/orders/checkout.html:74
+msgid "The coupon you entered expired"
+msgstr "Girdiğiniz kuponun süresi doldu"
+
+#: orders/templates/orders/checkout.html:80
+msgid "Sub total"
+msgstr "toplam"
+
+#: orders/templates/orders/checkout.html:84
+#: orders/templates/orders/order_list.html:102
+msgid "delivery fee"
+msgstr "teslimat zamanı"
+
+#: orders/templates/orders/checkout.html:88
+#: orders/templates/orders/order_list.html:98
+#: orders/templates/orders/success.html:91
+msgid "discount"
+msgstr "indirim tutarı"
+
+#: orders/templates/orders/checkout.html:92
+#: orders/templates/orders/order_list.html:106
+#: orders/templates/orders/success.html:99
+msgid "Total"
+msgstr "toplam"
+
+#: orders/templates/orders/checkout.html:103
+msgid "Complete Payment"
+msgstr "Ödemeyi Tamamla"
+
+#: orders/templates/orders/checkout.html:106
+msgid "proceed to checkout"
+msgstr "Ödemeye Devam Et"
+
+#: orders/templates/orders/failure.html:16
+msgid "ERROR!!!"
+msgstr "HATA!!!"
+
+#: orders/templates/orders/failure.html:17
+msgid "ooopps! payment failed could you try again later"
+msgstr "ayyy! "
+
+#: orders/templates/orders/failure.html:18
+msgid ""
+"Please be sure that your payment cart is working and has the enough money in "
+"it."
+msgstr "Ödeme sepetinizin çalıştığından ve yeterli paranın bulunduğundan emin olunuz."
+
+#: orders/templates/orders/failure.html:19
+msgid "go to home"
+msgstr "eve git"
+
+#: orders/templates/orders/order_list.html:17 templates/base.html:774
+msgid "Order History"
+msgstr "Sipariş Geçmişi"
+
+#: orders/templates/orders/order_list.html:33
+msgid "total order"
+msgstr "toplam"
+
+#: orders/templates/orders/order_list.html:44
+msgid "Order"
+msgstr "sipariş"
+
+#: orders/templates/orders/order_list.html:74
+msgid "order id"
+msgstr "sipariş zamanı"
+
+#: orders/templates/orders/order_list.html:78
+#: orders/templates/orders/success.html:60
+msgid "Total Item"
+msgstr "toplam"
+
+#: orders/templates/orders/order_list.html:82
+#: orders/templates/orders/success.html:64
+msgid "Order Time"
+msgstr "sipariş zamanı"
+
+#: orders/templates/orders/order_list.html:86
+#: orders/templates/orders/success.html:68
+msgid "Delivery Time"
+msgstr "teslimat zamanı"
+
+#: orders/templates/orders/order_list.html:94
+#: orders/templates/orders/success.html:87
+msgid "Sub Total"
+msgstr "Alt Toplam"
+
+#: orders/templates/orders/order_list.html:113
+msgid "Delivery location"
+msgstr "teslimat zamanı"
+
+#: orders/templates/orders/order_list.html:122
+#: orders/templates/orders/success.html:111
+msgid "Serial"
+msgstr "Seri"
+
+#: orders/templates/orders/order_list.html:123
+#: orders/templates/orders/success.html:112
+msgid "Product"
+msgstr "ürün"
+
+#: orders/templates/orders/order_list.html:124
+#: orders/templates/orders/success.html:113
+msgid "Name"
+msgstr "İsim"
+
+#: orders/templates/orders/order_list.html:125
+#: orders/templates/orders/success.html:114
+msgid "Price"
+msgstr "fiyat"
+
+#: orders/templates/orders/order_list.html:126
+#: orders/templates/orders/success.html:115 products/models.py:25
+msgid "brand"
+msgstr "marka"
+
+#: orders/templates/orders/success.html:16
+msgid "Order invoice"
+msgstr "Sipariş Geçmişi"
+
+#: orders/templates/orders/success.html:17
+msgid "Payment Success"
+msgstr "Ödeme Başarılı"
+
+#: orders/templates/orders/success.html:18
+msgid "Your code is"
+msgstr "Kodunuz"
+
+#: orders/templates/orders/success.html:34
+msgid "Thank you! We have recieved your order."
+msgstr "Teşekkür ederim! "
+
+#: orders/templates/orders/success.html:40
+msgid "order recieved"
+msgstr "sipariş zamanı"
+
+#: orders/templates/orders/success.html:44
+msgid "order number"
+msgstr "sipariş sahibi"
+
+#: orders/templates/orders/success.html:45
+msgid "order date"
+msgstr "sipariş zamanı"
+
+#: orders/templates/orders/success.html:46
+msgid "total amount"
+msgstr "indirim tutarı"
+
+#: orders/templates/orders/success.html:47
+msgid "payment method"
+msgstr "ödeme yöntemi"
+
+#: orders/templates/orders/success.html:47
+msgid "Online Payment"
+msgstr "Online Ödeme"
+
+#: orders/templates/orders/success.html:55
+msgid "Order Details"
+msgstr "sepet ayrıntıları"
+
+#: orders/templates/orders/success.html:61
+msgid "Items"
+msgstr "Öğeler"
+
+#: orders/templates/orders/success.html:72
+msgid "Delivery Location"
+msgstr "Konum"
+
+#: orders/templates/orders/success.html:82
+msgid "Amount Details"
+msgstr "sepet ayrıntıları"
+
+#: orders/templates/orders/success.html:95
+msgid "Delivery Fee"
+msgstr "teslimat zamanı"
+
+#: orders/templates/orders/success.html:138
+msgid "Back to Home"
+msgstr "Eve Dönüş"
 
 #: products/models.py:17
 msgid "flag"
@@ -149,10 +665,6 @@ msgstr "altyazı"
 msgid "description"
 msgstr "açıklama"
 
-#: products/models.py:25
-msgid "brand"
-msgstr "marka"
-
 #: products/models.py:46
 msgid "products"
 msgstr "ürünler"
@@ -169,15 +681,76 @@ msgstr "oran"
 msgid "review date"
 msgstr "inceleme tarihi"
 
+#: products/templates/includes/reviews.html:3
+msgid "Reviews"
+msgstr "inceleme"
+
+#: products/templates/products/brand_detail.html:16
+msgid "Brand Details"
+msgstr "sepet ayrıntıları"
+
+#: products/templates/products/brand_detail.html:30
+#: products/templates/products/brand_list.html:43
+msgid "items"
+msgstr "öğeler"
+
+#: products/templates/products/brand_list.html:16
+msgid "brands list"
+msgstr "markalar"
+
+#: products/templates/products/product_detail.html:21
+msgid "product details"
+msgstr "sepet ayrıntıları"
+
+#: products/templates/products/product_detail.html:60
+msgid "SKU"
+msgstr ""
+
+#: products/templates/products/product_detail.html:61
+msgid "BRAND"
+msgstr "MARKA"
+
+#: products/templates/products/product_detail.html:106
+msgid "add to cart"
+msgstr "sepete ekle"
+
+#: products/templates/products/product_detail.html:139
+msgid "Description"
+msgstr "açıklama"
+
+#: products/templates/products/product_detail.html:148
+msgid "add your review"
+msgstr "yorumunuzu ekleyin"
+
+#: products/templates/products/product_detail.html:163
+msgid "write your review about this product"
+msgstr "Bu ürün hakkında yorumunuzu yazın"
+
+#: products/templates/products/product_detail.html:169
+msgid "drop your review"
+msgstr "yorumunuzu bırakın"
+
+#: products/templates/products/product_detail.html:192
+msgid "related this items"
+msgstr "Öne çıkan ürünlerimiz"
+
+#: products/templates/products/product_detail.html:246
+msgid "view all related"
+msgstr "tüm markaları görüntüle"
+
+#: products/templates/products/product_list.html:10
+msgid "Products List"
+msgstr "ürünler"
+
 #: settings/models.py:7
 msgid "logo"
 msgstr ""
 
-#: settings/models.py:9
+#: settings/models.py:9 templates/base.html:200
 msgid "call us"
 msgstr "bizi arayın"
 
-#: settings/models.py:10
+#: settings/models.py:10 templates/base.html:207
 msgid "email us"
 msgstr "Bize e-posta gönderin"
 
@@ -216,4 +789,170 @@ msgstr ""
 #: settings/models.py:26
 msgid "fee"
 msgstr "ücret"
+
+#: settings/templates/settings/home.html:42
+msgid "recently sold items"
+msgstr "son zamanlarda satılan ürünler"
+
+#: settings/templates/settings/home.html:90
+#: settings/templates/settings/home.html:157
+#: settings/templates/settings/home.html:227
+msgid "show more"
+msgstr "daha fazlasını göster"
+
+#: settings/templates/settings/home.html:110
+msgid "our featured items"
+msgstr "Öne çıkan ürünlerimiz"
+
+#: settings/templates/settings/home.html:177
+msgid "collected new items"
+msgstr "toplanan yeni öğeler"
+
+#: settings/templates/settings/home.html:248
+msgid "shop by brands"
+msgstr "markalara göre alışveriş yap"
+
+#: settings/templates/settings/home.html:273
+msgid "view all brands"
+msgstr "tüm markaları görüntüle"
+
+#: settings/templates/settings/home.html:293
+msgid "client's feedback"
+msgstr "müşterinin geri bildirimi"
+
+#: templates/base.html:86
+msgid "Welcome to Ecomart in Your Dream Online Store!"
+msgstr "Hayalinizdeki Online Mağazada Ecomart'a Hoş Geldiniz!"
+
+#: templates/base.html:113
+msgid "need help"
+msgstr "yardıma ihtiyacım var"
+
+#: templates/base.html:114 templates/base.html:747
+msgid "contact us"
+msgstr "Bize ulaşın"
+
+#: templates/base.html:150
+msgid "join"
+msgstr "katıl"
+
+#: templates/base.html:155
+msgid "Search anything..."
+msgstr "Herhangi bir şeyi arayın..."
+
+#: templates/base.html:163
+msgid "total price"
+msgstr "toplam"
+
+#: templates/base.html:184
+msgid "home"
+msgstr "ev"
+
+#: templates/base.html:187
+msgid "shop"
+msgstr "dükkan"
+
+#: templates/base.html:190
+msgid "brands"
+msgstr "markalar"
+
+#: templates/base.html:193
+msgid "orders"
+msgstr "siparişler"
+
+#: templates/base.html:678
+msgid "free home delivery"
+msgstr "ücretsiz eve teslimat"
+
+#: templates/base.html:679 templates/base.html:690 templates/base.html:701
+#: templates/base.html:712
+msgid "Lorem ipsum dolor sit amet adipisicing elit nobis."
+msgstr "Lorem ipsum dolor sit amet amet adipisicing elit nobis."
+
+#: templates/base.html:689
+msgid "instant return policy"
+msgstr "anında iade politikası"
+
+#: templates/base.html:700
+msgid "quick support system"
+msgstr "hızlı destek sistemi"
+
+#: templates/base.html:711
+msgid "secure payment way"
+msgstr "güvenli ödeme yolu"
+
+#: templates/base.html:770
+msgid "quick Links"
+msgstr "hızlı Bağlantılar"
+
+#: templates/base.html:773
+msgid "My Account"
+msgstr "Hesabım"
+
+#: templates/base.html:775
+msgid "Order Tracking"
+msgstr "Sipariş Takibi"
+
+#: templates/base.html:776
+msgid "Best Seller"
+msgstr "Çok Satanlar"
+
+#: templates/base.html:777
+msgid "New Arrivals"
+msgstr "Yeni Gelenler"
+
+#: templates/base.html:780
+msgid "Location"
+msgstr "Konum"
+
+#: templates/base.html:781
+msgid "Affiliates"
+msgstr "Bağlı Kuruluşlar"
+
+#: templates/base.html:782
+msgid "Contact"
+msgstr "İletişim"
+
+#: templates/base.html:783
+msgid "Carrer"
+msgstr "Taşıyıcı"
+
+#: templates/base.html:784
+msgid "Faq"
+msgstr "SSS"
+
+#: templates/base.html:791
+msgid "Download App"
+msgstr "Uygulamayı İndir"
+
+#: templates/base.html:792
+msgid ""
+"Lorem ipsum dolor sit amet tenetur dignissimos ipsum eligendi autem "
+"obcaecati minus ducimus totam reprehenderit exercitationem!"
+msgstr "Lorem ipsum dolor sit amet tenetur dignissimos ipsum eligendi autem obcaecati eksi ducimus totam reprehenderit exercitationem!"
+"Lorem ipsum dolor sit amet tenetur dignissimos ipsum eligendi autem "
+"obcaecati eksi ducimus totam reprehenderit exercitationem!Lorem ipsum dolor "
+"sit amet tenetur dignissimos ipsum eligendi autem obcaecati eksi ducimus "
+"totam reprehenderit exercitationem!Lorem ipsum dolor sit amet tenetur "
+"dignissimos ipsum eligendi autem obcaecati eksi ducimus totam reprehenderit "
+"exercitationem!Lorem ipsum dolor sit amet tenetur dignissimos ipsum eligendi "
+"autem obcaecati eksi ducimus totam reprehenderit exercitationem!Lorem ipsum "
+"dolor sit amet tenetur dignissimos ipsum eligendi autem obcaecati eksi "
+"ducimus totam reprehenderit exercitationem!"
+
+#: templates/base.html:799
+msgid "All Copyrights Reserved by"
+msgstr "Tüm Telif Hakları Saklıdır"
+
+#: templates/cart_includes.html:5
+msgid "total item"
+msgstr "toplam"
+
+#: templates/cart_includes.html:20
+msgid "Unit Price"
+msgstr "Birim Fiyat"
+
+#: templates/cart_includes.html:35
+msgid "Proceed to Checkout"
+msgstr "Ödemeye Devam Et"
 

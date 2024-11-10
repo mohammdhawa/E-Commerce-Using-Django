@@ -1,7 +1,14 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load i18n %}
+{% get_current_language as LANGUAGE_CODE %}
+
 {% block css %}
-<link rel="stylesheet" href="{% static 'en/css/product-details.css' %}">
+    {% if LANGUAGE_CODE == 'ar' %}
+    <link rel="stylesheet" href="{% static 'ar/css/product-details.css' %}">
+    {% else %}
+    <link rel="stylesheet" href="{% static 'en/css/product-details.css' %}">
+    {% endif %}
 {% endblock css %}
 
 {% block body %}
@@ -16,12 +23,7 @@
         =======================================-->
         <section class="single-banner inner-section" style="background: url(images/single-banner.jpg) no-repeat center;">
             <div class="container">
-                <h2>product simple</h2>
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                    <li class="breadcrumb-item"><a href="shop-4column.html">shop-4column</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">product-simple</li>
-                </ol>
+                <h2>{% translate 'product details' %}</h2>
             </div>
         </section>
         <!--=====================================
@@ -60,8 +62,8 @@
                         <div class="details-content">
                             <h3 class="details-name"><a href="#">{{ object }}</a></h3>
                             <div class="details-meta">
-                                <p>SKU:<span>{{ object.sku }}</span></p>
-                                <p>BRAND:<a href="#">{{ object.brand }}</a></p>
+                                <p>{% translate 'SKU' %}:<span>{{ object.sku }}</span></p>
+                                <p>{% translate 'BRAND' %}:<a href="#">{{ object.brand }}</a></p>
                             </div>
                             <div class="details-rating">
                                 <i class="icofont-star {% if object.avg_rate > 0 %}active{% endif %}"></i>
@@ -106,7 +108,7 @@
                                             <div class="col-lg-6">
                                                 <button class="product-add" title="Add to Cart" type="submit">
                                                     <i class="fas fa-shopping-basket"></i>
-                                                    <span>add to cart</span>
+                                                    <span>{% translate 'add to cart' %}</span>
                                                 </button>
                                             </div>
                                         </div>
@@ -139,7 +141,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="product-details-frame">
-                            <h3 class="frame-title">Description</h3>
+                            <h3 class="frame-title">{% translate 'Description' %}</h3>
                             <div class="tab-descrip">
                                 <p>{{ object.description }}</p>
                             </div>
@@ -148,7 +150,7 @@
                             {% include 'includes/reviews.html' %}
                         </div>
                         <div class="product-details-frame">
-                            <h3 class="frame-title">add your review</h3>
+                            <h3 class="frame-title">{% translate 'add your review' %}</h3>
                             <form id="review-form" class="review-form" method="post" action="{% url 'add-review' object.slug %}">
                                 {% csrf_token %}
                                 <div class="row">
@@ -163,13 +165,13 @@
                                     </div>
                                     <div class="col-lg-12">
                                         <div class="form-group">
-                                            <textarea class="form-control" placeholder="Describe" name="review"></textarea>
+                                            <textarea class="form-control" placeholder="{% translate 'write your review about this product' %}" name="review"></textarea>
                                         </div>
                                     </div>
                                     <div class="col-lg-12">
                                         <button class="btn btn-inline" type="submit">
                                             <i class="icofont-water-drop"></i>
-                                            <span>drop your review</span>
+                                            <span>{% translate 'drop your review' %}</span>
                                         </button>
                                     </div>
                                 </div>
@@ -192,7 +194,7 @@
                 <div class="row">
                     <div class="col">
                         <div class="section-heading">
-                            <h2>related this items</h2>
+                            <h2>{% translate 'related this items' %}</h2>
                         </div>
                     </div>
                 </div>
@@ -246,7 +248,7 @@
                         <div class="section-btn-25">
                             <a href="shop-4column.html" class="btn btn-outline">
                                 <i class="fas fa-eye"></i>
-                                <span>view all related</span>
+                                <span>{% translate 'view all related' %}</span>
                             </a>
                         </div>
                     </div>

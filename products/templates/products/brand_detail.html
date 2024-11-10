@@ -1,8 +1,14 @@
 {% extends 'base.html' %}
 {% load static %}
+{% load i18n %}
+{% get_current_language as LANGUAGE_CODE %}
 
 {% block css %}
-<link rel="stylesheet" href="{% static 'en/css/brand-single.css' %}">
+    {% if LANGUAGE_CODE == 'ar' %}
+    <link rel="stylesheet" href="{% static 'en/css/brand-single.css' %}">
+    {% else %}
+    <link rel="stylesheet" href="{% static 'ar/css/brand-single.css' %}">
+    {% endif %}
 {% endblock css %}
 
 {% block body %}
@@ -12,12 +18,7 @@
         =======================================-->
         <section class="single-banner" style="background: url(images/single-banner.jpg) no-repeat center;">
             <div class="container">
-                <h2>Brand Single</h2>
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-                    <li class="breadcrumb-item"><a href="brand-list.html">brand-list</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">brand-single</li>
-                </ol>
+                <h2>{% translate 'Brand Details' %}</h2>
             </div>
         </section>
         <!--=====================================
@@ -31,7 +32,7 @@
         <div class="brand-single">
             <a href="#"><img src="{{ brand.image.url }}" alt="brand"></a>
             <a href="#"><h3>{{ brand }}</h3></a>
-            <p>({{ brand.product_count }} items)</p>
+            <p>({{ brand.product_count }} {% translate 'items' %})</p>
         </div>
         <!--=====================================
                   BRAND SINGLE PART END
@@ -98,7 +99,6 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="bottom-paginate">
-                            <p class="page-info">Showing 12 of 60 Results</p>
                             <ul class="pagination">
 
                                 {% if page_obj.has_previous %}
