@@ -120,6 +120,6 @@ def seed_review():
 # seed_users(10)
 # seed_brand(50)
 # seed_product(50)
-seed_product_images()
-seed_review()
+# seed_product_images()
+# seed_review()
 # set_product()
