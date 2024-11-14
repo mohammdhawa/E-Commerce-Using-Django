@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-11-10 16:05+0300\n"
+"POT-Creation-Date: 2024-11-13 21:33+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,39 +19,83 @@ msgstr ""
 "Plural-Forms: nplurals=6; plural=n==0 ? 0 : n==1 ? 1 : n==2 ? 2 : n%100>=3 "
 "&& n%100<=10 ? 3 : n%100>=11 && n%100<=99 ? 4 : 5;\n"
 
-#: accounts/models.py:11
+#: accounts/models.py:11 accounts/models.py:19
 msgid "profile"
 msgstr "الملف الشخصي"
 
 #: accounts/models.py:12 products/models.py:19 products/models.py:64
-#: products/models.py:72
+#: products/models.py:76
 msgid "image"
 msgstr "صورة"
 
-#: accounts/models.py:13 orders/models.py:21 orders/models.py:76
+#: accounts/models.py:13 orders/models.py:21 orders/models.py:92
 msgid "code"
 msgstr "كود"
 
-#: accounts/models.py:33 accounts/models.py:48 products/models.py:97
+#: accounts/models.py:20
+msgid "profiles"
+msgstr "الملف الشخصي"
+
+#: accounts/models.py:30 accounts/templates/accounts/profile.html:178
+#: accounts/templates/accounts/profile.html:271
+msgid "Home"
+msgstr "المنزل"
+
+#: accounts/models.py:31 accounts/templates/accounts/profile.html:179
+#: accounts/templates/accounts/profile.html:272
+msgid "Office"
+msgstr "مكتب"
+
+#: accounts/models.py:32 accounts/templates/accounts/profile.html:180
+#: accounts/templates/accounts/profile.html:273
+msgid "Work"
+msgstr "العمل"
+
+#: accounts/models.py:33 accounts/templates/accounts/profile.html:181
+#: accounts/templates/accounts/profile.html:274
+msgid "Other"
+msgstr "أخرى"
+
+#: accounts/models.py:37 accounts/models.py:56 products/models.py:105
 msgid "user"
 msgstr "المستخدم"
 
-#: accounts/models.py:34 accounts/models.py:49
+#: accounts/models.py:38 accounts/models.py:57
 msgid "type"
 msgstr "النوع"
 
-#: accounts/models.py:35 accounts/templates/accounts/profile.html:181
-#: settings/models.py:13
+#: accounts/models.py:39 accounts/models.py:46
+#: accounts/templates/accounts/profile.html:185 settings/models.py:13
 msgid "address"
 msgstr "العنوان"
 
-#: accounts/models.py:36
+#: accounts/models.py:40
 msgid "default"
 msgstr "افتراضي"
 
-#: accounts/models.py:50 accounts/templates/accounts/profile.html:247
+#: accounts/models.py:47
+msgid "addresses"
+msgstr "العنوان"
+
+#: accounts/models.py:51
+msgid "Primary"
+msgstr "الابتدائي"
+
+#: accounts/models.py:52
+msgid "Secondary"
+msgstr "ثانوي"
+
+#: accounts/models.py:58 accounts/templates/accounts/profile.html:251
 msgid "number"
 msgstr "رقم"
+
+#: accounts/models.py:61 settings/models.py:11
+msgid "phone"
+msgstr "الهاتف"
+
+#: accounts/models.py:62
+msgid "phones"
+msgstr "الهاتف"
 
 #: accounts/templates/accounts/activate.html:6
 msgid "Title"
@@ -65,124 +109,104 @@ msgstr "تفعيل حسابك"
 msgid "activate"
 msgstr "تفعيل"
 
-#: accounts/templates/accounts/profile.html:21
+#: accounts/templates/accounts/profile.html:25
 msgid "my profile"
 msgstr "الملف الشخصي"
 
-#: accounts/templates/accounts/profile.html:38
+#: accounts/templates/accounts/profile.html:42
 msgid "Your Profile"
 msgstr "الملف الشخصي"
 
-#: accounts/templates/accounts/profile.html:39
+#: accounts/templates/accounts/profile.html:43
 msgid "edit profile"
 msgstr "الملف الشخصي"
 
-#: accounts/templates/accounts/profile.html:50 products/models.py:16
-#: products/models.py:71 settings/models.py:6
+#: accounts/templates/accounts/profile.html:54 products/models.py:16
+#: products/models.py:75 settings/models.py:6
 msgid "name"
 msgstr "الاسم"
 
-#: accounts/templates/accounts/profile.html:56
+#: accounts/templates/accounts/profile.html:60
 msgid "Email"
 msgstr "البريد الإلكتروني"
 
-#: accounts/templates/accounts/profile.html:62
+#: accounts/templates/accounts/profile.html:66
 msgid "change pass."
 msgstr "تمرير التغيير."
 
-#: accounts/templates/accounts/profile.html:72
+#: accounts/templates/accounts/profile.html:76
 msgid "contact number"
 msgstr "اتصل بنا"
 
-#: accounts/templates/accounts/profile.html:74
+#: accounts/templates/accounts/profile.html:78
 msgid "add contact"
 msgstr "اتصل بنا"
 
-#: accounts/templates/accounts/profile.html:97 orders/models.py:24
+#: accounts/templates/accounts/profile.html:101 orders/models.py:24
 msgid "delivery address"
 msgstr "عنوان التسليم"
 
-#: accounts/templates/accounts/profile.html:99
+#: accounts/templates/accounts/profile.html:103
 msgid "add address"
 msgstr "العنوان"
 
-#: accounts/templates/accounts/profile.html:141
+#: accounts/templates/accounts/profile.html:145
 msgid "add new contact"
 msgstr "إضافة جهة اتصال جديدة"
 
-#: accounts/templates/accounts/profile.html:145
-#: accounts/templates/accounts/profile.html:172
-#: accounts/templates/accounts/profile.html:265
+#: accounts/templates/accounts/profile.html:149
+#: accounts/templates/accounts/profile.html:176
+#: accounts/templates/accounts/profile.html:269
 msgid "title"
 msgstr "العنوان الفرعي"
 
-#: accounts/templates/accounts/profile.html:147
-#: accounts/templates/accounts/profile.html:242
+#: accounts/templates/accounts/profile.html:151
+#: accounts/templates/accounts/profile.html:246
 msgid "primary"
 msgstr "الابتدائي"
 
-#: accounts/templates/accounts/profile.html:148
-#: accounts/templates/accounts/profile.html:243
+#: accounts/templates/accounts/profile.html:152
+#: accounts/templates/accounts/profile.html:247
 msgid "secondary"
 msgstr "ثانوي"
 
-#: accounts/templates/accounts/profile.html:155
-#: accounts/templates/accounts/profile.html:250
+#: accounts/templates/accounts/profile.html:159
+#: accounts/templates/accounts/profile.html:254
 msgid "save contact info"
 msgstr "حفظ معلومات الاتصال"
 
-#: accounts/templates/accounts/profile.html:169
+#: accounts/templates/accounts/profile.html:173
 msgid "add new address"
-msgstr "عنوان التسليم"
-
-#: accounts/templates/accounts/profile.html:174
-#: accounts/templates/accounts/profile.html:267
-msgid "Home"
-msgstr "المنزل"
-
-#: accounts/templates/accounts/profile.html:175
-#: accounts/templates/accounts/profile.html:268
-msgid "Office"
-msgstr "مكتب"
-
-#: accounts/templates/accounts/profile.html:176
-#: accounts/templates/accounts/profile.html:269
-msgid "Work"
-msgstr "العمل"
-
-#: accounts/templates/accounts/profile.html:177
-#: accounts/templates/accounts/profile.html:270
-msgid "Other"
-msgstr "أخرى"
-
-#: accounts/templates/accounts/profile.html:182
-#: accounts/templates/accounts/profile.html:275
-msgid "Enter your address"
 msgstr "عنوان التسليم"
 
 #: accounts/templates/accounts/profile.html:186
 #: accounts/templates/accounts/profile.html:279
+msgid "Enter your address"
+msgstr "عنوان التسليم"
+
+#: accounts/templates/accounts/profile.html:190
+#: accounts/templates/accounts/profile.html:283
 msgid "Make It Default Address"
 msgstr "اجعله العنوان الافتراضي"
 
-#: accounts/templates/accounts/profile.html:188
-#: accounts/templates/accounts/profile.html:281
+#: accounts/templates/accounts/profile.html:192
+#: accounts/templates/accounts/profile.html:285
 msgid "save address info"
 msgstr "عنوان التسليم"
 
-#: accounts/templates/accounts/profile.html:210
+#: accounts/templates/accounts/profile.html:214
 msgid "edit profile info"
 msgstr "تعديل معلومات الملف الشخصي"
 
-#: accounts/templates/accounts/profile.html:213
+#: accounts/templates/accounts/profile.html:217
 msgid "profile image"
 msgstr "الملف الشخصي"
 
-#: accounts/templates/accounts/profile.html:224
+#: accounts/templates/accounts/profile.html:228
 msgid "save profile info"
 msgstr "حفظ معلومات الملف الشخصي"
 
-#: accounts/templates/accounts/profile.html:237
+#: accounts/templates/accounts/profile.html:241
 msgid "edit contact info"
 msgstr "تعديل معلومات الاتصال"
 
@@ -288,6 +312,7 @@ msgid "Use your credentials to access"
 msgstr "استخدم بيانات الاعتماد الخاصة بك للوصول"
 
 #: accounts/templates/registration/login.html:26
+#: myenv/lib/python3.12/site-packages/django/utils/text.py:254
 msgid "or"
 msgstr "أو"
 
@@ -380,17 +405,1631 @@ msgstr "ناجح"
 msgid ""
 "We've emailed you instructions for setting your password. If they haven't "
 "arrived in a few minutes, check your spam folder."
-msgstr "لقد أرسلنا إليك تعليمات عبر البريد الإلكتروني لإعداد كلمة المرور الخاصة بك. "
+msgstr ""
+"لقد أرسلنا إليك تعليمات عبر البريد الإلكتروني لإعداد كلمة المرور الخاصة بك. "
 
 #: accounts/templates/registration/password_reset_form.html:19
 msgid "Write Your Email To Send You A Link For Password Reset"
 msgstr "اكتب بريدك الإلكتروني لإرسال رابط لإعادة تعيين كلمة المرور"
 
+#: myenv/lib/python3.12/site-packages/bootstrap5/components.py:17
+#: myenv/lib/python3.12/site-packages/bootstrap5/templates/bootstrap5/form_errors.html:3
+#: myenv/lib/python3.12/site-packages/bootstrap5/templates/bootstrap5/messages.html:4
+msgid "close"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/click/_termui_impl.py:518
+#, python-brace-format
+msgid "{editor}: Editing failed"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/click/_termui_impl.py:522
+#, python-brace-format
+msgid "{editor}: Editing failed: {e}"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/click/core.py:1120
+msgid "Aborted!"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/click/core.py:1309
+#: myenv/lib/python3.12/site-packages/click/decorators.py:559
+msgid "Show this message and exit."
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/click/core.py:1340
+#: myenv/lib/python3.12/site-packages/click/core.py:1370
+#, python-brace-format
+msgid "(Deprecated) {text}"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/click/core.py:1387
+msgid "Options"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/click/core.py:1413
+#, python-brace-format
+msgid "Got unexpected extra argument ({args})"
+msgid_plural "Got unexpected extra arguments ({args})"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+msgstr[4] ""
+msgstr[5] ""
+
+#: myenv/lib/python3.12/site-packages/click/core.py:1429
+msgid "DeprecationWarning: The command {name!r} is deprecated."
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/click/core.py:1636
+msgid "Commands"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/click/core.py:1668
+msgid "Missing command."
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/click/core.py:1746
+msgid "No such command {name!r}."
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/click/core.py:2310
+msgid "Value must be an iterable."
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/click/core.py:2331
+#, python-brace-format
+msgid "Takes {nargs} values but 1 was given."
+msgid_plural "Takes {nargs} values but {len} were given."
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+msgstr[4] ""
+msgstr[5] ""
+
+#: myenv/lib/python3.12/site-packages/click/core.py:2778
+#, python-brace-format
+msgid "env var: {var}"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/click/core.py:2808
+msgid "(dynamic)"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/click/core.py:2821
+#, python-brace-format
+msgid "default: {default}"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/click/core.py:2834
+msgid "required"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/click/decorators.py:465
+#, python-format
+msgid "%(prog)s, version %(version)s"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/click/decorators.py:528
+msgid "Show the version and exit."
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/click/exceptions.py:44
+#: myenv/lib/python3.12/site-packages/click/exceptions.py:80
+#, python-brace-format
+msgid "Error: {message}"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/click/exceptions.py:72
+#, python-brace-format
+msgid "Try '{command} {option}' for help."
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/click/exceptions.py:121
+#, python-brace-format
+msgid "Invalid value: {message}"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/click/exceptions.py:123
+#, python-brace-format
+msgid "Invalid value for {param_hint}: {message}"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/click/exceptions.py:179
+msgid "Missing argument"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/click/exceptions.py:181
+msgid "Missing option"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/click/exceptions.py:183
+msgid "Missing parameter"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/click/exceptions.py:185
+#, python-brace-format
+msgid "Missing {param_type}"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/click/exceptions.py:192
+#, python-brace-format
+msgid "Missing parameter: {param_name}"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/click/exceptions.py:212
+#, python-brace-format
+msgid "No such option: {name}"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/click/exceptions.py:224
+#, python-brace-format
+msgid "Did you mean {possibility}?"
+msgid_plural "(Possible options: {possibilities})"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+msgstr[4] ""
+msgstr[5] ""
+
+#: myenv/lib/python3.12/site-packages/click/exceptions.py:262
+msgid "unknown error"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/click/exceptions.py:269
+msgid "Could not open file {filename!r}: {message}"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/click/parser.py:231
+msgid "Argument {name!r} takes {nargs} values."
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/click/parser.py:413
+msgid "Option {name!r} does not take a value."
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/click/parser.py:474
+msgid "Option {name!r} requires an argument."
+msgid_plural "Option {name!r} requires {nargs} arguments."
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+msgstr[4] ""
+msgstr[5] ""
+
+#: myenv/lib/python3.12/site-packages/click/shell_completion.py:319
+msgid "Shell completion is not supported for Bash versions older than 4.4."
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/click/shell_completion.py:326
+msgid "Couldn't detect Bash version, shell completion is not supported."
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/click/termui.py:158
+msgid "Repeat for confirmation"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/click/termui.py:174
+msgid "Error: The value you entered was invalid."
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/click/termui.py:176
+#, python-brace-format
+msgid "Error: {e.message}"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/click/termui.py:187
+msgid "Error: The two entered values do not match."
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/click/termui.py:243
+msgid "Error: invalid input"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/click/termui.py:773
+msgid "Press any key to continue..."
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/click/types.py:266
+#, python-brace-format
+msgid ""
+"Choose from:\n"
+"\t{choices}"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/click/types.py:298
+msgid "{value!r} is not {choice}."
+msgid_plural "{value!r} is not one of {choices}."
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+msgstr[4] ""
+msgstr[5] ""
+
+#: myenv/lib/python3.12/site-packages/click/types.py:392
+msgid "{value!r} does not match the format {format}."
+msgid_plural "{value!r} does not match the formats {formats}."
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+msgstr[4] ""
+msgstr[5] ""
+
+#: myenv/lib/python3.12/site-packages/click/types.py:414
+msgid "{value!r} is not a valid {number_type}."
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/click/types.py:470
+#, python-brace-format
+msgid "{value} is not in the range {range}."
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/click/types.py:611
+msgid "{value!r} is not a valid boolean."
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/click/types.py:635
+msgid "{value!r} is not a valid UUID."
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/click/types.py:822
+msgid "file"
+msgstr "الملف الشخصي"
+
+#: myenv/lib/python3.12/site-packages/click/types.py:824
+msgid "directory"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/click/types.py:826
+msgid "path"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/click/types.py:877
+msgid "{name} {filename!r} does not exist."
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/click/types.py:886
+msgid "{name} {filename!r} is a file."
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/click/types.py:894
+#, python-brace-format
+msgid "{name} '{filename}' is a directory."
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/click/types.py:903
+msgid "{name} {filename!r} is not readable."
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/click/types.py:912
+msgid "{name} {filename!r} is not writable."
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/click/types.py:921
+msgid "{name} {filename!r} is not executable."
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/click/types.py:988
+#, python-brace-format
+msgid "{len_type} values are required, but {len_value} was given."
+msgid_plural "{len_type} values are required, but {len_value} were given."
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+msgstr[4] ""
+msgstr[5] ""
+
+#: myenv/lib/python3.12/site-packages/django/contrib/messages/apps.py:15
+msgid "Messages"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/contrib/sitemaps/apps.py:8
+msgid "Site Maps"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/contrib/staticfiles/apps.py:9
+msgid "Static Files"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/contrib/syndication/apps.py:7
+msgid "Syndication"
+msgstr "الموقع"
+
+#. Translators: String used to replace omitted page numbers in elided page
+#. range generated by paginators, e.g. [1, 2, '…', 5, 6, 7, '…', 9, 10].
+#: myenv/lib/python3.12/site-packages/django/core/paginator.py:30
+msgid "…"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/core/paginator.py:50
+msgid "That page number is not an integer"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/core/paginator.py:52
+msgid "That page number is less than 1"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/core/paginator.py:54
+msgid "That page contains no results"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/core/validators.py:22
+msgid "Enter a valid value."
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/core/validators.py:104
+#: myenv/lib/python3.12/site-packages/django/forms/fields.py:749
+msgid "Enter a valid URL."
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/core/validators.py:164
+msgid "Enter a valid integer."
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/core/validators.py:175
+msgid "Enter a valid email address."
+msgstr "عنوان التسليم"
+
+#. Translators: "letters" means latin letters: a-z and A-Z.
+#: myenv/lib/python3.12/site-packages/django/core/validators.py:256
+msgid ""
+"Enter a valid “slug” consisting of letters, numbers, underscores or hyphens."
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/core/validators.py:264
+msgid ""
+"Enter a valid “slug” consisting of Unicode letters, numbers, underscores, or "
+"hyphens."
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/core/validators.py:276
+#: myenv/lib/python3.12/site-packages/django/core/validators.py:284
+#: myenv/lib/python3.12/site-packages/django/core/validators.py:313
+msgid "Enter a valid IPv4 address."
+msgstr "عنوان التسليم"
+
+#: myenv/lib/python3.12/site-packages/django/core/validators.py:293
+#: myenv/lib/python3.12/site-packages/django/core/validators.py:314
+msgid "Enter a valid IPv6 address."
+msgstr "عنوان التسليم"
+
+#: myenv/lib/python3.12/site-packages/django/core/validators.py:305
+#: myenv/lib/python3.12/site-packages/django/core/validators.py:312
+msgid "Enter a valid IPv4 or IPv6 address."
+msgstr "عنوان التسليم"
+
+#: myenv/lib/python3.12/site-packages/django/core/validators.py:348
+msgid "Enter only digits separated by commas."
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/core/validators.py:354
+#, python-format
+msgid "Ensure this value is %(limit_value)s (it is %(show_value)s)."
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/core/validators.py:389
+#, python-format
+msgid "Ensure this value is less than or equal to %(limit_value)s."
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/core/validators.py:398
+#, python-format
+msgid "Ensure this value is greater than or equal to %(limit_value)s."
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/core/validators.py:407
+#, python-format
+msgid "Ensure this value is a multiple of step size %(limit_value)s."
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/core/validators.py:417
+#, python-format
+msgid ""
+"Ensure this value has at least %(limit_value)d character (it has "
+"%(show_value)d)."
+msgid_plural ""
+"Ensure this value has at least %(limit_value)d characters (it has "
+"%(show_value)d)."
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+msgstr[4] ""
+msgstr[5] ""
+
+#: myenv/lib/python3.12/site-packages/django/core/validators.py:435
+#, python-format
+msgid ""
+"Ensure this value has at most %(limit_value)d character (it has "
+"%(show_value)d)."
+msgid_plural ""
+"Ensure this value has at most %(limit_value)d characters (it has "
+"%(show_value)d)."
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+msgstr[4] ""
+msgstr[5] ""
+
+#: myenv/lib/python3.12/site-packages/django/core/validators.py:458
+#: myenv/lib/python3.12/site-packages/django/forms/fields.py:347
+#: myenv/lib/python3.12/site-packages/django/forms/fields.py:386
+msgid "Enter a number."
+msgstr "اتصل بنا"
+
+#: myenv/lib/python3.12/site-packages/django/core/validators.py:460
+#, python-format
+msgid "Ensure that there are no more than %(max)s digit in total."
+msgid_plural "Ensure that there are no more than %(max)s digits in total."
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+msgstr[4] ""
+msgstr[5] ""
+
+#: myenv/lib/python3.12/site-packages/django/core/validators.py:465
+#, python-format
+msgid "Ensure that there are no more than %(max)s decimal place."
+msgid_plural "Ensure that there are no more than %(max)s decimal places."
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+msgstr[4] ""
+msgstr[5] ""
+
+#: myenv/lib/python3.12/site-packages/django/core/validators.py:470
+#, python-format
+msgid ""
+"Ensure that there are no more than %(max)s digit before the decimal point."
+msgid_plural ""
+"Ensure that there are no more than %(max)s digits before the decimal point."
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+msgstr[4] ""
+msgstr[5] ""
+
+#: myenv/lib/python3.12/site-packages/django/core/validators.py:541
+#, python-format
+msgid ""
+"File extension “%(extension)s” is not allowed. Allowed extensions are: "
+"%(allowed_extensions)s."
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/core/validators.py:602
+msgid "Null characters are not allowed."
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/db/models/base.py:1423
+#: myenv/lib/python3.12/site-packages/django/forms/models.py:893
+msgid "and"
+msgstr "العلامة التجارية"
+
+#: myenv/lib/python3.12/site-packages/django/db/models/base.py:1425
+#, python-format
+msgid "%(model_name)s with this %(field_labels)s already exists."
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/db/models/constraints.py:17
+#, python-format
+msgid "Constraint “%(name)s” is violated."
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/db/models/fields/__init__.py:128
+#, python-format
+msgid "Value %(value)r is not a valid choice."
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/db/models/fields/__init__.py:129
+msgid "This field cannot be null."
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/db/models/fields/__init__.py:130
+msgid "This field cannot be blank."
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/db/models/fields/__init__.py:131
+#, python-format
+msgid "%(model_name)s with this %(field_label)s already exists."
+msgstr ""
+
+#. Translators: The 'lookup_type' is one of 'date', 'year' or
+#. 'month'. Eg: "Title must be unique for pub_date year"
+#: myenv/lib/python3.12/site-packages/django/db/models/fields/__init__.py:135
+#, python-format
+msgid ""
+"%(field_label)s must be unique for %(date_field_label)s %(lookup_type)s."
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/db/models/fields/__init__.py:173
+#, python-format
+msgid "Field of type: %(field_type)s"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1094
+#, python-format
+msgid "“%(value)s” value must be either True or False."
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1095
+#, python-format
+msgid "“%(value)s” value must be either True, False, or None."
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1097
+msgid "Boolean (Either True or False)"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1147
+#, python-format
+msgid "String (up to %(max_length)s)"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1149
+msgid "String (unlimited)"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1253
+msgid "Comma-separated integers"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1354
+#, python-format
+msgid ""
+"“%(value)s” value has an invalid date format. It must be in YYYY-MM-DD "
+"format."
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1358
+#: myenv/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1493
+#, python-format
+msgid ""
+"“%(value)s” value has the correct format (YYYY-MM-DD) but it is an invalid "
+"date."
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1362
+msgid "Date (without time)"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1489
+#, python-format
+msgid ""
+"“%(value)s” value has an invalid format. It must be in YYYY-MM-DD HH:MM[:ss[."
+"uuuuuu]][TZ] format."
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1497
+#, python-format
+msgid ""
+"“%(value)s” value has the correct format (YYYY-MM-DD HH:MM[:ss[.uuuuuu]]"
+"[TZ]) but it is an invalid date/time."
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1502
+msgid "Date (with time)"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1626
+#, python-format
+msgid "“%(value)s” value must be a decimal number."
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1628
+msgid "Decimal number"
+msgstr "اتصل بنا"
+
+#: myenv/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1791
+#, python-format
+msgid ""
+"“%(value)s” value has an invalid format. It must be in [DD] [[HH:]MM:]ss[."
+"uuuuuu] format."
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1795
+msgid "Duration"
+msgstr "الوصف"
+
+#: myenv/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1847
+msgid "Email address"
+msgstr "العنوان"
+
+#: myenv/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1872
+msgid "File path"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1950
+#, python-format
+msgid "“%(value)s” value must be a float."
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1952
+msgid "Floating point number"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1992
+#, python-format
+msgid "“%(value)s” value must be an integer."
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/db/models/fields/__init__.py:1994
+msgid "Integer"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/db/models/fields/__init__.py:2090
+msgid "Big (8 byte) integer"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/db/models/fields/__init__.py:2107
+msgid "Small integer"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/db/models/fields/__init__.py:2115
+msgid "IPv4 address"
+msgstr "العنوان"
+
+#: myenv/lib/python3.12/site-packages/django/db/models/fields/__init__.py:2146
+msgid "IP address"
+msgstr "العنوان"
+
+#: myenv/lib/python3.12/site-packages/django/db/models/fields/__init__.py:2239
+#: myenv/lib/python3.12/site-packages/django/db/models/fields/__init__.py:2240
+#, python-format
+msgid "“%(value)s” value must be either None, True or False."
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/db/models/fields/__init__.py:2242
+msgid "Boolean (Either True, False or None)"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/db/models/fields/__init__.py:2293
+msgid "Positive big integer"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/db/models/fields/__init__.py:2308
+msgid "Positive integer"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/db/models/fields/__init__.py:2323
+msgid "Positive small integer"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/db/models/fields/__init__.py:2339
+#, python-format
+msgid "Slug (up to %(max_length)s)"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/db/models/fields/__init__.py:2375
+msgid "Text"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/db/models/fields/__init__.py:2450
+#, python-format
+msgid ""
+"“%(value)s” value has an invalid format. It must be in HH:MM[:ss[.uuuuuu]] "
+"format."
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/db/models/fields/__init__.py:2454
+#, python-format
+msgid ""
+"“%(value)s” value has the correct format (HH:MM[:ss[.uuuuuu]]) but it is an "
+"invalid time."
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/db/models/fields/__init__.py:2458
+msgid "Time"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/db/models/fields/__init__.py:2566
+msgid "URL"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/db/models/fields/__init__.py:2590
+msgid "Raw binary data"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/db/models/fields/__init__.py:2655
+#, python-format
+msgid "“%(value)s” is not a valid UUID."
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/db/models/fields/__init__.py:2657
+msgid "Universally unique identifier"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/db/models/fields/files.py:232
+msgid "File"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/db/models/fields/files.py:393
+msgid "Image"
+msgstr "صورة"
+
+#: myenv/lib/python3.12/site-packages/django/db/models/fields/json.py:26
+msgid "A JSON object"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/db/models/fields/json.py:28
+msgid "Value must be valid JSON."
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/db/models/fields/related.py:919
+#, python-format
+msgid "%(model)s instance with %(field)s %(value)r does not exist."
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/db/models/fields/related.py:921
+msgid "Foreign Key (type determined by related field)"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/db/models/fields/related.py:1212
+msgid "One-to-one relationship"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/db/models/fields/related.py:1269
+#, python-format
+msgid "%(from)s-%(to)s relationship"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/db/models/fields/related.py:1271
+#, python-format
+msgid "%(from)s-%(to)s relationships"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/db/models/fields/related.py:1319
+msgid "Many-to-many relationship"
+msgstr ""
+
+#. Translators: If found as last label character, these punctuation
+#. characters will prevent the default label_suffix to be appended to the label
+#: myenv/lib/python3.12/site-packages/django/forms/boundfield.py:184
+msgid ":?.!"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/forms/fields.py:91
+msgid "This field is required."
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/forms/fields.py:298
+msgid "Enter a whole number."
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/forms/fields.py:467
+#: myenv/lib/python3.12/site-packages/django/forms/fields.py:1238
+msgid "Enter a valid date."
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/forms/fields.py:490
+#: myenv/lib/python3.12/site-packages/django/forms/fields.py:1239
+msgid "Enter a valid time."
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/forms/fields.py:517
+msgid "Enter a valid date/time."
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/forms/fields.py:551
+msgid "Enter a valid duration."
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/forms/fields.py:552
+#, python-brace-format
+msgid "The number of days must be between {min_days} and {max_days}."
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/forms/fields.py:618
+msgid "No file was submitted. Check the encoding type on the form."
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/forms/fields.py:619
+msgid "No file was submitted."
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/forms/fields.py:620
+msgid "The submitted file is empty."
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/forms/fields.py:622
+#, python-format
+msgid "Ensure this filename has at most %(max)d character (it has %(length)d)."
+msgid_plural ""
+"Ensure this filename has at most %(max)d characters (it has %(length)d)."
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+msgstr[4] ""
+msgstr[5] ""
+
+#: myenv/lib/python3.12/site-packages/django/forms/fields.py:627
+msgid "Please either submit a file or check the clear checkbox, not both."
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/forms/fields.py:691
+msgid ""
+"Upload a valid image. The file you uploaded was either not an image or a "
+"corrupted image."
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/forms/fields.py:854
+#: myenv/lib/python3.12/site-packages/django/forms/fields.py:946
+#: myenv/lib/python3.12/site-packages/django/forms/models.py:1566
+#, python-format
+msgid "Select a valid choice. %(value)s is not one of the available choices."
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/forms/fields.py:948
+#: myenv/lib/python3.12/site-packages/django/forms/fields.py:1067
+#: myenv/lib/python3.12/site-packages/django/forms/models.py:1564
+msgid "Enter a list of values."
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/forms/fields.py:1068
+msgid "Enter a complete value."
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/forms/fields.py:1307
+msgid "Enter a valid UUID."
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/forms/fields.py:1337
+msgid "Enter a valid JSON."
+msgstr ""
+
+#. Translators: This is the default suffix added to form field labels
+#: myenv/lib/python3.12/site-packages/django/forms/forms.py:98
+msgid ":"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/forms/forms.py:244
+#: myenv/lib/python3.12/site-packages/django/forms/forms.py:328
+#, python-format
+msgid "(Hidden field %(name)s) %(error)s"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/forms/formsets.py:63
+#, python-format
+msgid ""
+"ManagementForm data is missing or has been tampered with. Missing fields: "
+"%(field_names)s. You may need to file a bug report if the issue persists."
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/forms/formsets.py:67
+#, python-format
+msgid "Please submit at most %(num)d form."
+msgid_plural "Please submit at most %(num)d forms."
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+msgstr[4] ""
+msgstr[5] ""
+
+#: myenv/lib/python3.12/site-packages/django/forms/formsets.py:72
+#, python-format
+msgid "Please submit at least %(num)d form."
+msgid_plural "Please submit at least %(num)d forms."
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+msgstr[4] ""
+msgstr[5] ""
+
+#: myenv/lib/python3.12/site-packages/django/forms/formsets.py:484
+#: myenv/lib/python3.12/site-packages/django/forms/formsets.py:491
+#: orders/templates/orders/order_list.html:48
+msgid "Order"
+msgstr "النظام"
+
+#: myenv/lib/python3.12/site-packages/django/forms/formsets.py:499
+msgid "Delete"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/forms/models.py:886
+#, python-format
+msgid "Please correct the duplicate data for %(field)s."
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/forms/models.py:891
+#, python-format
+msgid "Please correct the duplicate data for %(field)s, which must be unique."
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/forms/models.py:898
+#, python-format
+msgid ""
+"Please correct the duplicate data for %(field_name)s which must be unique "
+"for the %(lookup)s in %(date_field)s."
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/forms/models.py:907
+msgid "Please correct the duplicate values below."
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/forms/models.py:1338
+msgid "The inline value did not match the parent instance."
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/forms/models.py:1429
+msgid "Select a valid choice. That choice is not one of the available choices."
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/forms/models.py:1568
+#, python-format
+msgid "“%(pk)s” is not a valid value."
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/forms/utils.py:226
+#, python-format
+msgid ""
+"%(datetime)s couldn’t be interpreted in time zone %(current_timezone)s; it "
+"may be ambiguous or it may not exist."
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/forms/widgets.py:439
+msgid "Clear"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/forms/widgets.py:440
+msgid "Currently"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/forms/widgets.py:441
+msgid "Change"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/forms/widgets.py:770
+msgid "Unknown"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/forms/widgets.py:771
+msgid "Yes"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/forms/widgets.py:772
+msgid "No"
+msgstr ""
+
+#. Translators: Please do not add spaces around commas.
+#: myenv/lib/python3.12/site-packages/django/template/defaultfilters.py:861
+msgid "yes,no,maybe"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/template/defaultfilters.py:891
+#: myenv/lib/python3.12/site-packages/django/template/defaultfilters.py:908
+#, python-format
+msgid "%(size)d byte"
+msgid_plural "%(size)d bytes"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+msgstr[4] ""
+msgstr[5] ""
+
+#: myenv/lib/python3.12/site-packages/django/template/defaultfilters.py:910
+#, python-format
+msgid "%s KB"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/template/defaultfilters.py:912
+#, python-format
+msgid "%s MB"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/template/defaultfilters.py:914
+#, python-format
+msgid "%s GB"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/template/defaultfilters.py:916
+#, python-format
+msgid "%s TB"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/template/defaultfilters.py:918
+#, python-format
+msgid "%s PB"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/utils/dateformat.py:73
+msgid "p.m."
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/utils/dateformat.py:74
+msgid "a.m."
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/utils/dateformat.py:79
+msgid "PM"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/utils/dateformat.py:80
+msgid "AM"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/utils/dateformat.py:152
+msgid "midnight"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/utils/dateformat.py:154
+msgid "noon"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/utils/dates.py:7
+msgid "Monday"
+msgstr "ثانوي"
+
+#: myenv/lib/python3.12/site-packages/django/utils/dates.py:8
+msgid "Tuesday"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/utils/dates.py:9
+msgid "Wednesday"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/utils/dates.py:10
+msgid "Thursday"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/utils/dates.py:11
+msgid "Friday"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/utils/dates.py:12
+msgid "Saturday"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/utils/dates.py:13
+msgid "Sunday"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/utils/dates.py:16
+msgid "Mon"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/utils/dates.py:17
+msgid "Tue"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/utils/dates.py:18
+msgid "Wed"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/utils/dates.py:19
+msgid "Thu"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/utils/dates.py:20
+msgid "Fri"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/utils/dates.py:21
+msgid "Sat"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/utils/dates.py:22
+msgid "Sun"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/utils/dates.py:25
+msgid "January"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/utils/dates.py:26
+msgid "February"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/utils/dates.py:27
+msgid "March"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/utils/dates.py:28
+msgid "April"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/utils/dates.py:29
+msgid "May"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/utils/dates.py:30
+msgid "June"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/utils/dates.py:31
+msgid "July"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/utils/dates.py:32
+msgid "August"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/utils/dates.py:33
+msgid "September"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/utils/dates.py:34
+msgid "October"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/utils/dates.py:35
+msgid "November"
+msgstr "صاحب الأمر"
+
+#: myenv/lib/python3.12/site-packages/django/utils/dates.py:36
+msgid "December"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/utils/dates.py:39
+msgid "jan"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/utils/dates.py:40
+msgid "feb"
+msgstr "رسوم"
+
+#: myenv/lib/python3.12/site-packages/django/utils/dates.py:41
+msgid "mar"
+msgstr "الابتدائي"
+
+#: myenv/lib/python3.12/site-packages/django/utils/dates.py:42
+msgid "apr"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/utils/dates.py:43
+msgid "may"
+msgstr "الابتدائي"
+
+#: myenv/lib/python3.12/site-packages/django/utils/dates.py:44
+msgid "jun"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/utils/dates.py:45
+msgid "jul"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/utils/dates.py:46
+msgid "aug"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/utils/dates.py:47
+msgid "sep"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/utils/dates.py:48
+msgid "oct"
+msgstr "المنتج"
+
+#: myenv/lib/python3.12/site-packages/django/utils/dates.py:49
+msgid "nov"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/utils/dates.py:50
+msgid "dec"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/utils/dates.py:53
+msgctxt "abbrev. month"
+msgid "Jan."
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/utils/dates.py:54
+msgctxt "abbrev. month"
+msgid "Feb."
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/utils/dates.py:55
+msgctxt "abbrev. month"
+msgid "March"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/utils/dates.py:56
+msgctxt "abbrev. month"
+msgid "April"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/utils/dates.py:57
+msgctxt "abbrev. month"
+msgid "May"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/utils/dates.py:58
+msgctxt "abbrev. month"
+msgid "June"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/utils/dates.py:59
+msgctxt "abbrev. month"
+msgid "July"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/utils/dates.py:60
+msgctxt "abbrev. month"
+msgid "Aug."
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/utils/dates.py:61
+msgctxt "abbrev. month"
+msgid "Sept."
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/utils/dates.py:62
+msgctxt "abbrev. month"
+msgid "Oct."
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/utils/dates.py:63
+msgctxt "abbrev. month"
+msgid "Nov."
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/utils/dates.py:64
+msgctxt "abbrev. month"
+msgid "Dec."
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/utils/dates.py:67
+msgctxt "alt. month"
+msgid "January"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/utils/dates.py:68
+msgctxt "alt. month"
+msgid "February"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/utils/dates.py:69
+msgctxt "alt. month"
+msgid "March"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/utils/dates.py:70
+msgctxt "alt. month"
+msgid "April"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/utils/dates.py:71
+msgctxt "alt. month"
+msgid "May"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/utils/dates.py:72
+msgctxt "alt. month"
+msgid "June"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/utils/dates.py:73
+msgctxt "alt. month"
+msgid "July"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/utils/dates.py:74
+msgctxt "alt. month"
+msgid "August"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/utils/dates.py:75
+msgctxt "alt. month"
+msgid "September"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/utils/dates.py:76
+msgctxt "alt. month"
+msgid "October"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/utils/dates.py:77
+msgctxt "alt. month"
+msgid "November"
+msgstr "صاحب الأمر"
+
+#: myenv/lib/python3.12/site-packages/django/utils/dates.py:78
+msgctxt "alt. month"
+msgid "December"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/utils/ipv6.py:8
+msgid "This is not a valid IPv6 address."
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/utils/text.py:78
+#, python-format
+msgctxt "String to return when truncating text"
+msgid "%(truncated_text)s…"
+msgstr ""
+
+#. Translators: This string is used as a separator between list elements
+#: myenv/lib/python3.12/site-packages/django/utils/text.py:273
+#: myenv/lib/python3.12/site-packages/django/utils/timesince.py:131
+msgid ", "
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/utils/timesince.py:8
+#, python-format
+msgid "%(num)d year"
+msgid_plural "%(num)d years"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+msgstr[4] ""
+msgstr[5] ""
+
+#: myenv/lib/python3.12/site-packages/django/utils/timesince.py:9
+#, python-format
+msgid "%(num)d month"
+msgid_plural "%(num)d months"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+msgstr[4] ""
+msgstr[5] ""
+
+#: myenv/lib/python3.12/site-packages/django/utils/timesince.py:10
+#, python-format
+msgid "%(num)d week"
+msgid_plural "%(num)d weeks"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+msgstr[4] ""
+msgstr[5] ""
+
+#: myenv/lib/python3.12/site-packages/django/utils/timesince.py:11
+#, python-format
+msgid "%(num)d day"
+msgid_plural "%(num)d days"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+msgstr[4] ""
+msgstr[5] ""
+
+#: myenv/lib/python3.12/site-packages/django/utils/timesince.py:12
+#, python-format
+msgid "%(num)d hour"
+msgid_plural "%(num)d hours"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+msgstr[4] ""
+msgstr[5] ""
+
+#: myenv/lib/python3.12/site-packages/django/utils/timesince.py:13
+#, python-format
+msgid "%(num)d minute"
+msgid_plural "%(num)d minutes"
+msgstr[0] ""
+msgstr[1] ""
+msgstr[2] ""
+msgstr[3] ""
+msgstr[4] ""
+msgstr[5] ""
+
+#: myenv/lib/python3.12/site-packages/django/views/csrf.py:111
+msgid "Forbidden"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/views/csrf.py:112
+msgid "CSRF verification failed. Request aborted."
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/views/csrf.py:116
+msgid ""
+"You are seeing this message because this HTTPS site requires a “Referer "
+"header” to be sent by your web browser, but none was sent. This header is "
+"required for security reasons, to ensure that your browser is not being "
+"hijacked by third parties."
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/views/csrf.py:122
+msgid ""
+"If you have configured your browser to disable “Referer” headers, please re-"
+"enable them, at least for this site, or for HTTPS connections, or for “same-"
+"origin” requests."
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/views/csrf.py:127
+msgid ""
+"If you are using the <meta name=\"referrer\" content=\"no-referrer\"> tag or "
+"including the “Referrer-Policy: no-referrer” header, please remove them. The "
+"CSRF protection requires the “Referer” header to do strict referer checking. "
+"If you’re concerned about privacy, use alternatives like <a "
+"rel=\"noreferrer\" …> for links to third-party sites."
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/views/csrf.py:136
+msgid ""
+"You are seeing this message because this site requires a CSRF cookie when "
+"submitting forms. This cookie is required for security reasons, to ensure "
+"that your browser is not being hijacked by third parties."
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/views/csrf.py:142
+msgid ""
+"If you have configured your browser to disable cookies, please re-enable "
+"them, at least for this site, or for “same-origin” requests."
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/views/csrf.py:148
+msgid "More information is available with DEBUG=True."
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/views/generic/dates.py:44
+msgid "No year specified"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/views/generic/dates.py:64
+#: myenv/lib/python3.12/site-packages/django/views/generic/dates.py:115
+#: myenv/lib/python3.12/site-packages/django/views/generic/dates.py:214
+msgid "Date out of range"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/views/generic/dates.py:94
+msgid "No month specified"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/views/generic/dates.py:147
+msgid "No day specified"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/views/generic/dates.py:194
+msgid "No week specified"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/views/generic/dates.py:349
+#: myenv/lib/python3.12/site-packages/django/views/generic/dates.py:380
+#, python-format
+msgid "No %(verbose_name_plural)s available"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/views/generic/dates.py:652
+#, python-format
+msgid ""
+"Future %(verbose_name_plural)s not available because %(class_name)s."
+"allow_future is False."
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/views/generic/dates.py:692
+#, python-format
+msgid "Invalid date string “%(datestr)s” given format “%(format)s”"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/views/generic/detail.py:56
+#, python-format
+msgid "No %(verbose_name)s found matching the query"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/views/generic/list.py:70
+msgid "Page is not “last”, nor can it be converted to an int."
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/views/generic/list.py:77
+#, python-format
+msgid "Invalid page (%(page_number)s): %(message)s"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/views/generic/list.py:169
+#, python-format
+msgid "Empty list and “%(class_name)s.allow_empty” is False."
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/views/static.py:38
+msgid "Directory indexes are not allowed here."
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/views/static.py:40
+#, python-format
+msgid "“%(path)s” does not exist"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/views/static.py:79
+#, python-format
+msgid "Index of %(directory)s"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/views/templates/default_urlconf.html:7
+#: myenv/lib/python3.12/site-packages/django/views/templates/default_urlconf.html:221
+msgid "The install worked successfully! Congratulations!"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/views/templates/default_urlconf.html:207
+#, python-format
+msgid ""
+"View <a href=\"https://docs.djangoproject.com/en/%(version)s/releases/\" "
+"target=\"_blank\" rel=\"noopener\">release notes</a> for Django %(version)s"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/views/templates/default_urlconf.html:222
+#, python-format
+msgid ""
+"You are seeing this page because <a href=\"https://docs.djangoproject.com/en/"
+"%(version)s/ref/settings/#debug\" target=\"_blank\" "
+"rel=\"noopener\">DEBUG=True</a> is in your settings file and you have not "
+"configured any URLs."
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/views/templates/default_urlconf.html:230
+msgid "Django Documentation"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/views/templates/default_urlconf.html:231
+msgid "Topics, references, &amp; how-to’s"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/views/templates/default_urlconf.html:239
+msgid "Tutorial: A Polling App"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/views/templates/default_urlconf.html:240
+msgid "Get started with Django"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/views/templates/default_urlconf.html:248
+msgid "Django Community"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/django/views/templates/default_urlconf.html:249
+msgid "Connect, get help, or contribute"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/kombu/transport/qpid.py:1311
+#, python-format
+msgid "Attempting to connect to qpid with SASL mechanism %s"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/kombu/transport/qpid.py:1316
+#, python-format
+msgid "Connected to qpid with SASL mechanism %s"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/kombu/transport/qpid.py:1334
+#, python-format
+msgid "Unable to connect to qpid with SASL mechanism %s"
+msgstr ""
+
+#: myenv/lib/python3.12/site-packages/modeltranslation/widgets.py:32
+msgid "None"
+msgstr ""
+
+#: orders/models.py:13
+msgid "Recieved"
+msgstr "وقت الطلب"
+
+#: orders/models.py:14
+msgid "Processing"
+msgstr ""
+
+#: orders/models.py:15
+msgid "Shipped"
+msgstr ""
+
+#: orders/models.py:16
+msgid "Delivered"
+msgstr "وقت التسليم"
+
 #: orders/models.py:19
 msgid "order owner"
 msgstr "صاحب الأمر"
 
-#: orders/models.py:20 orders/models.py:46
+#: orders/models.py:20 orders/models.py:54
 msgid "status"
 msgstr "الحالة"
 
@@ -402,253 +2041,300 @@ msgstr "وقت الطلب"
 msgid "deliery time"
 msgstr "وقت التسليم"
 
-#: orders/models.py:25
+#: orders/models.py:25 orders/models.py:108
 msgid "coupon"
 msgstr "قسيمة"
 
-#: orders/models.py:27 orders/models.py:37 orders/models.py:49
-#: orders/models.py:65
+#: orders/models.py:27 orders/models.py:41 orders/models.py:57
+#: orders/models.py:77
 msgid "total"
 msgstr "المجموع"
 
-#: orders/models.py:28 orders/models.py:50
+#: orders/models.py:28 orders/models.py:58
 msgid "total with coupon"
 msgstr "الإجمالي مع القسيمة"
 
-#: orders/models.py:32 orders/templates/orders/order_list.html:45
+#: orders/models.py:31 orders/models.py:36
+#: orders/templates/orders/order_list.html:49
 msgid "order"
 msgstr "النظام"
 
-#: orders/models.py:33 products/models.py:45 products/models.py:63
-#: products/models.py:98
+#: orders/models.py:32 templates/base.html:193
+msgid "orders"
+msgstr "الأوامر"
+
+#: orders/models.py:37 products/models.py:45 products/models.py:63
+#: products/models.py:106
 msgid "product"
 msgstr "المنتج"
 
-#: orders/models.py:35 orders/models.py:64 orders/models.py:79
-#: orders/templates/orders/order_list.html:127
-#: orders/templates/orders/success.html:116 products/models.py:20
+#: orders/models.py:39 orders/models.py:76 orders/models.py:95
+#: orders/templates/orders/order_list.html:131
+#: orders/templates/orders/success.html:121 products/models.py:20
 msgid "quantity"
 msgstr "الكمية"
 
-#: orders/models.py:36 products/models.py:18
+#: orders/models.py:40 products/models.py:18
 msgid "price"
 msgstr "السعر"
 
+#: orders/models.py:44
+msgid "order detail"
+msgstr "تفاصيل العربة"
+
 #: orders/models.py:45
+msgid "order details"
+msgstr "تفاصيل العربة"
+
+#: orders/models.py:49
+msgid "Inprogress"
+msgstr ""
+
+#: orders/models.py:50
+msgid "Completed"
+msgstr "الدفع الكامل"
+
+#: orders/models.py:53
 msgid "cart owner"
 msgstr "صاحب العربة"
 
-#: orders/models.py:47
+#: orders/models.py:55
 msgid "cart coupon"
 msgstr "قسيمة عربة التسوق"
 
-#: orders/models.py:61
+#: orders/models.py:68
+msgid "cart"
+msgstr "السلة"
+
+#: orders/models.py:69
+msgid "carts"
+msgstr "السلات"
+
+#: orders/models.py:73 orders/models.py:88
 msgid "cart details"
 msgstr "تفاصيل العربة"
 
-#: orders/models.py:62
+#: orders/models.py:74
 msgid "cart detail product"
 msgstr "منتج تفاصيل عربة التسوق"
 
-#: orders/models.py:77
+#: orders/models.py:87
+msgid "cart detail"
+msgstr "تفاصيل العربة"
+
+#: orders/models.py:93
 msgid "start date"
 msgstr "تاريخ البدء"
 
-#: orders/models.py:78
+#: orders/models.py:94
 msgid "end date"
 msgstr "تاريخ الانتهاء"
 
-#: orders/models.py:80
+#: orders/models.py:96
 msgid "discount amount"
 msgstr "مبلغ الخصم"
 
-#: orders/templates/orders/checkout.html:16
+#: orders/models.py:109
+msgid "coupons"
+msgstr "قسيمة"
+
+#: orders/templates/orders/checkout.html:21
 msgid "checkout"
 msgstr "الخروج"
 
-#: orders/templates/orders/checkout.html:67
+#: orders/templates/orders/checkout.html:72
 msgid "Do you have a coupon code?"
 msgstr "هل لديك رمز قسيمة؟"
 
-#: orders/templates/orders/checkout.html:74
+#: orders/templates/orders/checkout.html:79
 msgid "The coupon you entered expired"
 msgstr "انتهت صلاحية القسيمة التي أدخلتها"
 
-#: orders/templates/orders/checkout.html:80
+#: orders/templates/orders/checkout.html:85
 msgid "Sub total"
 msgstr "المجموع"
 
-#: orders/templates/orders/checkout.html:84
-#: orders/templates/orders/order_list.html:102
+#: orders/templates/orders/checkout.html:89
+#: orders/templates/orders/order_list.html:106 settings/models.py:36
+#: settings/models.py:37
 msgid "delivery fee"
 msgstr "وقت التسليم"
 
-#: orders/templates/orders/checkout.html:88
-#: orders/templates/orders/order_list.html:98
-#: orders/templates/orders/success.html:91
+#: orders/templates/orders/checkout.html:93
+#: orders/templates/orders/order_list.html:102
+#: orders/templates/orders/success.html:96
 msgid "discount"
 msgstr "مبلغ الخصم"
 
-#: orders/templates/orders/checkout.html:92
-#: orders/templates/orders/order_list.html:106
-#: orders/templates/orders/success.html:99
+#: orders/templates/orders/checkout.html:97
+#: orders/templates/orders/order_list.html:110
+#: orders/templates/orders/success.html:104
 msgid "Total"
 msgstr "المجموع"
 
-#: orders/templates/orders/checkout.html:103
+#: orders/templates/orders/checkout.html:108
 msgid "Complete Payment"
 msgstr "الدفع الكامل"
 
-#: orders/templates/orders/checkout.html:106
+#: orders/templates/orders/checkout.html:111
 msgid "proceed to checkout"
 msgstr "انتقل إلى الخروج"
 
-#: orders/templates/orders/failure.html:16
+#: orders/templates/orders/failure.html:21
 msgid "ERROR!!!"
 msgstr "خطأ!!!"
 
-#: orders/templates/orders/failure.html:17
+#: orders/templates/orders/failure.html:22
 msgid "ooopps! payment failed could you try again later"
 msgstr "عفوا! "
 
-#: orders/templates/orders/failure.html:18
+#: orders/templates/orders/failure.html:23
 msgid ""
 "Please be sure that your payment cart is working and has the enough money in "
 "it."
 msgstr "يرجى التأكد من أن عربة الدفع الخاصة بك تعمل وبها ما يكفي من المال."
 
-#: orders/templates/orders/failure.html:19
+#: orders/templates/orders/failure.html:24
 msgid "go to home"
 msgstr "اذهب إلى المنزل"
 
-#: orders/templates/orders/order_list.html:17 templates/base.html:774
+#: orders/templates/orders/order_list.html:21 templates/base.html:774
 msgid "Order History"
 msgstr "تاريخ الطلب"
 
-#: orders/templates/orders/order_list.html:33
+#: orders/templates/orders/order_list.html:37
 msgid "total order"
 msgstr "السعر الإجمالي"
 
-#: orders/templates/orders/order_list.html:44
-msgid "Order"
-msgstr "النظام"
-
-#: orders/templates/orders/order_list.html:74
+#: orders/templates/orders/order_list.html:78
 msgid "order id"
 msgstr "وقت الطلب"
 
-#: orders/templates/orders/order_list.html:78
-#: orders/templates/orders/success.html:60
+#: orders/templates/orders/order_list.html:82
+#: orders/templates/orders/success.html:65
 msgid "Total Item"
 msgstr "إجمالي البند"
 
-#: orders/templates/orders/order_list.html:82
-#: orders/templates/orders/success.html:64
+#: orders/templates/orders/order_list.html:86
+#: orders/templates/orders/success.html:69
 msgid "Order Time"
 msgstr "وقت الطلب"
 
-#: orders/templates/orders/order_list.html:86
-#: orders/templates/orders/success.html:68
+#: orders/templates/orders/order_list.html:90
+#: orders/templates/orders/success.html:73
 msgid "Delivery Time"
 msgstr "وقت التسليم"
 
-#: orders/templates/orders/order_list.html:94
-#: orders/templates/orders/success.html:87
+#: orders/templates/orders/order_list.html:98
+#: orders/templates/orders/success.html:92
 msgid "Sub Total"
 msgstr "المجموع الفرعي"
 
-#: orders/templates/orders/order_list.html:113
+#: orders/templates/orders/order_list.html:117
 msgid "Delivery location"
 msgstr "وقت التسليم"
 
-#: orders/templates/orders/order_list.html:122
-#: orders/templates/orders/success.html:111
+#: orders/templates/orders/order_list.html:126
+#: orders/templates/orders/success.html:116
 msgid "Serial"
 msgstr "مسلسل"
 
-#: orders/templates/orders/order_list.html:123
-#: orders/templates/orders/success.html:112
+#: orders/templates/orders/order_list.html:127
+#: orders/templates/orders/success.html:117
 msgid "Product"
 msgstr "المنتج"
 
-#: orders/templates/orders/order_list.html:124
-#: orders/templates/orders/success.html:113
+#: orders/templates/orders/order_list.html:128
+#: orders/templates/orders/success.html:118
 msgid "Name"
 msgstr "الاسم"
 
-#: orders/templates/orders/order_list.html:125
-#: orders/templates/orders/success.html:114
+#: orders/templates/orders/order_list.html:129
+#: orders/templates/orders/success.html:119
 msgid "Price"
 msgstr "السعر"
 
-#: orders/templates/orders/order_list.html:126
-#: orders/templates/orders/success.html:115 products/models.py:25
+#: orders/templates/orders/order_list.html:130
+#: orders/templates/orders/success.html:120 products/models.py:25
+#: products/models.py:100
 msgid "brand"
 msgstr "العلامة التجارية"
 
-#: orders/templates/orders/success.html:16
+#: orders/templates/orders/success.html:21
 msgid "Order invoice"
 msgstr "تاريخ الطلب"
 
-#: orders/templates/orders/success.html:17
+#: orders/templates/orders/success.html:22
 msgid "Payment Success"
 msgstr "نجاح الدفع"
 
-#: orders/templates/orders/success.html:18
+#: orders/templates/orders/success.html:23
 msgid "Your code is"
 msgstr "الرمز الخاص بك هو"
 
-#: orders/templates/orders/success.html:34
+#: orders/templates/orders/success.html:39
 msgid "Thank you! We have recieved your order."
 msgstr "شكرا لك! "
 
-#: orders/templates/orders/success.html:40
+#: orders/templates/orders/success.html:45
 msgid "order recieved"
 msgstr "وقت الطلب"
 
-#: orders/templates/orders/success.html:44
+#: orders/templates/orders/success.html:49
 msgid "order number"
 msgstr "صاحب الأمر"
 
-#: orders/templates/orders/success.html:45
+#: orders/templates/orders/success.html:50
 msgid "order date"
 msgstr "وقت الطلب"
 
-#: orders/templates/orders/success.html:46
+#: orders/templates/orders/success.html:51
 msgid "total amount"
 msgstr "مبلغ الخصم"
 
-#: orders/templates/orders/success.html:47
+#: orders/templates/orders/success.html:52
 msgid "payment method"
 msgstr "طريقة الدفع"
 
-#: orders/templates/orders/success.html:47
+#: orders/templates/orders/success.html:52
 msgid "Online Payment"
 msgstr "الدفع عبر الإنترنت"
 
-#: orders/templates/orders/success.html:55
+#: orders/templates/orders/success.html:60
 msgid "Order Details"
 msgstr "تفاصيل العربة"
 
-#: orders/templates/orders/success.html:61
+#: orders/templates/orders/success.html:66
 msgid "Items"
 msgstr "العناصر"
 
-#: orders/templates/orders/success.html:72
+#: orders/templates/orders/success.html:77
 msgid "Delivery Location"
 msgstr "الموقع"
 
-#: orders/templates/orders/success.html:82
+#: orders/templates/orders/success.html:87
 msgid "Amount Details"
 msgstr "تفاصيل العربة"
 
-#: orders/templates/orders/success.html:95
+#: orders/templates/orders/success.html:100
 msgid "Delivery Fee"
 msgstr "وقت التسليم"
 
-#: orders/templates/orders/success.html:138
+#: orders/templates/orders/success.html:143
 msgid "Back to Home"
 msgstr "العودة إلى المنزل"
+
+#: products/models.py:10
+msgid "New"
+msgstr "جديد"
+
+#: products/models.py:11
+msgid "Feature"
+msgstr "ميزة"
+
+#: products/models.py:12
+msgid "Sale"
+msgstr "للبيع"
 
 #: products/models.py:17
 msgid "flag"
@@ -670,72 +2356,84 @@ msgstr "الوصف"
 msgid "products"
 msgstr "المنتجات"
 
-#: products/models.py:99
+#: products/models.py:70 products/models.py:71
+msgid "product images"
+msgstr "المنتجات"
+
+#: products/models.py:101 templates/base.html:190
+msgid "brands"
+msgstr "العلامات التجارية"
+
+#: products/models.py:107 products/models.py:115
 msgid "review"
 msgstr "مراجعة"
 
-#: products/models.py:100
+#: products/models.py:108
 msgid "rate"
 msgstr "معدل"
 
-#: products/models.py:101
+#: products/models.py:109
 msgid "review date"
 msgstr "تاريخ المراجعة"
+
+#: products/models.py:116
+msgid "reviews"
+msgstr "مراجعة"
 
 #: products/templates/includes/reviews.html:3
 msgid "Reviews"
 msgstr "مراجعة"
 
-#: products/templates/products/brand_detail.html:16
+#: products/templates/products/brand_detail.html:21
 msgid "Brand Details"
 msgstr "تفاصيل العربة"
 
-#: products/templates/products/brand_detail.html:30
-#: products/templates/products/brand_list.html:43
+#: products/templates/products/brand_detail.html:35
+#: products/templates/products/brand_list.html:49
 msgid "items"
 msgstr "العناصر"
 
-#: products/templates/products/brand_list.html:16
+#: products/templates/products/brand_list.html:22
 msgid "brands list"
 msgstr "العلامات التجارية"
 
-#: products/templates/products/product_detail.html:21
+#: products/templates/products/product_detail.html:26
 msgid "product details"
 msgstr "تفاصيل العربة"
 
-#: products/templates/products/product_detail.html:60
+#: products/templates/products/product_detail.html:65
 msgid "SKU"
 msgstr ""
 
-#: products/templates/products/product_detail.html:61
+#: products/templates/products/product_detail.html:66
 msgid "BRAND"
 msgstr "العلامة التجارية"
 
-#: products/templates/products/product_detail.html:106
+#: products/templates/products/product_detail.html:111
 msgid "add to cart"
 msgstr "أضف إلى السلة"
 
-#: products/templates/products/product_detail.html:139
+#: products/templates/products/product_detail.html:144
 msgid "Description"
 msgstr "الوصف"
 
-#: products/templates/products/product_detail.html:148
+#: products/templates/products/product_detail.html:153
 msgid "add your review"
 msgstr "أضف رأيك"
 
-#: products/templates/products/product_detail.html:163
+#: products/templates/products/product_detail.html:168
 msgid "write your review about this product"
 msgstr "اكتب رأيك حول هذا المنتج"
 
-#: products/templates/products/product_detail.html:169
+#: products/templates/products/product_detail.html:174
 msgid "drop your review"
 msgstr "قم بإسقاط رأيك"
 
-#: products/templates/products/product_detail.html:192
+#: products/templates/products/product_detail.html:197
 msgid "related this items"
 msgstr "عناصرنا المميزة"
 
-#: products/templates/products/product_detail.html:246
+#: products/templates/products/product_detail.html:251
 msgid "view all related"
 msgstr "عرض جميع الماركات"
 
@@ -754,10 +2452,6 @@ msgstr "اتصل بنا"
 #: settings/models.py:10 templates/base.html:207
 msgid "email us"
 msgstr "راسلنا عبر البريد الإلكتروني"
-
-#: settings/models.py:11
-msgid "phone"
-msgstr "الهاتف"
 
 #: settings/models.py:12
 msgid "email"
@@ -787,37 +2481,41 @@ msgstr "تويتر"
 msgid "instagram"
 msgstr "الانستقرام"
 
-#: settings/models.py:26
+#: settings/models.py:25 settings/models.py:26
+msgid "settings"
+msgstr "الإعدادات"
+
+#: settings/models.py:30
 msgid "fee"
 msgstr "رسوم"
 
-#: settings/templates/settings/home.html:42
+#: settings/templates/settings/home.html:48
 msgid "recently sold items"
 msgstr "العناصر المباعة مؤخرًا"
 
-#: settings/templates/settings/home.html:90
-#: settings/templates/settings/home.html:157
-#: settings/templates/settings/home.html:227
+#: settings/templates/settings/home.html:96
+#: settings/templates/settings/home.html:163
+#: settings/templates/settings/home.html:233
 msgid "show more"
 msgstr "عرض المزيد"
 
-#: settings/templates/settings/home.html:110
+#: settings/templates/settings/home.html:116
 msgid "our featured items"
 msgstr "عناصرنا المميزة"
 
-#: settings/templates/settings/home.html:177
+#: settings/templates/settings/home.html:183
 msgid "collected new items"
 msgstr "جمع عناصر جديدة"
 
-#: settings/templates/settings/home.html:248
+#: settings/templates/settings/home.html:254
 msgid "shop by brands"
 msgstr "تسوق حسب العلامات التجارية"
 
-#: settings/templates/settings/home.html:273
+#: settings/templates/settings/home.html:279
 msgid "view all brands"
 msgstr "عرض جميع الماركات"
 
-#: settings/templates/settings/home.html:293
+#: settings/templates/settings/home.html:299
 msgid "client's feedback"
 msgstr "ملاحظات العميل"
 
@@ -852,14 +2550,6 @@ msgstr "المنزل"
 #: templates/base.html:187
 msgid "shop"
 msgstr "متجر"
-
-#: templates/base.html:190
-msgid "brands"
-msgstr "العلامات التجارية"
-
-#: templates/base.html:193
-msgid "orders"
-msgstr "الأوامر"
 
 #: templates/base.html:678
 msgid "free home delivery"
@@ -930,13 +2620,19 @@ msgstr "تنزيل التطبيق"
 msgid ""
 "Lorem ipsum dolor sit amet tenetur dignissimos ipsum eligendi autem "
 "obcaecati minus ducimus totam reprehenderit exercitationem!"
-msgstr "Lorem ipsum dolor sit amet Tenetur dignissimos ipsum eligendi autem obcaecati minus ducimus totam rerehenderit exercitementem!"
+msgstr ""
 "Lorem ipsum dolor sit amet Tenetur dignissimos ipsum eligendi autem "
-"obcaecati minus ducimus totam rerehenderit exercitationem!"
+"obcaecati minus ducimus totam rerehenderit exercitementem!Lorem ipsum dolor "
+"sit amet Tenetur dignissimos ipsum eligendi autem obcaecati minus ducimus "
+"totam rerehenderit exercitationem!"
 
 #: templates/base.html:799
 msgid "All Copyrights Reserved by"
 msgstr "جميع الحقوق محفوظة"
+
+#: templates/base_generic.html:27
+msgid "Greeny - Login"
+msgstr "جريني"
 
 #: templates/cart_includes.html:5
 msgid "total item"
@@ -949,4 +2645,3 @@ msgstr "سعر الوحدة"
 #: templates/cart_includes.html:35
 msgid "Proceed to Checkout"
 msgstr "انتقل إلى الخروج"
-

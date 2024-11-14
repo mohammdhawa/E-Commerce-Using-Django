@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'modeltranslation',
     'accounts.apps.AccountsConfig',
 
     'django.contrib.admin',
@@ -48,6 +49,7 @@ INSTALLED_APPS = [
     'dj_rest_auth.registration',
 
 
+
     # My Packages
     'taggit',
     'rest_framework',
@@ -58,6 +60,7 @@ INSTALLED_APPS = [
     'rest_framework.authtoken',
     'rest_framework_simplejwt',
     'dj_rest_auth',
+
 
     # My Apps
     'products.apps.ProductsConfig',
@@ -138,8 +141,8 @@ CACHES = {
 }
 
 # Celery & Redis
-# CELERY_BROKER_URL = 'redis://localhost:6379'
-# CELERY_BACKEND_RESULTS = 'redis://localhost:6379'
+CELERY_BROKER_URL = 'redis://localhost:6379'
+CELERY_BACKEND_RESULTS = 'redis://localhost:6379'
 
 # Celery in Docker
 # Celery & Redis
@@ -187,7 +190,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.2/topics/i18n/
 
-LANGUAGE_CODE = 'tr'
+LANGUAGE_CODE = 'en'
 
 TIME_ZONE = 'UTC'
 
@@ -252,3 +255,5 @@ LANGUAGES = (
     ('tr', 'Turkish'),
     ('ar', 'Arabic')
 )
+
+MODELTRANSLATION_DEFAULT_LANGUAGE = 'en'

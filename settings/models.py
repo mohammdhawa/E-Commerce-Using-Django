@@ -21,9 +21,17 @@ class Settings(models.Model):
     def __str__(self):
         return self.name
 
+    class Meta:
+        verbose_name = _('settings')
+        verbose_name_plural = _('settings')
+
 
 class DeliveryFee(models.Model):
     fee = models.FloatField(_('fee'))
 
     def __str__(self):
         return str(self.fee)
+
+    class Meta:
+        verbose_name = _('delivery fee')
+        verbose_name_plural = _('delivery fee')
