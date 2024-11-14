@@ -7,9 +7,9 @@ from django.utils.translation import gettext_lazy as _
 
 
 FLAG_CHOICES = (
-    ('New', 'New'),
-    ('Feature', 'Feature'),
-    ('Sale', 'Sale'),
+    ('New', _('New')),
+    ('Feature', _('Feature')),
+    ('Sale', _('Sale')),
 )
 
 class Product(models.Model):
@@ -44,7 +44,7 @@ class Product(models.Model):
     class Meta:
         verbose_name = _('product')
         verbose_name_plural = _('products')
-        ordering = ['-id']
+        # ordering = ['-id']
 
     @property
     def avg_rate(self):
@@ -65,6 +65,10 @@ class ProductImages(models.Model):
 
     def __str__(self):
         return str(self.product)
+
+    class Meta:
+        verbose_name = _('product images')
+        verbose_name_plural = _('product images')
 
 
 class Brand(models.Model):
@@ -92,6 +96,10 @@ class Brand(models.Model):
     def products_count(self):
         return self.product_brand.count()
 
+    class Meta:
+        verbose_name = _('brand')
+        verbose_name_plural = _('brands')
+
 
 class Review(models.Model):
     user = models.ForeignKey(User, verbose_name=_('user'), related_name='review_user', on_delete=models.SET_NULL, null=True)
@@ -104,4 +112,6 @@ class Review(models.Model):
         return f"{self.user} - {self.product}"
 
     class Meta:
+        verbose_name = _('review')
+        verbose_name_plural = _('reviews')
         ordering = ['-id']

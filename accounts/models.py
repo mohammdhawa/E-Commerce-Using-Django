@@ -15,6 +15,10 @@ class Profile(models.Model):
     def __str__(self):
         return str(self.user)
 
+    class Meta:
+        verbose_name = _('profile')
+        verbose_name_plural = _('profiles')
+
 
 @receiver(post_save, sender=User)
 def create_profile(sender, instance, created, **kwargs):
@@ -23,10 +27,10 @@ def create_profile(sender, instance, created, **kwargs):
 
 
 ADDRESS_CHOICES = (
-    ('Home', 'Home'),
-    ('Office', 'Office'),
-    ('Work', 'Work'),
-    ('Other', 'Other'),
+    ('Home', _('Home')),
+    ('Office', _('Office')),
+    ('Work', _('Work')),
+    ('Other', _('Other')),
 )
 
 class Address(models.Model):
@@ -38,13 +42,21 @@ class Address(models.Model):
     def __str__(self):
         return self.address
 
+    class Meta:
+        verbose_name = _('address')
+        verbose_name_plural = _('addresses')
+
 
 PHONE_CHOICES = (
-    ('Primary', 'Primary'),
-    ('Secondary', 'Secondary'),
+    ('Primary', _('Primary')),
+    ('Secondary', _('Secondary')),
 )
 
 class Phone(models.Model):
     user = models.ForeignKey(User, verbose_name=_('user'), related_name='user_phone', on_delete=models.CASCADE)
     type = models.CharField(_('type'), max_length=10, choices=PHONE_CHOICES)
     number = models.CharField(_('number'), max_length=25)
+
+    class Meta:
+        verbose_name = _('phone')
+        verbose_name_plural = _('phones')

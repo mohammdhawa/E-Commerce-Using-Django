@@ -10,10 +10,10 @@ from django.utils.translation import gettext_lazy as _
 
 
 ORDER_STATUS_CHOICES = (
-    ('Recieved', 'Recieved'),
-    ('Processing', 'Processing'),
-    ('Shipped', 'Shipped'),
-    ('Delivered', 'Delivered'),
+    ('Recieved', _('Recieved')),
+    ('Processing', _('Processing')),
+    ('Shipped', _('Shipped')),
+    ('Delivered', _('Delivered')),
 )
 class Order(models.Model):
     user = models.ForeignKey(User, verbose_name=_('order owner') ,related_name='order_owner', on_delete=models.SET_NULL, null=True, blank=True)
@@ -27,6 +27,10 @@ class Order(models.Model):
     total = models.FloatField(_('total'))
     total_with_coupon = models.FloatField(_('total with coupon'), null=True, blank=True)
 
+    class Meta:
+        verbose_name = _('order')
+        verbose_name_plural = _('orders')
+
 
 class OrderDetail(models.Model):
     order = models.ForeignKey(Order, verbose_name=_('order'), related_name='order_details', on_delete=models.CASCADE)
@@ -36,10 +40,14 @@ class OrderDetail(models.Model):
     price = models.FloatField(_('price'))
     total = models.FloatField(_('total'), null=True, blank=True)
 
+    class Meta:
+        verbose_name = _('order detail')
+        verbose_name_plural = _('order details')
+
 
 CART_STATUS_CHOICES = (
-    ('Inprogress', 'Inprogress'),
-    ('Completed', 'Completed'),
+    ('Inprogress', _('Inprogress')),
+    ('Completed', _('Completed')),
 )
 class Cart(models.Model):
     user = models.ForeignKey(User, verbose_name=_('cart owner'), related_name='cart_owner', on_delete=models.SET_NULL, null=True, blank=True)
@@ -56,6 +64,10 @@ class Cart(models.Model):
             total += item.total
         return round(total, 2)
 
+    class Meta:
+        verbose_name = _('cart')
+        verbose_name_plural = _('carts')
+
 
 class CartDetail(models.Model):
     cart = models.ForeignKey(Cart, verbose_name=_('cart details'), related_name='cart_details', on_delete=models.CASCADE)
@@ -70,6 +82,10 @@ class CartDetail(models.Model):
             self.total = total
         # Call the parent save method to actually save the data
         super().save(*args, **kwargs)
+
+    class Meta:
+        verbose_name = _('cart detail')
+        verbose_name_plural = _('cart details')
 
 
 class Coupon(models.Model):
@@ -87,3 +103,7 @@ class Coupon(models.Model):
             week = self.start_date + timezone.timedelta(days=7)
             self.end_date = week
         super(Coupon, self).save(*args, **kwargs)
+
+    class Meta:
+        verbose_name = _('coupon')
+        verbose_name_plural = _('coupons')
