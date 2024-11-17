@@ -1,9 +1,10 @@
 {% extends 'base.html' %}
 {% load bootstrap5 %}
 {% load i18n %}
-{% get_current_language as LANGUAGE_CODE %}
 
 {% load static %}
+
+{% get_current_language as LANGUAGE_CODE %}
 
 {% block css %}
     {% if LANGUAGE_CODE == 'ar' %}
@@ -63,7 +64,7 @@
                                     </div>
                                     <div class="col-lg-2">
                                         <div class="profile-btn">
-                                            <a href="{% url 'password_change' %}">{% translate 'change pass.' %}</a>
+                                            <a href="{% url 'password_change' %}">{% translate 'change password' %}</a>
                                         </div>
                                     </div>
                                 </div>
