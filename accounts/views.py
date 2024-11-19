@@ -10,6 +10,7 @@ from django.contrib.auth.models import User
 from accounts.models import Address, Phone
 from django.http import JsonResponse
 from django.db import IntegrityError
+from .tasks import send_activation_code
 
 
 def signup(request):
@@ -28,13 +29,7 @@ def signup(request):
             profile = Profile.objects.get(user__username=username)
 
             # Send email
-            send_mail(
-                "Account Activation",
-                f"Welcome {username} \nUse this code {profile.code} to activate your account.",
-                "ismekbektop@gmail.com",
-                [email],
-                fail_silently=False,
-            )
+            send_activation_code.delay(username, profile.code, email)
 
             return redirect('account-activate', username=username)
 
@@ -60,7 +55,7 @@ def user_activate(request, username):
                 user.is_active = True
                 user.save()
 
-                return redirect('accounts/login')
+                return redirect('login')
     else:
         form = UserActivationForm()
 
