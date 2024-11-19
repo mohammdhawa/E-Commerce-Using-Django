@@ -21,6 +21,7 @@ import stripe
 class OrderList(ListView):
     template_name = 'orders/order_list.html'
     context_object_name = 'orders'
+
     def get_queryset(self, *args, **kwargs):
         queryset = Order.objects.filter(user=self.request.user)
         return queryset
